@@ -1,6 +1,4 @@
-import Layout from "../containers/layout";
-import Section from "../components/section";
-import Slider from "react-slick";
+import Layout from "Containers/layout";
 
 const Articles = (props) => {
   

@@ -198,7 +198,7 @@ const Home = (props) => {
             </h3>
             <div className="article-wrapper">
                 { props.articles && props.articles.map((article, idx) => 
-                    <div className="article-card-wrapper">
+                    <div className="article-card-wrapper" key={idx}>
                       <ArticleCard
                         picture={article.img}
                         name={article.title}

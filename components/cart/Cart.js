@@ -55,7 +55,7 @@ const Cart = (props) => {
                 <div className="cart-detail-wrapper">
                     {
                         props.cart && props.cart.map((item, idx) => 
-                            <div className="product-cart-wrapper">
+                            <div className="product-cart-wrapper" key={idx}>
                                 <ProductCardCart
                                     picture={item.product.img}
                                     category={`${item.product.Application.name}`}

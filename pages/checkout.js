@@ -66,7 +66,8 @@ const Home = (props) => {
                             <div className="checkout-detail-wrapper">
                                 {
                                     cart && cart.map((item, idx) => 
-                                        <div className="product-cart-wrapper">
+                                        <div className="product-cart-wrapper" 
+                                        key={idx}>
                                             <ProductCardCart
                                                 picture={item.product.img}
                                                 category={`${item.product.Application.name}`}

@@ -123,7 +123,8 @@ const Home = (props) => {
               <div className="career-card-wrapper">
                 {
                   props.careers && props.careers.map((career, idx) => 
-                  <CareerCard title={career.title} description={career.description} />)
+                  <CareerCard 
+                     key={idx} title={career.title} description={career.description} />)
                 }
               </div>
             </div>

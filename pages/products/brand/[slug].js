@@ -50,7 +50,8 @@ const Home = (props) => {
                         </div>
 
                         {
-                            isBrands && <div className="group-list-wrapper"> {props.brands && props.brands.map((brand, idx) => <a href={`http://localhost:3000/products/brand/${brand.id}`}><p className="group-list">{brand.name}</p></a>)}</div>
+                            isBrands && <div className="group-list-wrapper"> {props.brands && props.brands.map((brand, idx) => <a 
+                              key={idx} href={`http://localhost:3000/products/brand/${brand.id}`}><p className="group-list">{brand.name}</p></a>)}</div>
                           }
                         <div className="category-group">
                           <h3 className="category-side-title ">
@@ -62,7 +63,8 @@ const Home = (props) => {
                         </div>
 
                           {
-                            isIndustry && <div className="group-list-wrapper"> {props.industries && props.industries.map((industry, idx) => <a href={`http://localhost:3000/products/industry/${industry.id}`}><p className="group-list">{industry.name}</p></a>)}</div>
+                            isIndustry && <div className="group-list-wrapper"> {props.industries && props.industries.map((industry, idx) => <a 
+                              key={idx} href={`http://localhost:3000/products/industry/${industry.id}`}><p className="group-list">{industry.name}</p></a>)}</div>
                           }
                         <div className="category-group">
                           <h3 className="category-side-title ">
@@ -73,7 +75,8 @@ const Home = (props) => {
                           }
                         </div>
                           {
-                            isApplication && <div className="group-list-wrapper"> {props.applications && props.applications.map((application, idx) => <a href={`http://localhost:3000/products/application/${application.id}`}><p className="group-list">{application.name}</p></a>)}</div>
+                            isApplication && <div className="group-list-wrapper"> {props.applications && props.applications.map((application, idx) => <a 
+                              key={idx} href={`http://localhost:3000/products/application/${application.id}`}><p className="group-list">{application.name}</p></a>)}</div>
                           }
                     </div>
                     <div className="right-products">
