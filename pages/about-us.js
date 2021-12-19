@@ -1,0 +1,512 @@
+import Layout from "../containers/layout";
+import Section from "../components/section";
+import Slider from "react-slick";
+
+const Home = (props) => {
+  
+	const settings = {
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+    variableWidth: true
+	};
+
+  return (
+      <Layout
+        title="test"
+        applications={props.applications}
+        brands={props.brands}
+        industries={props.industries} >      
+        <div className="container">
+          <div className="header-about">
+            <img className="green-tetra-img" src="/static/images/green-tetra.svg" />
+            <div className="header-about-wrapper">
+              <div className="header-img">
+                <img src="http://cdn.eramitra.com/images_article/original/DSC00749.jpg" />
+              </div>
+              <h3 className="section-title">About Us</h3>
+              <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	
+              Equipment,	and	Services. We	are	highly	experienced	and	a	trusted	partner	for	
+              Government	Institutions,	Universities,	and	Industries	to	
+              supply,	install,	and	provide	after	sales	services	in	the	area	
+              of	scientific	and	laboratory	equipment	since	1999.</p>
+            </div>
+            <style>
+              {`
+                .header-about-wrapper {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  margin-top: -250px;
+                  padding-bottom: 78px;
+                }
+
+                .header-img {
+                  width: 566px;
+                  height: 345px;
+                  border-radius: 20px;
+                  margin-bottom: 70px;
+                }
+
+                .header-img img {
+                  object-fit: cover;
+                  width: 566px;
+                  height: 345px;
+                  border-radius: 20px;
+                }
+
+                .header-about .section-title, .header-about .section-description {
+                  text-align: center;
+                  width: 55%;
+                }
+
+
+                @media only screen and (max-width: 800px){
+
+                  .header-about-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: -50px;
+                    padding-bottom: 30px;
+                  }
+
+                  .header-img {
+                    width: 183px;
+                    height: 111px;
+                    border-radius: 10px;
+                    margin-bottom: 30px;
+                  }
+
+                  .header-img img {
+                    width: 183px;
+                    height: 111px;
+                    border-radius: 10px;
+                  }
+  
+                }
+              `}
+            </style>
+          </div>
+          <Section 
+            element_id="vision-about" 
+            background="#FBFBFB"  
+            height="618px" >
+            <div className="container-inner">
+              <div className="vision-about-wrapper">
+                <div className="about-us-description">
+                  <h3 className="section-title">Vision</h3>
+                  <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	
+                  Equipment,	and	Services. We	are	highly	experienced	and	a	trusted	partner	for	
+                  Government	Institutions,	Universities,	and	Industries	to	
+                  supply,	install,	and	provide	after	sales	services	in	the	area	
+                  of	scientific	and	laboratory	equipment	since	1999.</p>
+                </div>
+                <img src="/static/images/vision.svg" />
+              </div>
+            </div>
+            <style>
+              {`
+                .vision-about-wrapper {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                }
+
+                .vision-about-wrapper img {
+                  height: 60%;
+                  width: auto;
+                  border-radius: 20px;
+                  margin-left: 75px;
+                }
+
+                @media only screen and (max-width: 800px){
+                  .vision-about {
+                    height: 400px !important;
+                  }
+
+                  .vision-about-wrapper {
+                    flex-direction: column-reverse;
+                    justify-content: center;
+                
+                  }
+
+                  .vision-about-wrapper img {
+                    height: auto;
+                    width: 70%;
+                    margin-left: 0;
+                    margin-bottom: 20px;
+                  }
+
+                }
+              `}
+            </style>
+          </Section>
+
+          <Section 
+            element_id="mission-about" 
+            background="#FFFFFF" 
+            icon={[
+              {
+                image: "shape-5.svg",
+                vertical: "bottom",
+                horizontal: "right"
+              }
+            ]} 
+            height="618px" >
+            <div className="container-inner">
+              <div className="mission-about-wrapper">
+                <img src="/static/images/mission.svg" />
+                <div className="mission-description">
+                  <h3 className="section-title">Mission</h3>
+                  <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	
+                  Equipment,	and	Services. We	are	highly	experienced	and	a	trusted	partner	for	
+                  Government	Institutions,	Universities,	and	Industries	to	
+                  supply,	install,	and	provide	after	sales	services	in	the	area	
+                  of	scientific	and	laboratory	equipment	since	1999.</p>
+                </div>
+              </div>
+            </div>
+            <style>
+              {`
+                .mission-about-wrapper {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                }
+
+                .mission-about-wrapper img {
+                  height: 70%;
+                  width: auto;
+                  border-radius: 20px;
+                  margin-right: 75px;
+                }
+
+
+                @media only screen and (max-width: 800px){
+
+                  .mission-about {
+                    height: 400px !important;
+                  }
+
+                  .mission-about-wrapper {
+                    flex-direction: column;
+                    justify-content: center;                
+                  }
+
+                  .mission-about-wrapper img {
+                    height: auto;
+                    width: 70%;
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                  }
+                }
+              `}
+            </style>
+          </Section>
+          
+          
+          <Section 
+            element_id="values" 
+            background="#FBFBFB" 
+            icon={[
+              {
+                image: "shape-4.svg",
+                vertical: "top",
+                horizontal: "left"
+              }
+            ]} 
+            height="768px" >
+            <div className="container-inner">
+              <div className="values-wrapper">
+                <h3 className="section-title">Values</h3>
+                <div className="values-card-wrapper">
+                  <div className="values-card">
+                    <h6></h6>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <style>
+              {`
+                .values-wrapper {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .values-card-wrapper {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 40px;
+                }
+
+                .values-card {
+
+                }
+
+                .values-card h6 {
+                  font-family: Bahnschrift;
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 24px;
+                  line-height: 29px;
+                  text-align: center;
+                }
+
+                .values-card p {
+                  font-family: Calibri;
+                  font-style: italic;
+                  font-weight: normal;
+                  font-size: 20px;
+                  line-height: 24px;
+                  text-align: center;
+                  color: #666A66;
+                }
+              `}
+            </style>
+          </Section>
+
+          <Section 
+            element_id="what-we-do-best" 
+            background="#FFFFFF" 
+            icon={[
+              {
+                image: "shape-2.svg",
+                vertical: "top",
+                horizontal: "right"
+              }
+            ]} 
+            height="1000px" >
+            <div className="container-inner">
+              <div className="what-we-do-best-wrapper">
+                  <h3 className="section-title">What We Do Best</h3>
+                  <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus. </p>
+                      
+                  <div className="main-content">
+                    <div className="card-wrapper">
+                      <div className="wwdb-card">
+                        <img src="/static/images/wwdb-1.svg" />
+                        <p>High Quality with <br></br> Competitive Price</p>
+                      </div>
+                      <div className="wwdb-card">
+                        <img src="/static/images/wwdb-2.svg" />
+                        <p>Installation &amp; <br></br>Training</p>
+                      </div>
+                      <div className="wwdb-card">
+                        <img src="/static/images/wwdb-3.svg" />
+                        <p>Accessories &amp;<br></br> Sparepart</p>
+                      </div>
+                      <div className="wwdb-card">
+                        <img src="/static/images/wwdb-4.svg" />
+                        <p>Maintenance &amp; <br></br> Contract Service</p>
+                      </div>
+                    </div>
+                    <img className="what-we-do-img" src="/static/images/what-we-do-best.svg" />
+                  </div>
+              </div>
+            </div>
+            <style>
+              {`
+                .what-we-do-best-wrapper {
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                }
+                .what-we-do-best-wrapper .section-title {
+                  text-align: center;
+                }
+                
+                .what-we-do-best-wrapper .section-description {
+                  text-align: center;
+                  max-width: 741px;
+                }
+
+                .what-we-do-best-wrapper .main-content {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                  margin-top: 76px;
+                }
+
+                .what-we-do-best-wrapper .card-wrapper {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  padding-bottom: 20px;
+                }
+
+                .wwdb-card {
+                  background: #F8F8F8;
+                  border-radius: 20px;
+                  padding: 17px 19px;
+                  display: flex;
+                  align-items: center;
+                  max-width: 439px;
+                }
+
+                .wwdb-card p {
+                  font-family: Bahnschrift;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 24px;
+                  line-height: 29px;
+                  color: #000000;
+                  margin: 0 0 0 25px;
+                  padding-right: 50px;
+                }
+
+                @media only screen and (max-width: 800px){
+                  .what-we-do-best {
+                    height: 452px !important;
+                  }
+
+                  .what-we-do-best .icon-shape-0.right {
+                    height: 30%;
+                  }
+
+                  .wwdb-card {
+                    background: #F8F8F8;
+                    border-radius: 10px;
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    max-width: 217px !important;
+                  }
+  
+                  .wwdb-card img {
+                    height: 45px;
+                    width: auto;
+                  }
+
+                  .wwdb-card p {
+                    font-family: Bahnschrift;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 14px;
+                    margin: 0 0 0 12px !important;
+                    padding-right: 50px;
+                  }
+
+                  .what-we-do-img {
+                    display: none;
+                  }
+
+                  .what-we-do-best-wrapper {
+                    padding: 25px 0;
+                  }
+
+                  .what-we-do-best-wrapper .main-content {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin-top: 26px;
+                    height: 100%;
+                  }
+
+                  .what-we-do-best-wrapper .card-wrapper {
+                    padding-bottom: 0px;
+                  }
+                }
+              `}
+            </style>
+          </Section>
+        </div>
+        <style>
+          {`
+            .container {
+              width: 100vw;
+              padding: 0;
+            }
+  
+            .container-inner {
+              max-width: 1120px;
+              margin: 0 auto;
+              height: 100%;
+            }
+  
+            .container.banner {
+              background-color: #F5FFEE;
+            }
+
+            .section-title {
+              font-family: Bahnschrift;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 48px;
+              color: #000000;
+              margin: 0 0 24px 0;
+            }
+
+            .section-description {
+              font-family: Calibri;
+              font-style: italic;
+              font-weight: normal;
+              font-size: 20px;
+              line-height: 24px;
+              color: #666A66;
+              margin: 0;
+            }
+
+            .green-tetra-img {
+              width: 100%;
+            }
+
+
+            @media only screen and (max-width: 800px){
+              .section-title {
+                font-family: Bahnschrift;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                text-align: center;
+                margin-bottom: 10px;
+              }
+
+              .section-description {
+                font-family: Calibri;
+                font-style: italic;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: center;
+                color: #666A66;
+              }
+            }
+          `}
+        </style>
+      </Layout>
+  );
+}
+
+export async function getServerSideProps() {
+
+  const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`)
+  const brands = await getBrands.json()
+
+
+  const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`)
+  const industries = await getIndustry.json()
+
+
+  const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
+  const applications = await getApplication.json()
+
+  return { props: { brands: brands, industries: industries, applications: applications }}
+}
+
+export default Home;
