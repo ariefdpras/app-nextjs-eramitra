@@ -230,7 +230,7 @@ const Home = props => {
                 placeholder: "Message"
               }), /*#__PURE__*/jsx_runtime_.jsx("a", {
                 className: "btn-submit",
-                href: `${"http://localhost:3001"}/checkout`,
+                href: `${"http://staging.eramitra.com"}/checkout`,
                 children: "Submit"
               })]
             })]
@@ -538,11 +538,11 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://staging.eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://staging.eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {
