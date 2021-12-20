@@ -34,7 +34,7 @@ const Home = (props) => {
                     <p>{utc_to_local_short(props.articles[0].createdAt)}</p>
                     <h6>{props.articles[0].title}</h6>
                     <p>{truncate_text(props.articles[0].content, 150)}</p>
-                    <a href="http://localhost:3000/article/1"><div className="btn-read">Read Article</div></a>
+                    <a href={`${process.env.ROOT_DOMAIN}/article/${props.articles[0].id}`}><div className="btn-read">Read Article</div></a>
                   </div>
              </div>
             </div>

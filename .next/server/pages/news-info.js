@@ -55,7 +55,7 @@ class ArticleCard extends (external_react_default()).Component {
           className: "article-name",
           children: [props.name, " "]
         }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-          href: `${process.env.ROOT_DOMAIN}/article/${props.slug}`,
+          href: `${"http://localhost:3001"}/article/${props.slug}`,
           children: /*#__PURE__*/jsx_runtime_.jsx("div", {
             className: "btn-read-card",
             children: "Read Article"
@@ -174,7 +174,7 @@ const Home = props => {
               }), /*#__PURE__*/jsx_runtime_.jsx("p", {
                 children: (0,utils/* truncate_text */.vP)(props.articles[0].content, 150)
               }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-                href: "http://localhost:3000/article/1",
+                href: `${"http://localhost:3001"}/article/${props.articles[0].id}`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("div", {
                   className: "btn-read",
                   children: "Read Article"
@@ -429,13 +429,13 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`);
+  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`);
+  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getArticles = await fetch(`${process.env.ROOT_DOMAIN}/api/getArticle`);
+  const getArticles = await fetch(`${"http://localhost:3001"}/api/getArticle`);
   const articles = await getArticles.json();
   return {
     props: {

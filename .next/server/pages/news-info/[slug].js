@@ -181,11 +181,11 @@ const Articles = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`);
+  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`);
+  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {

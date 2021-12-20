@@ -50,7 +50,7 @@ class CategoryMenu extends React.Component {
             <div className="right-category-menu">
                 {
                     this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
-                        <a href={`http://localhost:3000/products/brand/${brand.id}`} 
+                        <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
                         key={idx}>
                             <h3 className="category-side-name " 
                                     key={idx}>
@@ -62,7 +62,7 @@ class CategoryMenu extends React.Component {
 
                 {
                     this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
-                        <a href={`http://localhost:3000/products/application/${app.id}`} 
+                        <a href={`${process.env.ROOT_DOMAIN}/products/application/${app.id}`} 
                         key={idx}>
                             <h3 className="category-side-name " 
                                     key={idx}>
@@ -74,7 +74,7 @@ class CategoryMenu extends React.Component {
 
                 {
                     this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
-                        <a href={`http://localhost:3000/products/industry/${ind.id}`} 
+                        <a href={`${process.env.ROOT_DOMAIN}/products/industry/${ind.id}`} 
                         key={idx}>
                             <h3 className="category-side-name " 
                                     key={idx}>

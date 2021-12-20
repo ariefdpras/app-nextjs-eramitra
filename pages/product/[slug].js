@@ -75,7 +75,7 @@ const Home = (props) => {
                 <div className="breadcrumb-wrapper">
                     <Breadcrumb
                         breadcrumbs={breadcrumbs}
-                        url={"http://localhost:3000"} />
+                        url={process.env.ROOT_DOMAIN} />
                 </div>
                 <div className="product-detail-container">
                     <div className="left-product">

@@ -29,7 +29,7 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "product-card",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-        href: `${process.env.ROOT_DOMAIN}/product/${props.id}`,
+        href: `${"http://localhost:3001"}/product/${props.id}`,
         children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("div", {
           className: "product-picture-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("img", {

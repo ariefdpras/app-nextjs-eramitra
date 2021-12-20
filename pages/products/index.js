@@ -7,7 +7,7 @@ const Home = (props) => {
     const breadcrumbs = [
       {
         title: "Products",
-        url: "http://localhost:3000/products"
+        url: process.env.ROOT_DOMAIN + "/products"
       }
     ]
     
@@ -30,7 +30,7 @@ const Home = (props) => {
                 <div className="breadcrumb-wrapper">
                     <Breadcrumb
                         breadcrumbs={breadcrumbs}
-                        url={"http://localhost:3000"} />
+                        url={process.env.ROOT_DOMAIN} />
                 </div>
                 <div className="products-container">
                     <div className="left-products">
@@ -47,7 +47,7 @@ const Home = (props) => {
                         </div>
 
                         {
-                            isBrands && <div className="group-list-wrapper"> {props.brands && props.brands.map((brand, idx) => <a href={`http://localhost:3000/products/brand/${brand.id}`} 
+                            isBrands && <div className="group-list-wrapper"> {props.brands && props.brands.map((brand, idx) => <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
                             key={idx}><p className="group-list">{brand.name}</p></a>)}</div>
                           }
                         <div className="category-group">
@@ -61,7 +61,7 @@ const Home = (props) => {
 
                           {
                             isIndustry && <div className="group-list-wrapper"> {props.industries && props.industries.map((industry, idx) => <a 
-                              key={idx} href={`http://localhost:3000/products/industry/${industry.id}`}><p className="group-list">{industry.name}</p></a>)}</div>
+                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/industry/${industry.id}`}><p className="group-list">{industry.name}</p></a>)}</div>
                           }
                         <div className="category-group">
                           <h3 className="category-side-title ">
@@ -73,7 +73,7 @@ const Home = (props) => {
                         </div>
                           {
                             isApplication && <div className="group-list-wrapper"> {props.applications && props.applications.map((application, idx) => <a 
-                              key={idx} href={`http://localhost:3000/products/application/${application.id}`}><p className="group-list">{application.name}</p></a>)}</div>
+                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/application/${application.id}`}><p className="group-list">{application.name}</p></a>)}</div>
                           }
                     </div>
                     <div className="right-products">
@@ -275,19 +275,19 @@ const Home = (props) => {
 export async function getServerSideProps(req) {
 
 
-  const getBrands = await fetch(`http://localhost:3000/api/getBrands`)
+  const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`)
   const brands = await getBrands.json()
 
 
-  const getIndustries = await fetch(`http://localhost:3000/api/getIndustry`)
+  const getIndustries = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`)
   const industries = await getIndustries.json()
 
 
-  const getApplication = await fetch(`http://localhost:3000/api/getApplication`)
+  const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
   const applications = await getApplication.json()
 
 
-  const getProducts = await fetch(`http://localhost:3000/api/getProduct`)
+  const getProducts = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct`)
   const products = await getProducts.json()
 
   return { props: { products: products, brands: brands, industries: industries, applications: applications }}

@@ -406,7 +406,7 @@ const Home = props => {
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
               className: "btn-wrapper",
               children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("a", {
-                href: `${process.env.ROOT_DOMAIN}/career`,
+                href: `${"http://localhost:3001"}/career`,
                 children: "More Info"
               })
             })]
@@ -550,11 +550,11 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`);
+  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`);
+  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {
