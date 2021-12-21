@@ -310,6 +310,10 @@ const Home = props => {
 
               @media only screen and (max-width: 800px){
 
+                .news-info .section-title-underline {
+                  margin-left: 20px;
+                }
+                
                 .news-info-cover {
                   width: 170px;
                   height: 100px;

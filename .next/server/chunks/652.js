@@ -67,7 +67,7 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
                     }
 
                     .product-picture {
-                        max-width: 100%;
+                        max-width: 200px;
                         height: 200px;
                         object-fit: cover;
                     }
@@ -123,8 +123,8 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
                         .product-card {
                             box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
                             border-radius: 20px;
-                            height: 250px;
-                            width: 100%;
+                            height: 325px;
+                            width: 150px;
                         }
 
                         .product-category {
@@ -136,6 +136,13 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
                             letter-spacing: 0em;
                             text-align: left;
                         }
+
+                        .product-picture {
+                            width: 150px;
+                            height: 150px;
+                            object-fit: cover;
+                        }
+    
 
                         .product-name {
                             font-family: Bahnschrift;
