@@ -76,6 +76,52 @@ class ArticleCard extends React.Component {
                         margin: 0;
                     }
 
+
+                    @media only screen and (max-width: 800px){
+
+                        .article-date {
+                            font-family: Calibri;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 12px;
+                            line-height: 15px;
+                            margin: 0 0 8px 0;
+                        }
+
+                    .article-card {
+                        width: 126px;
+                    }
+
+                    .article-picture {
+                        width: 126px;
+                        height: 126px;
+                        object-fit: cover;
+                    }
+
+                        .article-name {
+                            font-family: Bahnschrift;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 17px;
+                            letter-spacing: 0em;
+                            text-align: left;
+                            margin: 0 0 16px 0;
+                            width: 126px;
+                        }
+
+                        .btn-read-card {
+                            font-family: Bahnschrift;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 17px;
+                            /* identical to box height */
+
+                            text-align: center;
+                        }
+                    }
+
                 `}
             </style>
         </div>

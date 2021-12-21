@@ -481,6 +481,10 @@ class Header extends React.Component {
                         width: 55%;
                     }
 
+                    .footer-shape {
+                      display: none;
+                    }
+
                     .contact-follow {
                         width: 100%;
                         margin-left: 0px;

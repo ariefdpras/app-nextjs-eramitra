@@ -33,7 +33,7 @@ const Home = (props) => {
                   <div className="news-info-description">
                     <p>{utc_to_local_short(props.articles[0].createdAt)}</p>
                     <h6>{props.articles[0].title}</h6>
-                    <p>{truncate_text(props.articles[0].content, 150)}</p>
+                    <p className="news-info-content">{truncate_text(props.articles[0].content, 150)}</p>
                     <a href={`${process.env.ROOT_DOMAIN}/article/${props.articles[0].id}`}><div className="btn-read">Read Article</div></a>
                   </div>
              </div>
@@ -119,75 +119,109 @@ const Home = (props) => {
 
               @media only screen and (max-width: 800px){
 
-                .contact-us .icon-shape-0 {
-                  top: 0;
-                  bottom: none;
-                  width: 30%;
+                .news-info-cover {
+                  width: 170px;
+                  height: 100px;
+                  border-radius: 10px;
+                  margin-right: 0;
                 }
 
-                .contact-us .container-inner {
+                .news-info .news-info-wrapper {
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                }
+
+                .news-info-cover img {
+                  width: 170px;
+                  height: 100px;
+                  border-radius: 10px;
+                }
+
+                .news-info {
+                  height: 252px !important;
+                }
+
+                .news-info .icon-shape-0 {
+                  width: 30% !important;
+                }
+
+                .news-info-description {
+                  width: 90% !important;
+                  display: flex;
+
+                  flex-direction: column;
+                  align-items: center;
+                }
+
+                .news-info p {
+                  font-family: Calibri;
+                  font-style: italic;
+                  font-weight: normal;
+                  font-size: 12px;
+                  line-height: 15px;
+                  /* identical to box height */
+                  margin: 5px 0 0 0;
+                  text-align: center;
+                }
+
+                .news-info h6 {
+                  font-family: Bahnschrift;
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 16px;
+                  line-height: 19px;
+                  text-align: center;
+                  margin-bottom: 14px;
+                }
+
+                .container-inner {
                   padding: 0;
                 }
 
-                .contact-us .contact-us-wrapper {
-                  display: flex;
-                  justify-content: flex-start;
-                  align-items: center;
-                  flex-direction: column;
-                  padding: 25px;
+                .news-info-content {
+                  display: none;
                 }
 
-
-                .contact-us p {
+                .btn-read {
                   font-family: Bahnschrift;
-                  font-size: 10px;
                   font-style: normal;
-                  font-weight: 400;
-                  line-height: 12px;
-                  letter-spacing: 0em;
-                  text-align: left;
-                  color: #FFFFFF;                  
-                }
-
-                .contact-us h6 {
-                  font-family: Calibri;
-                  font-size: 10px;
-                  font-style: italic;
-                  font-weight: 400;
-                  line-height: 12px;
-                  letter-spacing: 0em;
-                  text-align: left;
-
-                  text-align: center;
-                  margin: 0;
-                }
-
-                .contact-us h4 {
-                  font-family: Bahnschrift;
-                  font-size: 18px;
-                  font-style: normal;
-                  font-weight: 600;
-                  line-height: 22px;
-                  letter-spacing: 0em;
-                  text-align: left;
-                  
-                  text-align: center;
-                  margin: 0 0 5px 0;             
-                }
-
-                .btn-submit {
-                
+                  font-weight: normal;
                   font-size: 12px;
-                  line-height: 12px;
-                  padding: 8px 15px;
-                  border-radius: 8px;
-                  width: fit-content;
-              }
-              .container-inner {
-                padding: 0;
-              }
+                  line-height: 14px;
+                  text-align: center;
+                  margin-top: 0;
+                }
 
+                .section-title-underline {
+                  font-family: Bahnschrift;
+                  font-size: 18px !important;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 25px !important;
+                  letter-spacing: 0em;
+                  text-align: left;
+                }
 
+                .section-title-underline:after {
+                  padding-top: 5px !important;
+                  margin-left: 1px !important;
+                  width: calc(100% - 20px) !important;
+                }
+
+                .article-wrapper {
+                  margin: 0 !important;
+                  justify-content: flex-start;
+                }
+
+                .article-card-wrapper {
+                  margin-bottom: 30px !important;
+                  flex: 0 0 50% !important;
+                }
+
+                .container-inner {
+                  padding: 0 !important;
+                }
               }
               `}
             </style>

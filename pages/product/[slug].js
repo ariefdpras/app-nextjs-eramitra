@@ -276,6 +276,39 @@ const Home = (props) => {
 
                 @media only screen and (max-width: 800px){
                
+                  .product-detail-container {
+                    flex-direction: column;
+                  }
+
+                  .left-product  {
+                    width: 100%;
+                    margin-right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 40px;
+                  }
+
+                  .left-product .image-big {
+                    width: 265px;
+                    height: 265px;
+                  }
+
+                  .right-product {
+                    width: 100%;
+                  }
+
+                  .right-product .product-name {
+                    margin: 0 0 5px 0;
+                  }
+
+                  .right-product .price-wrapper {
+                    margin-bottom: 16px !important;
+                  }
+
+                  .cart-product-wrapper {
+                    margin-bottom: 30px;
+                  }
                 }
               `}
             </style>
