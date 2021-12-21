@@ -55,7 +55,7 @@ class ArticleCard extends (external_react_default()).Component {
           className: "article-name",
           children: [props.name, " "]
         }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-          href: `${"http://eramitra.com"}/article/${props.slug}`,
+          href: `${"https://eramitra.com"}/article/${props.slug}`,
           children: /*#__PURE__*/jsx_runtime_.jsx("div", {
             className: "btn-read-card",
             children: "Read Article"
@@ -187,7 +187,7 @@ var utils = __webpack_require__(2820);
 
 const Home = props => {
   return /*#__PURE__*/(0,jsx_runtime_.jsxs)(layout/* default */.Z, {
-    title: "test",
+    title: "News & Info | PT. Era Mitra Perdana",
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
@@ -221,7 +221,7 @@ const Home = props => {
                 className: "news-info-content",
                 children: (0,utils/* truncate_text */.vP)(props.articles[0].content, 150)
               }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-                href: `${"http://eramitra.com"}/article/${props.articles[0].id}`,
+                href: `${"https://eramitra.com"}/article/${props.articles[0].id}`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("div", {
                   className: "btn-read",
                   children: "Read Article"
@@ -510,13 +510,13 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"https://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getArticles = await fetch(`${"http://eramitra.com"}/api/getArticle`);
+  const getArticles = await fetch(`${"https://eramitra.com"}/api/getArticle`);
   const articles = await getArticles.json();
   return {
     props: {

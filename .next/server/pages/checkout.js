@@ -193,7 +193,7 @@ const Home = props => {
                 placeholder: "Message"
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("a", {
                 className: "btn-submit",
-                href: `${"http://eramitra.com"}/checkout`,
+                href: `${"https://eramitra.com"}/checkout`,
                 children: "Submit"
               })]
             })]
@@ -517,11 +517,11 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"https://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {

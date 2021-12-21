@@ -33,7 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 const Home = props => {
   const breadcrumbs = [{
     title: "Products",
-    url: "http://eramitra.com" + "/products/"
+    url: "https://eramitra.com" + "/products/"
   }, {
     title: props.detail.name,
     url: "http://google.com"
@@ -97,7 +97,7 @@ const Home = props => {
           className: "breadcrumb-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
             breadcrumbs: breadcrumbs,
-            url: "http://eramitra.com"
+            url: "https://eramitra.com"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "product-detail-container",
@@ -428,13 +428,13 @@ const Home = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"https://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getProduct = await fetch(`${"http://eramitra.com"}/api/getProduct/${req.query.slug}`);
+  const getProduct = await fetch(`${"https://eramitra.com"}/api/getProduct/${req.query.slug}`);
   const product = await getProduct.json();
   return {
     props: {

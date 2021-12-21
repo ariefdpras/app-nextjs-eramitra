@@ -285,19 +285,19 @@ class CategoryMenu extends (external_react_default()).Component {
           }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
             className: "right-category-menu",
             children: [this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://eramitra.com"}/products/brand/${brand.id}`,
+              href: `${"https://eramitra.com"}/products/brand/${brand.id}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-name ",
                 children: brand.name
               }, idx)
             }, idx)), this.state.activeTab == "application" && props.applications && props.applications.map((app, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://eramitra.com"}/products/application/${app.id}`,
+              href: `${"https://eramitra.com"}/products/application/${app.id}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-name ",
                 children: app.name
               }, idx)
             }, idx)), this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://eramitra.com"}/products/industry/${ind.id}`,
+              href: `${"https://eramitra.com"}/products/industry/${ind.id}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-name ",
                 children: ind.name
@@ -537,7 +537,7 @@ const Cart = props => {
           })]
         }), /*#__PURE__*/jsx_runtime_.jsx("a", {
           className: "btn-checkout",
-          href: `${"http://eramitra.com"}/checkout`,
+          href: `${"https://eramitra.com"}/checkout`,
           children: "Go to checkout page"
         })]
       })]
@@ -808,7 +808,7 @@ class Header extends (external_react_default()).Component {
         children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
           className: "logo-wrapper",
           children: [/*#__PURE__*/jsx_runtime_.jsx("a", {
-            href: `${"http://eramitra.com"}`,
+            href: `${"https://eramitra.com"}`,
             children: /*#__PURE__*/jsx_runtime_.jsx("img", {
               className: "logo",
               src: "/static/images/logo.png"
@@ -821,7 +821,7 @@ class Header extends (external_react_default()).Component {
         }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
           className: "navbar-link",
           children: [/*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://eramitra.com"}/about-us`,
+            href: `${"https://eramitra.com"}/about-us`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "About Us"
             })
@@ -829,17 +829,17 @@ class Header extends (external_react_default()).Component {
             onClick: this.handleClickProduct,
             children: "Products"
           }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://eramitra.com"}/news-info`,
+            href: `${"https://eramitra.com"}/news-info`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "News & Info"
             })
           }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://eramitra.com"}/career`,
+            href: `${"https://eramitra.com"}/career`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "Career"
             })
           }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://eramitra.com"}/contact-us`,
+            href: `${"https://eramitra.com"}/contact-us`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "Contact Us"
             })
@@ -854,7 +854,7 @@ class Header extends (external_react_default()).Component {
             onClick: this.handleClickProduct,
             children: "chevron_left"
           }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-            href: `${"http://eramitra.com"}`,
+            href: `${"https://eramitra.com"}`,
             children: /*#__PURE__*/jsx_runtime_.jsx("img", {
               className: "logo",
               src: "/static/images/logo.png"
@@ -879,7 +879,7 @@ class Header extends (external_react_default()).Component {
               onClick: this.handleClick,
               children: "menu"
             }), !this.state.isSearch && /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://eramitra.com"}`,
+              href: `${"https://eramitra.com"}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                 className: "logo",
                 src: "/static/images/logo.png"
@@ -888,7 +888,7 @@ class Header extends (external_react_default()).Component {
           }), /*#__PURE__*/jsx_runtime_.jsx("div", {
             className: "logo-wrapper desktop-only",
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://eramitra.com"}`,
+              href: `${"https://eramitra.com"}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                 className: "logo",
                 src: "/static/images/logo.png"
@@ -899,7 +899,7 @@ class Header extends (external_react_default()).Component {
             children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "navbar-link-wrapper",
               children: [/*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://eramitra.com"}/about-us`,
+                href: `${"https://eramitra.com"}/about-us`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "About Us"
                 })
@@ -907,17 +907,17 @@ class Header extends (external_react_default()).Component {
                 onClick: this.handleClickProduct,
                 children: "Products"
               }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://eramitra.com"}/news-info`,
+                href: `${"https://eramitra.com"}/news-info`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "News & Info"
                 })
               }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://eramitra.com"}/career`,
+                href: `${"https://eramitra.com"}/career`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "Career"
                 })
               }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://eramitra.com"}/contact-us`,
+                href: `${"https://eramitra.com"}/contact-us`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "Contact Us"
                 })
@@ -1331,7 +1331,7 @@ class footer_Header extends (external_react_default()).Component {
               children: /*#__PURE__*/jsx_runtime_.jsx("div", {
                 className: "info-wrapper",
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-                  href: `${"http://eramitra.com"}`,
+                  href: `${"https://eramitra.com"}`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                     className: "logo",
                     src: "/static/images/logo-white.png"
@@ -1359,25 +1359,19 @@ class footer_Header extends (external_react_default()).Component {
                 }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
                   className: "social-media-wrapper",
                   children: [/*#__PURE__*/jsx_runtime_.jsx("a", {
-                    href: "https://wa.me/6281234567890",
-                    children: /*#__PURE__*/jsx_runtime_.jsx("img", {
-                      className: "logo-social",
-                      src: "/static/icons/whatsapp.svg"
-                    })
-                  }), /*#__PURE__*/jsx_runtime_.jsx("a", {
                     href: "mailto:sales@eramitra.com",
                     children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                       className: "material-icons white",
                       children: "mail"
                     })
                   }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-                    href: "http://linked.in",
+                    href: "https://www.linkedin.com/company/era-mitra-perdana",
                     children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                       className: "logo-social",
                       src: "/static/icons/linkedin.svg"
                     })
                   }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-                    href: "http://instagram.com/eramitra",
+                    href: "https://instagram.com/eramitra.id?utm_medium=copy_link",
                     children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                       className: "logo-social",
                       src: "/static/icons/instagram.svg"
@@ -1389,22 +1383,22 @@ class footer_Header extends (external_react_default()).Component {
                 children: [/*#__PURE__*/jsx_runtime_.jsx("h2", {
                   children: "Page"
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://eramitra.com"}/about-us`,
+                  href: `${"https://eramitra.com"}/about-us`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "About Us"
                   })
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://eramitra.com"}/career`,
+                  href: `${"https://eramitra.com"}/career`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "Career"
                   })
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://eramitra.com"}/contact-us`,
+                  href: `${"https://eramitra.com"}/contact-us`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "Contact Us"
                   })
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://eramitra.com"}/contact-us`,
+                  href: `${"https://eramitra.com"}/contact-us`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "Customer Service"
                   })

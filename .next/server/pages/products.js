@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 const Home = props => {
   const breadcrumbs = [{
     title: "Products",
-    url: "http://eramitra.com" + "/products"
+    url: "https://eramitra.com" + "/products"
   }];
   const {
     0: isBrands,
@@ -57,7 +57,7 @@ const Home = props => {
           className: "breadcrumb-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
             breadcrumbs: breadcrumbs,
-            url: "http://eramitra.com"
+            url: "https://eramitra.com"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "products-container",
@@ -89,7 +89,7 @@ const Home = props => {
             }), isBrands && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "group-list-wrapper",
               children: [" ", props.brands && props.brands.map((brand, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
-                href: `${"http://eramitra.com"}/products/brand/${brand.id}`,
+                href: `${"https://eramitra.com"}/products/brand/${brand.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
                   className: "group-list",
                   children: brand.name
@@ -118,7 +118,7 @@ const Home = props => {
             }), isIndustry && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "group-list-wrapper",
               children: [" ", props.industries && props.industries.map((industry, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
-                href: `${"http://eramitra.com"}/products/industry/${industry.id}`,
+                href: `${"https://eramitra.com"}/products/industry/${industry.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
                   className: "group-list",
                   children: industry.name
@@ -147,7 +147,7 @@ const Home = props => {
             }), isApplication && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "group-list-wrapper",
               children: [" ", props.applications && props.applications.map((application, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
-                href: `${"http://eramitra.com"}/products/application/${application.id}`,
+                href: `${"https://eramitra.com"}/products/application/${application.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
                   className: "group-list",
                   children: application.name
@@ -348,13 +348,13 @@ const Home = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustries = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
+  const getIndustries = await fetch(`${"https://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustries.json();
-  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getProducts = await fetch(`${"http://eramitra.com"}/api/getProduct`);
+  const getProducts = await fetch(`${"https://eramitra.com"}/api/getProduct`);
   const products = await getProducts.json();
   return {
     props: {

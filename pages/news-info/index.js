@@ -9,7 +9,7 @@ const Home = (props) => {
 
   return (
       <Layout
-        title="test"
+        title="News &amp; Info | PT. Era Mitra Perdana"
         applications={props.applications}
         brands={props.brands}
         industries={props.industries} > 

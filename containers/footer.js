@@ -62,12 +62,12 @@ class Header extends React.Component {
                   </div>
                   <h2>Follow Us</h2>
                   <div className="social-media-wrapper">
-                    <a href="https://wa.me/6281234567890">
+                    {/* <a href="https://wa.me/6281234567890">
                       <img
                         className="logo-social"
                         src="/static/icons/whatsapp.svg"
                       />
-                    </a>
+                    </a> */}
                     {/* <img className="logo-social" src="/static/icons/facebook.svg" />
                                       <img className="logo-social" src="/static/icons/linkedin.svg" /> */}
                     <a href="mailto:sales@eramitra.com">
@@ -76,11 +76,11 @@ class Header extends React.Component {
                       </span>
                     </a>
 
-                    <a href="http://linked.in">
+                    <a href="https://www.linkedin.com/company/era-mitra-perdana">
                     <img className="logo-social" src="/static/icons/linkedin.svg" />
                     </a>
 
-                    <a href="http://instagram.com/eramitra">
+                    <a href="https://instagram.com/eramitra.id?utm_medium=copy_link">
                     <img className="logo-social" src="/static/icons/instagram.svg" />
                     </a>
                   </div>
