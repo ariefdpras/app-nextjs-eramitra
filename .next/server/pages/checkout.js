@@ -77,7 +77,7 @@ const Home = props => {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
-    title: "test",
+    title: "Checkout Page | PT. Era Mitra Perdana",
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
@@ -193,7 +193,7 @@ const Home = props => {
                 placeholder: "Message"
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("a", {
                 className: "btn-submit",
-                href: `${"http://staging.eramitra.com"}/checkout`,
+                href: `${"http://eramitra.com"}/checkout`,
                 children: "Submit"
               })]
             })]
@@ -517,11 +517,11 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {

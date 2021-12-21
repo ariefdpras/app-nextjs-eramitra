@@ -36,7 +36,7 @@ const Home = props => {
     variableWidth: true
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
-    title: "test",
+    title: "PT. Era Mitra Perdana",
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
@@ -218,6 +218,7 @@ const Home = props => {
                   display: flex;
                   align-items: center;
                   max-width: 439px;
+                  margin: 5px 0;
                 }
 
                 .wwdb-card p {
@@ -229,6 +230,12 @@ const Home = props => {
                   color: #000000;
                   margin: 0 0 0 25px;
                   padding-right: 50px;
+                }
+
+                @media only screen and (max-width: 1024px){
+                  .what-we-do-img {
+                    width: 60%;
+                  }
                 }
 
                 @media only screen and (max-width: 800px){
@@ -406,7 +413,7 @@ const Home = props => {
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
               className: "btn-wrapper",
               children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("a", {
-                href: `${"http://staging.eramitra.com"}/career`,
+                href: `${"http://eramitra.com"}/career`,
                 children: "More Info"
               })
             })]
@@ -550,11 +557,11 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {

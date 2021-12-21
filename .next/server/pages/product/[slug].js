@@ -33,7 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 const Home = props => {
   const breadcrumbs = [{
     title: "Products",
-    url: "http://staging.eramitra.com" + "/products/"
+    url: "http://eramitra.com" + "/products/"
   }, {
     title: props.detail.name,
     url: "http://google.com"
@@ -84,7 +84,7 @@ const Home = props => {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(Containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
-    title: "test",
+    title: `${props.detail.name} | PT. Era Mitra Perdana`,
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
@@ -97,7 +97,7 @@ const Home = props => {
           className: "breadcrumb-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
             breadcrumbs: breadcrumbs,
-            url: "http://staging.eramitra.com"
+            url: "http://eramitra.com"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "product-detail-container",
@@ -105,7 +105,7 @@ const Home = props => {
             className: "left-product",
             children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("img", {
               className: "image-big",
-              src: "https://www.linseis.com/wp-content/uploads/2018/07/STA-PT-1000_gross.jpg"
+              src: `https://svr.eramitra.com/images/${props.detail.img}`
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "right-product",
@@ -428,13 +428,13 @@ const Home = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"http://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getProduct = await fetch(`${"http://staging.eramitra.com"}/api/getProduct/${req.query.slug}`);
+  const getProduct = await fetch(`${"http://eramitra.com"}/api/getProduct/${req.query.slug}`);
   const product = await getProduct.json();
   return {
     props: {

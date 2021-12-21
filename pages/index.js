@@ -16,7 +16,7 @@ const Home = (props) => {
 
   return (
       <Layout
-        title="test"
+        title="PT. Era Mitra Perdana"
         applications={props.applications}
         brands={props.brands}
         industries={props.industries} >     
@@ -180,6 +180,7 @@ const Home = (props) => {
                   display: flex;
                   align-items: center;
                   max-width: 439px;
+                  margin: 5px 0;
                 }
 
                 .wwdb-card p {
@@ -191,6 +192,12 @@ const Home = (props) => {
                   color: #000000;
                   margin: 0 0 0 25px;
                   padding-right: 50px;
+                }
+
+                @media only screen and (max-width: 1024px){
+                  .what-we-do-img {
+                    width: 60%;
+                  }
                 }
 
                 @media only screen and (max-width: 800px){

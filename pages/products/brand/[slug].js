@@ -22,7 +22,7 @@ const Home = (props) => {
   
   return (
       <Layout
-        title="test"
+        title={`${props.detail.name} | PT. Era Mitra Perdana`}
         applications={props.applications}
         brands={props.brands}
         industries={props.industries} 

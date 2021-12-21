@@ -16,7 +16,7 @@ const Home = (props) => {
 
   return (
       <Layout
-        title="test"
+        title="About Us | PT. Era Mitra Perdana"
         applications={props.applications}
         brands={props.brands}
         industries={props.industries} >      
@@ -205,6 +205,9 @@ const Home = (props) => {
                     margin-right: 0;
                     margin-bottom: 20px;
                   }
+                  .mission-about .icon-shape-0 {
+                    display: none;
+                  }
                 }
               `}
             </style>
@@ -227,8 +230,19 @@ const Home = (props) => {
                 <h3 className="section-title">Values</h3>
                 <div className="values-card-wrapper">
                   <div className="values-card">
-                    <h6></h6>
-                    <p></p>
+                    <img className="values-img" src="/static/images/bond.svg"/>
+                    <h6>Bond</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel</p>
+                  </div>
+                  <div className="values-card">
+                    <img className="values-img" src="/static/images/performance.svg"/>
+                    <h6>Performance</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel</p>
+                  </div>
+                  <div className="values-card">
+                    <img className="values-img" src="/static/images/process.svg"/>
+                    <h6>Process</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel</p>
                   </div>
                 </div>
               </div>
@@ -252,7 +266,16 @@ const Home = (props) => {
                 }
 
                 .values-card {
+                  width: 30%;
+                  margin: 0 20px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                }
 
+
+                .values-card img {
+                  margin-bottom: 20px;
                 }
 
                 .values-card h6 {
@@ -262,6 +285,7 @@ const Home = (props) => {
                   font-size: 24px;
                   line-height: 29px;
                   text-align: center;
+                  margin: 0 0 5px 0;
                 }
 
                 .values-card p {
@@ -272,6 +296,60 @@ const Home = (props) => {
                   line-height: 24px;
                   text-align: center;
                   color: #666A66;
+                }
+
+
+                @media only screen and (max-width: 800px){
+
+                  .values .icon-shape-0 {
+                    width: 20% !important;
+                  }
+                  .values .section-title {
+                    font-family: Bahnschrift;
+                  font-size: 24px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 29px;
+                  letter-spacing: 0em;
+                  text-align: center;
+
+                  }
+                 .values-card-wrapper {
+                   flex-direction: column;
+                 }
+
+                 .values-img {
+                   width: 30%;
+                   margin-bottom: 10px !important;
+                 }
+
+                 .values-card {
+                   width: 80%;
+                   margin-bottom: 20px;
+                 }
+
+                 .values-card h6 {
+                  font-family: Bahnschrift;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 19px;
+                  letter-spacing: 0em;
+                  text-align: center;
+
+                 }
+
+                 .values-card p {
+                  font-family: Calibri;
+                  font-size: 12px;
+                  font-style: italic;
+                  font-weight: 400;
+                  line-height: 15px;
+                  letter-spacing: 0em;
+                  text-align: center;
+                  margin: 0 !important;
+                  
+                 }
                 }
               `}
             </style>
@@ -355,6 +433,7 @@ const Home = (props) => {
                   display: flex;
                   align-items: center;
                   max-width: 439px;
+                  margin: 5px 0;
                 }
 
                 .wwdb-card p {
@@ -366,6 +445,10 @@ const Home = (props) => {
                   color: #000000;
                   margin: 0 0 0 25px;
                   padding-right: 50px;
+                }
+
+                .what-we-do-img {
+                  width: 90%;
                 }
 
                 @media only screen and (max-width: 800px){
@@ -420,6 +503,46 @@ const Home = (props) => {
                   .what-we-do-best-wrapper .card-wrapper {
                     padding-bottom: 0px;
                   }
+                }
+              `}
+            </style>
+          </Section>
+
+          <Section 
+            element_id="our-client" 
+            background="#FBFBFB"  
+            height="700px" >
+            <div className="container-inner">
+
+              <div className="our-client-wrapper">
+              <h3 className="section-title">Our Clients</h3>
+              <div className="map-wrapper"><img src="/static/images/map.svg" /></div>
+              </div>
+            </div>
+            <style>
+              {`
+                .our-client-wrapper {
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                }
+
+                .map-wrapper {
+                  margin-top: 20px;
+                  display: flex;
+                  justify-content: center;
+                }
+                .map-wrapper img {
+                  width: 90%;
+                }
+
+                @media only screen and (max-width: 800px){
+                  .our-client {
+                    height: 300px;
+                  }
+
                 }
               `}
             </style>

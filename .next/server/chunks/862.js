@@ -197,37 +197,38 @@ var jsx_runtime_ = __webpack_require__(5282);
 
 
 
-class WebHead extends (external_react_default()).Component {
-  render() {
-    return /*#__PURE__*/(0,jsx_runtime_.jsxs)((head_default()), {
-      children: [/*#__PURE__*/jsx_runtime_.jsx("title", {
-        children: "PT. Era Mitra Perdana"
-      }), /*#__PURE__*/jsx_runtime_.jsx("link", {
-        rel: "icon",
-        href: "/favicon.svg"
-      }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
-        name: "title",
-        content: "PT. Era Mitra Perdana"
-      }), /*#__PURE__*/jsx_runtime_.jsx("link", {
-        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-        rel: "stylesheet"
-      }), /*#__PURE__*/jsx_runtime_.jsx("link", {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/static/styles/css/slick.css"
-      }), /*#__PURE__*/jsx_runtime_.jsx("link", {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/static/styles/css/slick-theme.css"
-      }), /*#__PURE__*/jsx_runtime_.jsx("link", {
-        rel: "stylesheet",
-        href: "/static/fonts/Bahnschrift.TTF",
-        rel: "stylesheet"
-      })]
-    });
-  }
-
-}
+const WebHead = props => {
+  return /*#__PURE__*/(0,jsx_runtime_.jsxs)((head_default()), {
+    children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("title", {
+      children: [props.title || "PT. Era Mitra Perdana", " "]
+    }), /*#__PURE__*/jsx_runtime_.jsx("link", {
+      rel: "icon",
+      href: "/static/images/icon.png"
+    }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+      name: "title",
+      content: props.title || "PT. Era Mitra Perdana"
+    }), /*#__PURE__*/jsx_runtime_.jsx("link", {
+      href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+      rel: "stylesheet"
+    }), /*#__PURE__*/jsx_runtime_.jsx("link", {
+      rel: "stylesheet",
+      type: "text/css",
+      href: "/static/styles/css/slick.css"
+    }), /*#__PURE__*/jsx_runtime_.jsx("link", {
+      rel: "stylesheet",
+      type: "text/css",
+      href: "/static/styles/css/slick-theme.css"
+    }), /*#__PURE__*/jsx_runtime_.jsx("link", {
+      rel: "stylesheet",
+      type: "text/css",
+      href: "/static/styles/css/style.css"
+    }), /*#__PURE__*/jsx_runtime_.jsx("link", {
+      rel: "stylesheet",
+      href: "/static/fonts/Bahnschrift.TTF",
+      rel: "stylesheet"
+    })]
+  });
+};
 
 /* harmony default export */ const head = (WebHead);
 // EXTERNAL MODULE: ./node_modules/next/link.js
@@ -284,19 +285,19 @@ class CategoryMenu extends (external_react_default()).Component {
           }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
             className: "right-category-menu",
             children: [this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://staging.eramitra.com"}/products/brand/${brand.id}`,
+              href: `${"http://eramitra.com"}/products/brand/${brand.id}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-name ",
                 children: brand.name
               }, idx)
             }, idx)), this.state.activeTab == "application" && props.applications && props.applications.map((app, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://staging.eramitra.com"}/products/application/${app.id}`,
+              href: `${"http://eramitra.com"}/products/application/${app.id}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-name ",
                 children: app.name
               }, idx)
             }, idx)), this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://staging.eramitra.com"}/products/industry/${ind.id}`,
+              href: `${"http://eramitra.com"}/products/industry/${ind.id}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-name ",
                 children: ind.name
@@ -536,7 +537,7 @@ const Cart = props => {
           })]
         }), /*#__PURE__*/jsx_runtime_.jsx("a", {
           className: "btn-checkout",
-          href: `${"http://staging.eramitra.com"}/checkout`,
+          href: `${"http://eramitra.com"}/checkout`,
           children: "Go to checkout page"
         })]
       })]
@@ -807,7 +808,7 @@ class Header extends (external_react_default()).Component {
         children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
           className: "logo-wrapper",
           children: [/*#__PURE__*/jsx_runtime_.jsx("a", {
-            href: `${"http://staging.eramitra.com"}`,
+            href: `${"http://eramitra.com"}`,
             children: /*#__PURE__*/jsx_runtime_.jsx("img", {
               className: "logo",
               src: "/static/images/logo.png"
@@ -820,7 +821,7 @@ class Header extends (external_react_default()).Component {
         }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
           className: "navbar-link",
           children: [/*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://staging.eramitra.com"}/about-us`,
+            href: `${"http://eramitra.com"}/about-us`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "About Us"
             })
@@ -828,17 +829,17 @@ class Header extends (external_react_default()).Component {
             onClick: this.handleClickProduct,
             children: "Products"
           }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://staging.eramitra.com"}/news-info`,
+            href: `${"http://eramitra.com"}/news-info`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "News & Info"
             })
           }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://staging.eramitra.com"}/career`,
+            href: `${"http://eramitra.com"}/career`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "Career"
             })
           }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-            href: `${"http://staging.eramitra.com"}/contact-us`,
+            href: `${"http://eramitra.com"}/contact-us`,
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
               children: "Contact Us"
             })
@@ -853,7 +854,7 @@ class Header extends (external_react_default()).Component {
             onClick: this.handleClickProduct,
             children: "chevron_left"
           }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-            href: `${"http://staging.eramitra.com"}`,
+            href: `${"http://eramitra.com"}`,
             children: /*#__PURE__*/jsx_runtime_.jsx("img", {
               className: "logo",
               src: "/static/images/logo.png"
@@ -878,7 +879,7 @@ class Header extends (external_react_default()).Component {
               onClick: this.handleClick,
               children: "menu"
             }), !this.state.isSearch && /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://staging.eramitra.com"}`,
+              href: `${"http://eramitra.com"}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                 className: "logo",
                 src: "/static/images/logo.png"
@@ -887,7 +888,7 @@ class Header extends (external_react_default()).Component {
           }), /*#__PURE__*/jsx_runtime_.jsx("div", {
             className: "logo-wrapper desktop-only",
             children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-              href: `${"http://staging.eramitra.com"}`,
+              href: `${"http://eramitra.com"}`,
               children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                 className: "logo",
                 src: "/static/images/logo.png"
@@ -898,7 +899,7 @@ class Header extends (external_react_default()).Component {
             children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "navbar-link-wrapper",
               children: [/*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://staging.eramitra.com"}/about-us`,
+                href: `${"http://eramitra.com"}/about-us`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "About Us"
                 })
@@ -906,17 +907,17 @@ class Header extends (external_react_default()).Component {
                 onClick: this.handleClickProduct,
                 children: "Products"
               }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://staging.eramitra.com"}/news-info`,
+                href: `${"http://eramitra.com"}/news-info`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "News & Info"
                 })
               }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://staging.eramitra.com"}/career`,
+                href: `${"http://eramitra.com"}/career`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "Career"
                 })
               }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                href: `${"http://staging.eramitra.com"}/contact-us`,
+                href: `${"http://eramitra.com"}/contact-us`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                   children: "Contact Us"
                 })
@@ -1330,7 +1331,7 @@ class footer_Header extends (external_react_default()).Component {
               children: /*#__PURE__*/jsx_runtime_.jsx("div", {
                 className: "info-wrapper",
                 children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-                  href: `${"http://staging.eramitra.com"}`,
+                  href: `${"http://eramitra.com"}`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                     className: "logo",
                     src: "/static/images/logo-white.png"
@@ -1358,22 +1359,28 @@ class footer_Header extends (external_react_default()).Component {
                 }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
                   className: "social-media-wrapper",
                   children: [/*#__PURE__*/jsx_runtime_.jsx("a", {
-                    href: "https://www.instagram.com/byebeli/",
+                    href: "https://wa.me/6281234567890",
                     children: /*#__PURE__*/jsx_runtime_.jsx("img", {
                       className: "logo-social",
-                      src: "/static/icons/instagram.svg"
+                      src: "/static/icons/whatsapp.svg"
                     })
                   }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-                    href: "http://line.me/R/ti/p/@ywh9023y",
-                    children: /*#__PURE__*/jsx_runtime_.jsx("img", {
-                      className: "logo-social",
-                      src: "/static/icons/line.svg"
-                    })
-                  }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-                    href: "http://line.me/R/ti/p/@ywh9023y",
+                    href: "mailto:sales@eramitra.com",
                     children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                       className: "material-icons white",
                       children: "mail"
+                    })
+                  }), /*#__PURE__*/jsx_runtime_.jsx("a", {
+                    href: "http://linked.in",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("img", {
+                      className: "logo-social",
+                      src: "/static/icons/linkedin.svg"
+                    })
+                  }), /*#__PURE__*/jsx_runtime_.jsx("a", {
+                    href: "http://instagram.com/eramitra",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("img", {
+                      className: "logo-social",
+                      src: "/static/icons/instagram.svg"
                     })
                   })]
                 })]
@@ -1382,22 +1389,22 @@ class footer_Header extends (external_react_default()).Component {
                 children: [/*#__PURE__*/jsx_runtime_.jsx("h2", {
                   children: "Page"
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://staging.eramitra.com"}/about-us`,
+                  href: `${"http://eramitra.com"}/about-us`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "About Us"
                   })
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://staging.eramitra.com"}/career`,
+                  href: `${"http://eramitra.com"}/career`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "Career"
                   })
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://staging.eramitra.com"}/contact-us`,
+                  href: `${"http://eramitra.com"}/contact-us`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "Contact Us"
                   })
                 }), /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
-                  href: `${"http://staging.eramitra.com"}/contact-us`,
+                  href: `${"http://eramitra.com"}/contact-us`,
                   children: /*#__PURE__*/jsx_runtime_.jsx("a", {
                     children: "Customer Service"
                   })
@@ -1689,6 +1696,14 @@ class footer_Header extends (external_react_default()).Component {
                   outline: none;
                 }
 
+                .logo-social {
+                  height: 24px;
+                }
+
+                .social-media-wrapper .material-icons {
+                  margin-right: 5px;
+                }
+
                 @media only screen and (max-width: 800px){
                     .mobile-only {
                         display: block;
@@ -1907,7 +1922,9 @@ function Layout({
     }
   }, []);
   return /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
-    children: [/*#__PURE__*/jsx_runtime_.jsx(head, {}), /*#__PURE__*/(0,jsx_runtime_.jsxs)("main", {
+    children: [/*#__PURE__*/jsx_runtime_.jsx(head, {
+      title: title
+    }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("main", {
       children: [/*#__PURE__*/jsx_runtime_.jsx(header, {
         cart: cart || cartData,
         brands: brands,

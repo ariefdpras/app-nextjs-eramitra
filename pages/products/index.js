@@ -18,7 +18,7 @@ const Home = (props) => {
   
   return (
       <Layout
-        title="test"
+        title="Products | PT. Era Mitra Perdana"
         
         applications={props.applications}
         brands={props.brands}

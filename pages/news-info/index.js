@@ -28,7 +28,7 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="news-info-wrapper">
                   <div className="news-info-cover">
-                    <img src="http://cdn.eramitra.com/images_article/original/DSC00749.jpg" />
+                    <img src={`https://svr.eramitra.com/images/${props.articles[0].cover}`} />
                   </div>
                   <div className="news-info-description">
                     <p>{utc_to_local_short(props.articles[0].createdAt)}</p>
@@ -234,7 +234,7 @@ const Home = (props) => {
                 { props.articles && props.articles.map((article, idx) => 
                     <div className="article-card-wrapper" key={idx}>
                       <ArticleCard
-                        picture={article.img}
+                        picture={article.cover}
                         name={article.title}
                         slug={article.id}
                         date={utc_to_local_short(article.createdAt)}
@@ -274,7 +274,7 @@ const Home = (props) => {
               display: flex;
               justify-content: center;
               margin-bottom: 80px;
-              flex: 1 0 25%;
+              flex: 0 0 25%;
             }
 
             .section-title {

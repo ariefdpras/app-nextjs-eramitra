@@ -63,7 +63,7 @@ const Home = (props) => {
   
   return (
       <Layout
-        title="test"
+        title={`${props.detail.name} | PT. Era Mitra Perdana`}
         applications={props.applications}
         brands={props.brands}
         industries={props.industries} 
@@ -79,7 +79,7 @@ const Home = (props) => {
                 </div>
                 <div className="product-detail-container">
                     <div className="left-product">
-                      <img className="image-big" src="https://www.linseis.com/wp-content/uploads/2018/07/STA-PT-1000_gross.jpg"/>
+                      <img className="image-big" src={`https://svr.eramitra.com/images/${props.detail.img}`} />
                     </div>
                     <div className="right-product">
                       <div className="product-detail">

@@ -36,7 +36,7 @@ const Home = props => {
     variableWidth: true
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
-    title: "test",
+    title: "About Us | PT. Era Mitra Perdana",
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
@@ -235,6 +235,9 @@ const Home = props => {
                     margin-right: 0;
                     margin-bottom: 20px;
                   }
+                  .mission-about .icon-shape-0 {
+                    display: none;
+                  }
                 }
               `
         })]
@@ -254,12 +257,39 @@ const Home = props => {
             children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
               className: "section-title",
               children: "Values"
-            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "values-card-wrapper",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "values-card",
-                children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {}), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {})]
-              })
+                children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                  className: "values-img",
+                  src: "/static/images/bond.svg"
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
+                  children: "Bond"
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
+                  children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "values-card",
+                children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                  className: "values-img",
+                  src: "/static/images/performance.svg"
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
+                  children: "Performance"
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
+                  children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "values-card",
+                children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                  className: "values-img",
+                  src: "/static/images/process.svg"
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
+                  children: "Process"
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
+                  children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel"
+                })]
+              })]
             })]
           })
         }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("style", {
@@ -281,7 +311,16 @@ const Home = props => {
                 }
 
                 .values-card {
+                  width: 30%;
+                  margin: 0 20px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                }
 
+
+                .values-card img {
+                  margin-bottom: 20px;
                 }
 
                 .values-card h6 {
@@ -291,6 +330,7 @@ const Home = props => {
                   font-size: 24px;
                   line-height: 29px;
                   text-align: center;
+                  margin: 0 0 5px 0;
                 }
 
                 .values-card p {
@@ -301,6 +341,60 @@ const Home = props => {
                   line-height: 24px;
                   text-align: center;
                   color: #666A66;
+                }
+
+
+                @media only screen and (max-width: 800px){
+
+                  .values .icon-shape-0 {
+                    width: 20% !important;
+                  }
+                  .values .section-title {
+                    font-family: Bahnschrift;
+                  font-size: 24px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 29px;
+                  letter-spacing: 0em;
+                  text-align: center;
+
+                  }
+                 .values-card-wrapper {
+                   flex-direction: column;
+                 }
+
+                 .values-img {
+                   width: 30%;
+                   margin-bottom: 10px !important;
+                 }
+
+                 .values-card {
+                   width: 80%;
+                   margin-bottom: 20px;
+                 }
+
+                 .values-card h6 {
+                  font-family: Bahnschrift;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 19px;
+                  letter-spacing: 0em;
+                  text-align: center;
+
+                 }
+
+                 .values-card p {
+                  font-family: Calibri;
+                  font-size: 12px;
+                  font-style: italic;
+                  font-weight: 400;
+                  line-height: 15px;
+                  letter-spacing: 0em;
+                  text-align: center;
+                  margin: 0 !important;
+                  
+                 }
                 }
               `
         })]
@@ -401,6 +495,7 @@ const Home = props => {
                   display: flex;
                   align-items: center;
                   max-width: 439px;
+                  margin: 5px 0;
                 }
 
                 .wwdb-card p {
@@ -412,6 +507,10 @@ const Home = props => {
                   color: #000000;
                   margin: 0 0 0 25px;
                   padding-right: 50px;
+                }
+
+                .what-we-do-img {
+                  width: 90%;
                 }
 
                 @media only screen and (max-width: 800px){
@@ -466,6 +565,51 @@ const Home = props => {
                   .what-we-do-best-wrapper .card-wrapper {
                     padding-bottom: 0px;
                   }
+                }
+              `
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_components_section__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
+        element_id: "our-client",
+        background: "#FBFBFB",
+        height: "700px",
+        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+          className: "container-inner",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "our-client-wrapper",
+            children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
+              className: "section-title",
+              children: "Our Clients"
+            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+              className: "map-wrapper",
+              children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                src: "/static/images/map.svg"
+              })
+            })]
+          })
+        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("style", {
+          children: `
+                .our-client-wrapper {
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                }
+
+                .map-wrapper {
+                  margin-top: 20px;
+                  display: flex;
+                  justify-content: center;
+                }
+                .map-wrapper img {
+                  width: 90%;
+                }
+
+                @media only screen and (max-width: 800px){
+                  .our-client {
+                    height: 300px;
+                  }
+
                 }
               `
         })]
@@ -538,11 +682,11 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('/static/fonts/Bahnschrift.TTF') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Calibri';
+    src: url('/static/fonts/Calibri.ttf') format('truetype');
+  }

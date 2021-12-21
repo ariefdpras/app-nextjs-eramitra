@@ -99,7 +99,7 @@ const Home = (props) => {
 
   return (
       <Layout
-        title="test"
+        title="Contact Us | PT. Era Mitra Perdana"
         applications={props.applications}
         brands={props.brands}
         industries={props.industries} > 

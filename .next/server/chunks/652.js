@@ -29,12 +29,12 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "product-card",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-        href: `${"http://staging.eramitra.com"}/product/${props.id}`,
+        href: `${"http://eramitra.com"}/product/${props.id}`,
         children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("div", {
           className: "product-picture-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("img", {
             className: "product-picture",
-            src: props.picture
+            src: `https://svr.eramitra.com/images/${props.picture}`
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "product-description",

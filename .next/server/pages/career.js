@@ -245,7 +245,7 @@ const Home = props => {
     variableWidth: true
   };
   return /*#__PURE__*/(0,jsx_runtime_.jsxs)(layout/* default */.Z, {
-    title: "test",
+    title: "Career | PT. Era Mitra Perdana",
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
@@ -412,13 +412,13 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getCareer = await fetch(`${"http://staging.eramitra.com"}/api/getCareer`);
+  const getCareer = await fetch(`${"http://eramitra.com"}/api/getCareer`);
   const careers = await getCareer.json();
-  const getBrands = await fetch(`${"http://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
   return {
     props: {

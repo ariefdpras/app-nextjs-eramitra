@@ -44,7 +44,7 @@ class ArticleCard extends (external_react_default()).Component {
         className: "article-picture-wrapper",
         children: /*#__PURE__*/jsx_runtime_.jsx("img", {
           className: "article-picture",
-          src: props.picture
+          src: `https://svr.eramitra.com/images/${props.picture}`
         })
       }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
         className: "article-description",
@@ -55,7 +55,7 @@ class ArticleCard extends (external_react_default()).Component {
           className: "article-name",
           children: [props.name, " "]
         }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-          href: `${"http://staging.eramitra.com"}/article/${props.slug}`,
+          href: `${"http://eramitra.com"}/article/${props.slug}`,
           children: /*#__PURE__*/jsx_runtime_.jsx("div", {
             className: "btn-read-card",
             children: "Read Article"
@@ -209,7 +209,7 @@ const Home = props => {
             children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
               className: "news-info-cover",
               children: /*#__PURE__*/jsx_runtime_.jsx("img", {
-                src: "http://cdn.eramitra.com/images_article/original/DSC00749.jpg"
+                src: `https://svr.eramitra.com/images/${props.articles[0].cover}`
               })
             }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "news-info-description",
@@ -221,7 +221,7 @@ const Home = props => {
                 className: "news-info-content",
                 children: (0,utils/* truncate_text */.vP)(props.articles[0].content, 150)
               }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-                href: `${"http://staging.eramitra.com"}/article/${props.articles[0].id}`,
+                href: `${"http://eramitra.com"}/article/${props.articles[0].id}`,
                 children: /*#__PURE__*/jsx_runtime_.jsx("div", {
                   className: "btn-read",
                   children: "Read Article"
@@ -426,7 +426,7 @@ const Home = props => {
           children: props.articles && props.articles.map((article, idx) => /*#__PURE__*/jsx_runtime_.jsx("div", {
             className: "article-card-wrapper",
             children: /*#__PURE__*/jsx_runtime_.jsx(article_ArticleCard, {
-              picture: article.img,
+              picture: article.cover,
               name: article.title,
               slug: article.id,
               date: (0,utils/* utc_to_local_short */.vQ)(article.createdAt)
@@ -464,7 +464,7 @@ const Home = props => {
               display: flex;
               justify-content: center;
               margin-bottom: 80px;
-              flex: 1 0 25%;
+              flex: 0 0 25%;
             }
 
             .section-title {
@@ -510,13 +510,13 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getArticles = await fetch(`${"http://staging.eramitra.com"}/api/getArticle`);
+  const getArticles = await fetch(`${"http://eramitra.com"}/api/getArticle`);
   const articles = await getArticles.json();
   return {
     props: {

@@ -14,7 +14,7 @@ export default function Layout( { children, title, brands, applications, industr
 
   return (
     <div>
-      <WebHead />
+      <WebHead title={title}/>
 
       <main>
         <Header cart={cart || cartData} brands={brands} applications={applications} industries={industries}/>

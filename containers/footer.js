@@ -62,21 +62,26 @@ class Header extends React.Component {
                   </div>
                   <h2>Follow Us</h2>
                   <div className="social-media-wrapper">
-                    <a href="https://www.instagram.com/byebeli/">
+                    <a href="https://wa.me/6281234567890">
                       <img
                         className="logo-social"
-                        src="/static/icons/instagram.svg"
+                        src="/static/icons/whatsapp.svg"
                       />
                     </a>
                     {/* <img className="logo-social" src="/static/icons/facebook.svg" />
                                       <img className="logo-social" src="/static/icons/linkedin.svg" /> */}
-                    <a href="http://line.me/R/ti/p/@ywh9023y">
-                      <img className="logo-social" src="/static/icons/line.svg" />
-                    </a>
-                    <a href="http://line.me/R/ti/p/@ywh9023y">
+                    <a href="mailto:sales@eramitra.com">
                       <span className="material-icons white">
                       mail
                       </span>
+                    </a>
+
+                    <a href="http://linked.in">
+                    <img className="logo-social" src="/static/icons/linkedin.svg" />
+                    </a>
+
+                    <a href="http://instagram.com/eramitra">
+                    <img className="logo-social" src="/static/icons/instagram.svg" />
                     </a>
                   </div>
                 </div>
@@ -385,6 +390,14 @@ class Header extends React.Component {
 
                 textarea:focus{
                   outline: none;
+                }
+
+                .logo-social {
+                  height: 24px;
+                }
+
+                .social-media-wrapper .material-icons {
+                  margin-right: 5px;
                 }
 
                 @media only screen and (max-width: 800px){

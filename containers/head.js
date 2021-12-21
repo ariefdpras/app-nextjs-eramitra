@@ -1,13 +1,12 @@
 import Head from "next/head";
 import React from "react";
 
-class WebHead extends React.Component {
-  render() {
+const WebHead = (props) => {
     return (
       <Head>
-        <title>PT. Era Mitra Perdana</title>
-        <link rel="icon" href="/favicon.svg" />
-        <meta name="title" content="PT. Era Mitra Perdana" />
+        <title>{props.title || "PT. Era Mitra Perdana"} </title>
+        <link rel="icon" href="/static/images/icon.png" />
+        <meta name="title" content={props.title || "PT. Era Mitra Perdana"} />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
@@ -22,14 +21,20 @@ class WebHead extends React.Component {
           type="text/css"
           href="/static/styles/css/slick-theme.css"
         />
+
+      <link
+          rel="stylesheet"
+          type="text/css"
+          href="/static/styles/css/style.css"
+        />
         <link
           rel="stylesheet"
           href="/static/fonts/Bahnschrift.TTF"
           rel="stylesheet"
         />
+
       </Head>
     );
   }
-}
 
 export default WebHead;
