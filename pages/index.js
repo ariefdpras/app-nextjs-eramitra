@@ -52,8 +52,8 @@ const Home = (props) => {
             <div className="banner-slider">
               <Slider {...settings2}>
                 { props.banner && props.banner.map((banner, idx ) =>
-                <div className={`banner-item`}>
-                  <div className="banner-item-content">
+                <div className={`banner-item`} key={idx}>
+                  <div className={`banner-item-content-${idx}`}>
                   </div>
                   <style>
                     {
@@ -62,7 +62,7 @@ const Home = (props) => {
                         width: 100vw;
                         height: 80vh;
                       }
-                      .banner-item-content {
+                      .banner-item-content-${idx} {
                         background: url(https://svr.eramitra.com/images/${banner.img});
                         width: 100vw;
                         height: 80vh;
@@ -97,7 +97,7 @@ const Home = (props) => {
                           width: 100vw;
                           height: 20vh;
                         }
-                        .banner-item-content {
+                        .banner-item-content-${idx} {
                           width: 100vw;
                           height: 20vh;
                         }
@@ -357,7 +357,7 @@ const Home = (props) => {
                 <div className="brands-slider desktop">
                   <Slider {...settings}>
                     { props.brands && props.brands.map((brand, idx ) =>
-                      <div className="brands-item">
+                      <div className="brands-item" key={idx}>
                         <img src={`https://svr.eramitra.com/images/${brand.img}`} />
                       </div>)
                     }
@@ -367,7 +367,7 @@ const Home = (props) => {
                 <div className="brands-slider mobile">
                   <Slider {...settings2}>
                     { props.brands && props.brands.map((brand, idx ) =>
-                      <div className="brands-item">
+                      <div className="brands-item" key={idx}>
                         <img src={`https://svr.eramitra.com/images/${brand.img}`} />
                       </div>)
                     }

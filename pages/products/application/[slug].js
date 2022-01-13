@@ -91,7 +91,6 @@ const Home = (props) => {
                                 picture={product.img}
                                 category={`${product.Application ? product.Application.name : ""}`}
                                 brand={product.Brand ? product.Brand.name : ""}
-                                brand={product.Brand.name}
                                 name={product.name}
                                 price={product.price}
                                 key={idx}/>
