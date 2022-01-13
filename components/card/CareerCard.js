@@ -31,7 +31,7 @@ class CareerCard extends React.Component {
               <div className="career-border"></div>
                 { this.state.isToggleOn &&
                 <div className="career-expand">
-                    {props.description}
+                  <div className="description" dangerouslySetInnerHTML={{__html: props.description}}/>
                 </div> }
                     
             <style>

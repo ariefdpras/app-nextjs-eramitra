@@ -48,41 +48,42 @@ class CategoryMenu extends React.Component {
        
             </div>
             <div className="right-category-menu">
+                <div className="right-category-inner">
                 {
                     this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
-                        <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
-                        key={idx}>
-                            <h3 className="category-side-name " 
-                                    key={idx}>
-                                {brand.name}
-                            </h3>
-                        </a>
+                    
+                        <div className="category-side-name" key={idx}>
+                            <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
+                            key={idx}>
+                                    {brand.name}
+                            </a>
+                        </div>
                     )
                 }
 
                 {
                     this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
+                    
+                    <div className="category-side-name" key={idx}>
                         <a href={`${process.env.ROOT_DOMAIN}/products/application/${app.id}`} 
                         key={idx}>
-                            <h3 className="category-side-name " 
-                                    key={idx}>
                                 {app.name}
-                            </h3>
                         </a>
+                    </div>
                     )
                 }
 
                 {
                     this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
-                        <a href={`${process.env.ROOT_DOMAIN}/products/industry/${ind.id}`} 
+                    
+                    <div className="category-side-name" key={idx}>
+                        <a  href={`${process.env.ROOT_DOMAIN}/products/industry/${ind.id}`} 
                         key={idx}>
-                            <h3 className="category-side-name " 
-                                    key={idx}>
                                 {ind.name}
-                            </h3>
                         </a>
+                    </div>
                     )
-                }
+                }</div>
             </div>
             </div>
             </div>
@@ -118,6 +119,13 @@ class CategoryMenu extends React.Component {
                         padding: 24px;
                     }
 
+                    .right-category-inner {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        max-height: 402px;
+                        overflow-y: auto;
+                    }
+
                     .category-menu .category-side-title {
                         font-family: Bahnschrift;
                         font-style: normal;
@@ -146,6 +154,8 @@ class CategoryMenu extends React.Component {
                         line-height: 17px;
                         text-transform: uppercase;
                         color: #000000;
+                        max-width: 200px;
+                        padding: 6px 0;
                     }
 
                     .category-menu .category-side-name:hover {
@@ -160,6 +170,14 @@ class CategoryMenu extends React.Component {
                         box-shadow: none;
                         height: calc(100vh - 56px);
                     }
+
+                    .right-category-inner {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        max-height: calc(100vh - 56px);
+                        overflow-y: auto;
+                    }
+
 
                     .left-category-menu {
                         width: 40%;
@@ -188,7 +206,7 @@ class CategoryMenu extends React.Component {
                         font-size: 10px;
                         line-height: 12px;
                         text-transform: uppercase;
-                        margin: 8px 0 8px 0;
+                        padding: 6px 0;
                     }
                 }
                 `}

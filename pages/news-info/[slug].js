@@ -1,20 +1,11 @@
 import Layout from "Containers/layout";
 
 const Articles = (props) => {
-  
-	const settings = {
-		dots: true,
-		arrows: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-    variableWidth: true
-	};
 
   return (
+    props.article && 
       <Layout
-        title="test"
+        title={props.article.title ? `${props.article.title} || PT. Era Mitra Perdana` : "Article || PT. Era Mitra Perdana"}
         applications={props.applications}
         brands={props.brands}
         industries={props.industries} >      
@@ -23,14 +14,9 @@ const Articles = (props) => {
             <img className="green-tetra-img" src="/static/images/green-tetra.svg" />
             <div className="header-about-wrapper">
               <div className="header-img">
-                <img src="http://cdn.eramitra.com/images_article/original/DSC00749.jpg" />
+                <img src={props.article.cover ? `https://svr.eramitra.com/images/${props.article.cover}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" } />
               </div>
-              <h3 className="section-title">About Us</h3>
-              <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	
-              Equipment,	and	Services. We	are	highly	experienced	and	a	trusted	partner	for	
-              Government	Institutions,	Universities,	and	Industries	to	
-              supply,	install,	and	provide	after	sales	services	in	the	area	
-              of	scientific	and	laboratory	equipment	since	1999.</p>
+              <h3 className="section-title">{props.article.title}</h3>
             </div>
             <style>
               {`
@@ -39,7 +25,7 @@ const Articles = (props) => {
                   flex-direction: column;
                   align-items: center;
                   margin-top: -250px;
-                  padding-bottom: 78px;
+                  padding-bottom: 30px;
                 }
 
                 .header-img {
@@ -61,6 +47,9 @@ const Articles = (props) => {
                   width: 55%;
                 }
 
+                .article-content {
+                  margin-bottom: 50px;
+                }
 
                 @media only screen and (max-width: 800px){
 
@@ -88,6 +77,10 @@ const Articles = (props) => {
                 }
               `}
             </style>
+          </div>
+
+          <div className="container-inner">
+              <div className="article-content" dangerouslySetInnerHTML={{__html: props.article.content}}></div>
           </div>
         </div>
         <style>
@@ -158,7 +151,7 @@ const Articles = (props) => {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(req) {
 
   const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`)
   const brands = await getBrands.json()
@@ -171,7 +164,11 @@ export async function getServerSideProps() {
   const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
   const applications = await getApplication.json()
 
-  return { props: { brands: brands, industries: industries, applications: applications }}
+  
+  const getArticle = await fetch(`${process.env.ROOT_DOMAIN}/api/getArticle/${req.query.slug}`)
+  const article = await getArticle.json()
+
+  return { props: { article: article, brands: brands, industries: industries, applications: applications }}
 }
 
 export default Articles;

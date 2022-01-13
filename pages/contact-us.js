@@ -130,7 +130,7 @@ const Home = (props) => {
                     className="issue-select"
                     placeholder="Issue"
                     id="id_issue_select"
-                    options={[{ value: "test", label: "test"}, { value: "ini", label: "ini"}]}
+                    options={[{ value: "Sales Inquiries", label: "Sales Inquiries"}, { value: "Technical Inquiries", label: "Technical Inquiries"}, { value: "Application Inquiries", label: "Application Inquiries"}]}
                     onChange={(e) =>
                       onChangeForm({
                         ...TempDataForm,

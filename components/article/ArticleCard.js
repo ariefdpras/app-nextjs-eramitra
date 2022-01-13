@@ -15,7 +15,7 @@ class ArticleCard extends React.Component {
             <div className="article-description">
                 <p className="article-date">{props.date}</p>
                 <h6 className="article-name">{props.name} </h6>
-                <a href={`${process.env.ROOT_DOMAIN}/article/${props.slug}`}><div className="btn-read-card">Read Article</div></a>
+                <a href={`${process.env.ROOT_DOMAIN}/news-info/${props.slug}`}><div className="btn-read-card">Read Article</div></a>
             </div>
             <style>
                 {`

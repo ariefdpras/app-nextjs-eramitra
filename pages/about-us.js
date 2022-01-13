@@ -355,6 +355,7 @@ const Home = (props) => {
             </style>
           </Section>
 
+           
           <Section 
             element_id="what-we-do-best" 
             background="#FFFFFF" 
@@ -447,8 +448,10 @@ const Home = (props) => {
                   padding-right: 50px;
                 }
 
-                .what-we-do-img {
-                  width: 90%;
+                @media only screen and (max-width: 1024px){
+                  .what-we-do-img {
+                    width: 60%;
+                  }
                 }
 
                 @media only screen and (max-width: 800px){

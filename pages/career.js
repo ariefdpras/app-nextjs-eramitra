@@ -70,10 +70,6 @@ const Home = (props) => {
                 }
 
                 @media only screen and (max-width: 800px){
-
-                  .career-card-wrapper {
-                    margin-top: 20px !important;
-                  }
                   .career .icon-shape-0 {
                     height: 124px;
                   }
@@ -132,14 +128,19 @@ const Home = (props) => {
               {`
                 .career-card-wrapper {
                   margin-top: 50px;
+                  margin-bottom: 100px;
                 }
-
 
                 @media only screen and (max-width: 800px){
 
                   .career-content .icon-shape-0 {
                     display: none;
-                  }
+                  } 
+                  
+                  .career-card-wrapper {
+                      margin-top: 20px !important;
+                      margin-bottom: 40px !important;
+                    }
                   
                 }
               `}

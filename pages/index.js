@@ -1,9 +1,11 @@
 import Layout from "../containers/layout";
 import Section from "../components/section";
+import ArticleCard from "Components/article/ArticleCardHome";
+import { utc_to_local_short, truncate_text } from "Helpers/utils"
 import Slider from "react-slick";
 
 const Home = (props) => {
-  
+
 	const settings = {
 		dots: true,
 		arrows: true,
@@ -11,8 +13,31 @@ const Home = (props) => {
 		speed: 500,
 		slidesToShow: 4,
 		slidesToScroll: 1,
-    variableWidth: true
+    variableWidth: true,
+    
 	};
+
+  const settings2 = {
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+    variableWidth: true,
+	};
+
+  const settings3 = {
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+    variableWidth: true,
+	};
+
+
 
   return (
       <Layout
@@ -21,6 +46,71 @@ const Home = (props) => {
         brands={props.brands}
         industries={props.industries} >     
         <div className="container">
+          <Section 
+            element_id="banner" 
+            background="#FFFFFF"  >
+            <div className="banner-slider">
+              <Slider {...settings2}>
+                { props.banner && props.banner.map((banner, idx ) =>
+                <div className={`banner-item`}>
+                  <div className="banner-item-content">
+                  </div>
+                  <style>
+                    {
+                      `
+                      .banner-item{
+                        width: 100vw;
+                        height: 80vh;
+                      }
+                      .banner-item-content {
+                        background: url(https://svr.eramitra.com/images/${banner.img});
+                        width: 100vw;
+                        height: 80vh;
+                        background-size: cover;
+                      }
+
+                      .slick-prev:before {
+                        font-family: 'Bahnschrift';
+                        content: '<';
+                        color: black;
+                        font-size: 20px;
+                      }
+                      
+                      .slick-next:before {
+                        font-family: 'Bahnschrift';
+                        content: ">";
+                        color: black;
+                        font-size: 20px;
+                      }
+
+                      .banner-slider .slick-next {
+                        right: 30px;
+                      }
+
+                      .banner-slider .slick-prev {
+                        left: 20px;
+                        z-index: 5;
+                      }
+
+                      @media only screen and (max-width: 800px){
+                        .banner-item{
+                          width: 100vw;
+                          height: 20vh;
+                        }
+                        .banner-item-content {
+                          width: 100vw;
+                          height: 20vh;
+                        }
+  
+                      }
+                      `
+                    }
+                  </style>
+                </div>)}
+              
+              </Slider>
+            </div>
+            </Section>
           <Section 
             element_id="about-us" 
             background="#FBFBFB" 
@@ -264,21 +354,24 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="brands-wrapper">
                 
-                <div className="brands-slider">
-                  {/* <Slider {...settings}>
-                    <div className="brands-item">
-                      <img src="https://cdn.eramitra.com/kategori/1/micromeritics-images-nqk.JPG" />
-                    </div>
-                    <div className="brands-item">
-                      <img src="https://cdn.eramitra.com/kategori/1/micromeritics-images-nqk.JPG" />
-                    </div>
-                    <div className="brands-item">
-                      <img src="https://cdn.eramitra.com/kategori/1/micromeritics-images-nqk.JPG" />
-                    </div>
-                    <div className="brands-item">
-                      <img src="https://cdn.eramitra.com/kategori/1/micromeritics-images-nqk.JPG" />
-                    </div>
-                  </Slider> */}
+                <div className="brands-slider desktop">
+                  <Slider {...settings}>
+                    { props.brands && props.brands.map((brand, idx ) =>
+                      <div className="brands-item">
+                        <img src={`https://svr.eramitra.com/images/${brand.img}`} />
+                      </div>)
+                    }
+                  </Slider>
+                </div>
+
+                <div className="brands-slider mobile">
+                  <Slider {...settings2}>
+                    { props.brands && props.brands.map((brand, idx ) =>
+                      <div className="brands-item">
+                        <img src={`https://svr.eramitra.com/images/${brand.img}`} />
+                      </div>)
+                    }
+                  </Slider>
                 </div>
                 <div className="brands-description">
                   <h3 className="section-title">Brands</h3>
@@ -303,14 +396,63 @@ const Home = (props) => {
                   max-width: 280px;
                 }
 
-                .brands-slider {
-                  width: 100%;
+                .brands-slider.desktop {
+                  width: 70%;
                   margin-right: 54px;
                 }
 
+                .brands-slider.mobile {
+                  display: none;
+                }
+
+
                 .brands-item {
-                  height: 90px;
+                  height: 30px;
+                  display: flex;
+                  justify-content: center;
+                }
+
+                .brands-item img{
+                  height: 30px;
                   width: auto;
+                  margin: 0 20px;
+                }
+
+                
+                @media only screen and (max-width: 800px){
+                    .brands-wrapper {
+                      flex-direction: column-reverse;
+                      justify-content: center;
+                    }
+
+                    
+                    .brands-slider.mobile {
+                      display: block;
+                      width: 100%;
+                      margin-right: 0 !important;
+                      padding: 0 20px;
+                    }
+
+                    .brands-slider.desktop {
+                      display: none;
+                    }
+
+                    .brands-item {
+                      height: 30px;
+                      display: flex;
+                      justify-content: center;
+                    }
+    
+                    .brands-item img{
+                      height: 30px;
+                      width: auto;
+                      margin: 0 20px;
+                    }
+
+                    .brands-description {
+                      margin-bottom: 25px;
+                    }
+    
                 }
               `}
             </style>
@@ -333,6 +475,89 @@ const Home = (props) => {
                   <p className="section-description">Discover our latest news and info. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus.</p>
              
                 </div>
+              <div className="discover-slider">
+                
+              <Slider {...settings2}>
+                {  props.articles && props.articles.data && props.articles.data.map((article, idx) => 
+                    <div className="article-card-wrapper" key={idx}>
+                      <ArticleCard
+                        picture={article.cover}
+                        name={article.title}
+                        slug={article.id}
+                        date={utc_to_local_short(article.createdAt)}
+                        key={idx}/>
+                  <style>
+                    {
+                      `
+
+                      .discover-slider {
+                        width: calc(100% - 500px);
+                      }
+
+                      .discover-description {
+                        margin-right: 30px;
+                      }
+                      .slick-prev:before {
+                        font-family: 'Bahnschrift';
+                        content: '<';
+                        color: black;
+                        font-size: 20px;
+                      }
+                      
+                      .slick-next:before {
+                        font-family: 'Bahnschrift';
+                        content: ">";
+                        color: black;
+                        font-size: 20px;
+                      }
+
+                      .discover-slider .slick-next {
+                        right: 650px;
+                        top: auto;
+                        bottom: 10px;
+                      }
+
+                      .discover-slider .slick-prev {
+                        left: -75px;
+                        z-index: 5;
+                        top: auto;
+                        bottom: 10px;
+                      }
+
+                      @media only screen and (max-width: 800px){
+                        .discover {
+                          height: auto !important;
+                          padding: 100px 0;
+                        }
+                        .discover-slider {
+                          width: 100%;
+                          margin-top: 40px;
+                        }
+                        .discover-slider .slick-next {
+                          right: 0px;
+                          top: -10px;
+                          bottom: 10px;
+                        }
+  
+                        .discover-slider .slick-prev {
+                          left: auto;
+                          z-index: 5;
+                          top: -10px;
+                          right: 20px;
+                          bottom: auto;
+                        }
+  
+                        .discover-description {
+                          margin-right: 0px !important;
+                        }
+                      }
+                      `
+                    }
+                  </style>
+                </div>)}
+              
+              </Slider>
+              </div>
               </div>
             </div>
             <style>
@@ -350,7 +575,12 @@ const Home = (props) => {
 
                 @media only screen and (max-width: 800px){
                   .discover .icon-shape-0.left {
-                    width: 30%;
+                    width: 25%;
+                  }
+
+                  .discover-wrapper {
+                    flex-direction: column;
+                    justify-content: center;
                   }
                 }
                 
@@ -532,6 +762,10 @@ export async function getServerSideProps() {
   const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`)
   const brands = await getBrands.json()
 
+  
+  const getBanner = await fetch(`${process.env.ROOT_DOMAIN}/api/getBanner`)
+  const banner = await getBanner.json()
+
 
   const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`)
   const industries = await getIndustry.json()
@@ -540,7 +774,10 @@ export async function getServerSideProps() {
   const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
   const applications = await getApplication.json()
 
-  return { props: { brands: brands, industries: industries, applications: applications }}
+  const getArticles = await fetch(`${process.env.ROOT_DOMAIN}/api/getArticle`)
+  const articles = await getArticles.json()
+
+  return { props: { articles: articles, banner: banner, brands: brands, industries: industries, applications: applications }}
 }
 
 export default Home;

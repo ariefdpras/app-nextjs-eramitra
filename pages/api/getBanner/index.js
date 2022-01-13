@@ -9,7 +9,7 @@ async function handler(req, res) {
     // Run the middleware
     await runMiddleware(req, res, cors)
     try {
-        const getBrands = await fetch(`https://svr.eramitra.com/brand`)
+        const getBrands = await fetch(`https://svr.eramitra.com/banner?status=active`)
         const data = await getBrands.json()
         res.json(data)
     } catch (err) {

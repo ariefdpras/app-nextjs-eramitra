@@ -197,6 +197,7 @@ const Home = (props) => {
                             .checkout-detail-wrapper {
                                 display: flex;
                                 flex-direction: column;
+                                min-height: 250px;
                             }
 
                             .checkout-total {
@@ -363,9 +364,14 @@ const Home = (props) => {
                         width: 100%;
                     }
 
-        
-
                         @media only screen and (max-width: 800px){
+                            .checkout-menu {
+                                flex-direction: column;
+                            }
+
+                            .right-checkout {
+                                width: 100%;
+                            }
                             .checkout-menu-wrapper {
                                 width: 85vw;
                             }

@@ -1,13 +1,63 @@
-import React from "react";
 import Link from "next/link";
+import React, {useState, useEffect} from 'react'
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
-  render() {
-    const props = this.props;
+const Header= (props) => {
+  
+    const [csData, setCsData] = useState({
+      name: '',
+      phone: '',
+      email: '',
+      company: '',
+      message: ''
+    })
+
+    const setName = (e) => {
+      setCsData((csData) => ({
+        ...csData,
+        name: e.target.value
+      }))
+    }
+
+    
+    const setPhone = (e) => {
+      setCsData((csData) => ({
+        ...csData,
+        phone: e.target.value
+      }))
+    }
+
+
+    
+    const setEmail = (e) => {
+      setCsData((csData) => ({
+        ...csData,
+        email: e.target.value
+      }))
+    }
+
+
+    
+    const setCompany = (e) => {
+      setCsData((csData) => ({
+        ...csData,
+        company: e.target.value
+      }))
+    }
+
+
+    
+    const setMessage = (e) => {
+      setCsData((csData) => ({
+        ...csData,
+        message: e.target.value
+      }))
+    }
+
+
+    const emailSend = () => {
+      window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Name: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''} %0d%0aMessage: ${csData.message || ''}`, '_blank');
+    };
 
     return (
       <div className="footer-container">
@@ -31,12 +81,12 @@ class Header extends React.Component {
               </div>
               <div className="reach-us">
                  <h2>REACH US</h2>
-                 <div className="form-reach-us"><input type="text" placeholder="Name"/></div>
-                 <div className="form-reach-us"><input type="text" placeholder="Phone Number"/></div>
-                 <div className="form-reach-us"><input type="text" placeholder="Email"/></div>
-                 <div className="form-reach-us"><input type="text" placeholder="Company"/></div>
-                 <div className="form-reach-us"><textarea rows="5" placeholder="Message"/></div>
-                 <a className="btn-submit-reach" onClick={() => {}}>Submit</a>
+                 <div className="form-reach-us"><input type="text" placeholder="Name" onChange={setName} /></div>
+                 <div className="form-reach-us"><input type="text" placeholder="Phone Number" onChange={setPhone}/></div>
+                 <div className="form-reach-us"><input type="text" placeholder="Email" onChange={setEmail}/></div>
+                 <div className="form-reach-us"><input type="text" placeholder="Company" onChange={setCompany}/></div>
+                 <div className="form-reach-us"><textarea rows="5" placeholder="Message" onChange={setMessage}/></div>
+                 <a className="btn-submit-reach" onClick={() => emailSend()}>Submit</a>
               </div>
             </div>
           </div>
@@ -204,7 +254,7 @@ class Header extends React.Component {
                   padding: 6px 10px;
                   font-size: 16px;
                   line-height: 20px;
-                  color: #757575;
+                  color: #000000;
                 }
 
                 .footer-container .logo {
@@ -368,7 +418,7 @@ class Header extends React.Component {
                   border-radius: 10px 0 0 10px;
                   font-size: 16px;
                   line-height: 20px;
-                  color: #757575;
+                  color: #000000;
                   width: calc(100% - 100px);
                   outline: none;
                   border: none;
@@ -589,7 +639,6 @@ class Header extends React.Component {
         </style>
       </div>
     );
-  }
 }
 
 export default Header;

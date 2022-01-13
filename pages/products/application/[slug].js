@@ -89,7 +89,8 @@ const Home = (props) => {
                                 <ProductCard
                                 id={product.id}
                                 picture={product.img}
-                                category={`${product.Application.name}`}
+                                category={`${product.Application ? product.Application.name : ""}`}
+                                brand={product.Brand ? product.Brand.name : ""}
                                 brand={product.Brand.name}
                                 name={product.name}
                                 price={product.price}
@@ -297,7 +298,7 @@ export async function getServerSideProps(req) {
   const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication/${req.query.slug}`)
   const application = await getApplication.json()
 
-  return { props: { detail: application, products: products, brands: brands, industries: industries, applications: applications }}
+  return { props: { detail: application, products: products.data, brands: brands, industries: industries, applications: applications }}
 }
 
 export default Home;
