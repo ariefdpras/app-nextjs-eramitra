@@ -1,10 +1,20 @@
 import Layout from "../containers/layout";
 import React, { useState, useEffect } from 'react'
 import ProductCardCart from "Components/cart/Product";
+import { number } from "Helpers/utils";
 
 const Home = (props) => {
   
-    const [cart, setCart] = useState(props.cart)
+    const [cart, setCart] = useState(props.cart) 
+    const [csData, setCsData] = useState({
+        
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          address: "",
+        message: ""
+      })
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
@@ -12,12 +22,14 @@ const Home = (props) => {
             let currentTotal = 0
             for(let i = 0; i < cart.length; i++) {
                 if(cart[i].product.price){
+                    currentTotal = currentTotal + cart[i].product.price
+                } else {
                     setTotal(0)
                     break;
-                } else {
-                    currentTotal = currentTotal + cart[i].product.price
-                    setTotal(currentTotal)
                 }
+            }
+            if(currentTotal){
+                setTotal(currentTotal)
             }
         }
     }, [cart])
@@ -27,6 +39,56 @@ const Home = (props) => {
             setCart(JSON.parse(localStorage.getItem("cart")))
         }
     })
+
+    
+    const setName = (e) => {
+        setCsData((csData) => ({
+          ...csData,
+          name: e.target.value
+        }))
+      }
+  
+      
+      const setPhone = (e) => {
+        setCsData((csData) => ({
+          ...csData,
+          phone: e.target.value
+        }))
+      }
+  
+  
+      
+      const setEmail = (e) => {
+        setCsData((csData) => ({
+          ...csData,
+          email: e.target.value
+        }))
+      }
+  
+  
+      
+      const setCompany = (e) => {
+        setCsData((csData) => ({
+          ...csData,
+          company: e.target.value
+        }))
+      }
+  
+  
+      
+      const setMessage = (e) => {
+        setCsData((csData) => ({
+          ...csData,
+          message: e.target.value
+        }))
+      }
+
+      const setAddress = (e) => {
+        setCsData((csData) => ({
+          ...csData,
+          address: e.target.value
+        }))
+      }
 
     const setMinus = (id) => {
         let carts = cart
@@ -47,6 +109,14 @@ const Home = (props) => {
         localStorage.setItem("cart", JSON.stringify(carts))
     }
   
+    const emailSend = () => {
+        let data = ""
+        let tempCart = cart
+        for (var i = 0; i < tempCart.length; i++) {
+            data = data.concat("%0d%0a - " +cart[i].product.name + "- x " + cart[i].value);
+          }
+        window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Name: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''}%0d%0aAddres: ${csData.address || ''} %0d%0aMessage: ${csData.message || ''} %0d%0aCart: ${data || ''}`, '_blank');
+      };
 
     
   
@@ -108,27 +178,27 @@ const Home = (props) => {
                         <div className="checkout-contact-wrapper">
                         <div className="form-group">
                             <h6>Name</h6>
-                            <input type="text"/>
+                            <input type="text" onChange={setName}/>
                         </div>
                         <div className="form-group half">
                             <h6>Email</h6>
-                            <input type="text"/>
+                            <input type="text" onChange={setEmail}/>
                         </div>
                         <div className="form-group half">
                             <h6>Phone</h6>
-                            <input type="text"/>
+                            <input type="text" onChange={setPhone}/>
                         </div>
                         <div className="form-group">
                             <h6>Company (optional)</h6>
-                            <input type="text"/>
+                            <input type="text" onChange={setCompany}/>
                         </div>
                         <div className="form-group">
                             <h6>Address</h6>
-                            <input type="text"/>
+                            <input type="text" onChange={setAddress}/>
                         </div>
                         <h6>Notes</h6>
-                        <textarea rows="5" placeholder="Message"/>
-                        <a className="btn-submit" href={`${process.env.ROOT_DOMAIN}/checkout`}>Submit</a>
+                        <textarea rows="5" placeholder="Message" onChange={setMessage}/>
+                        <a className="btn-submit" onClick={() => emailSend()}>Submit</a>
             
                         </div>
                     </div>

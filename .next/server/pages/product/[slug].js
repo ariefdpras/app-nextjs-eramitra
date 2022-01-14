@@ -74,11 +74,13 @@ const Home = props => {
 
         setCart(tempCart);
         localStorage.setItem("cart", JSON.stringify(tempCart));
+        alert("Successfully add to cart!");
       } else {
         tempCart = cart;
         tempCart.push(data);
         setCart(tempCart);
         localStorage.setItem("cart", JSON.stringify(tempCart));
+        alert("Successfully add to cart!");
       }
     }
   };
@@ -113,13 +115,13 @@ const Home = props => {
               className: "product-detail",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
                 className: "product-category",
-                children: [props.detail.Application.name, " - ", props.detail.Industry.name]
+                children: [props.detail.Application && props.detail.Application.name, " ", props.detail.Application && props.detail.Industry && ' - ', " ", props.detail.Industry && props.detail.Industry.name]
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h4", {
                 className: "product-name",
                 children: props.detail.name
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h6", {
                 className: "product-brand",
-                children: props.detail.Brand.name
+                children: props.detail.Brand && props.detail.Brand.name
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                 className: "price-wrapper",
                 children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h6", {
@@ -167,8 +169,10 @@ const Home = props => {
               className: "product-descriptions",
               children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h6", {
                 children: "Description"
-              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("p", {
-                children: props.detail.description
+              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
+                dangerouslySetInnerHTML: {
+                  __html: props.detail.description
+                }
               })]
             })]
           })]

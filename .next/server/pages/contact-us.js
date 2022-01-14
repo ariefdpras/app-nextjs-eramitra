@@ -65,6 +65,81 @@ const Home = props => {
     },
     message: ""
   });
+
+  const setContactName = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      contact: _objectSpread(_objectSpread({}, TempDataForm.contact), {}, {
+        name: e.target.value
+      })
+    }));
+  };
+
+  const setContactCompany = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      contact: _objectSpread(_objectSpread({}, TempDataForm.contact), {}, {
+        company: e.target.value
+      })
+    }));
+  };
+
+  const setContactEmail = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      contact: _objectSpread(_objectSpread({}, TempDataForm.contact), {}, {
+        email: e.target.value
+      })
+    }));
+  };
+
+  const setContactPhone = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      contact: _objectSpread(_objectSpread({}, TempDataForm.contact), {}, {
+        phone: e.target.value
+      })
+    }));
+  };
+
+  const setInstrumentName = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      instrument: _objectSpread(_objectSpread({}, TempDataForm.instrument), {}, {
+        name: e.target.value
+      })
+    }));
+  };
+
+  const setInstrumentBrand = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      instrument: _objectSpread(_objectSpread({}, TempDataForm.instrument), {}, {
+        brand: e.target.value
+      })
+    }));
+  };
+
+  const setInstrumentModel = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      instrument: _objectSpread(_objectSpread({}, TempDataForm.instrument), {}, {
+        model: e.target.value
+      })
+    }));
+  };
+
+  const setInstrumentSerial = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      instrument: _objectSpread(_objectSpread({}, TempDataForm.instrument), {}, {
+        serial: e.target.value
+      })
+    }));
+  };
+
+  const setMessage = e => {
+    setDataForm(TempDataForm => _objectSpread(_objectSpread({}, TempDataForm), {}, {
+      message: e.target.value
+    }));
+  };
+
+  const emailSend = () => {
+    window.open(`mailto:sales@eramitra.com?subject=Customer Service Form&body=Name: ${TempDataForm.contact.name || ''} %0d%0aPhone: ${TempDataForm.contact.phone || ''}  %0d%0aEmail: ${TempDataForm.contact.email || ''} %0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0aInstrument: ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.brand || ''} ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.model || ''} (Serial Number: ${TempDataForm.instrument.serial || ''})%0d%0aMessage: ${TempDataForm.message || ''}`, '_blank');
+  };
+
   const customStyles = {
     option: (provided, state) => _objectSpread(_objectSpread({}, provided), {}, {
       textTransform: "capitalize",
@@ -198,16 +273,20 @@ const Home = props => {
                 className: "form-group",
                 children: [/*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Name"
+                  placeholder: "Name",
+                  onChange: setContactName
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Company (optional)"
+                  placeholder: "Company (optional)",
+                  onChange: setContactCompany
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Email"
+                  placeholder: "Email",
+                  onChange: setContactEmail
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Phone"
+                  placeholder: "Phone",
+                  onChange: setContactPhone
                 })]
               }), /*#__PURE__*/jsx_runtime_.jsx("h6", {
                 children: "Instrument Information"
@@ -215,25 +294,30 @@ const Home = props => {
                 className: "form-group",
                 children: [/*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Name"
+                  placeholder: "Name",
+                  onChange: setInstrumentName
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Brand"
+                  placeholder: "Brand",
+                  onChange: setInstrumentBrand
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Model"
+                  placeholder: "Model",
+                  onChange: setInstrumentModel
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Serial Number"
+                  placeholder: "Serial Number",
+                  onChange: setInstrumentSerial
                 })]
               }), /*#__PURE__*/jsx_runtime_.jsx("h6", {
                 children: "Message"
               }), /*#__PURE__*/jsx_runtime_.jsx("textarea", {
                 rows: "5",
-                placeholder: "Message"
+                placeholder: "Message",
+                onChange: setMessage
               }), /*#__PURE__*/jsx_runtime_.jsx("a", {
                 className: "btn-submit",
-                href: `${"https://staging.eramitra.com"}/checkout`,
+                onClick: () => emailSend(),
                 children: "Submit"
               })]
             })]

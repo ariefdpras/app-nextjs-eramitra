@@ -184,6 +184,7 @@ const Home = props => {
                 .left-products {
                     width: 250px;
                     margin-right: 54px;
+                    margin-bottom: 50px;
                 }
 
                 .right-products {
@@ -358,7 +359,7 @@ async function getServerSideProps(req) {
   const products = await getProducts.json();
   return {
     props: {
-      products: products,
+      products: products.data,
       brands: brands,
       industries: industries,
       applications: applications

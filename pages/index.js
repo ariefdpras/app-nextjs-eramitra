@@ -206,7 +206,7 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="what-we-do-best-wrapper">
                   <h3 className="section-title">What We Do Best</h3>
-                  <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus. </p>
+                  <p className="section-description">We offer the best solution for Scientific, Laboratory Equipment, and Services</p>
                       
                   <div className="main-content">
                     <div className="card-wrapper">
@@ -375,7 +375,7 @@ const Home = (props) => {
                 </div>
                 <div className="brands-description">
                   <h3 className="section-title">Brands</h3>
-                  <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                  <p className="section-description">Meet our principals</p>
                 </div>
               </div>
             </div>
@@ -472,7 +472,7 @@ const Home = (props) => {
               <div className="discover-wrapper">
                 <div className="discover-description">
                 <h3 className="section-title">Discover</h3>
-                  <p className="section-description">Discover our latest news and info. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus.</p>
+                  <p className="section-description">Discover our latest news and info</p>
              
                 </div>
               <div className="discover-slider">

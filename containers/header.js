@@ -69,7 +69,7 @@ class Header extends React.Component {
   }
 
   submitSearch() {
-   alert("submit")
+    window.location.replace(`${process.env.ROOT_DOMAIN}/search?name=${this.state.search}&by=product`);
   }
 
   render() {

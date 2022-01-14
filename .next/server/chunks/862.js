@@ -697,8 +697,10 @@ const Cart = props => {
       
 
                 @media only screen and (max-width: 800px){
+
                     .cart-menu-wrapper {
                         width: 85vw;
+                        padding: 40px 20px !important;
                     }
 
                     .cart-title {
@@ -737,6 +739,10 @@ const Cart = props => {
                         text-align: center;
                         width: 100%;
                         
+                    }
+
+                    .product-counter p {
+                        margin: 0 5px !important;
                     }
                 }
                 `
@@ -819,7 +825,7 @@ class Header extends (external_react_default()).Component {
   }
 
   submitSearch() {
-    alert("submit");
+    window.location.replace(`${"https://staging.eramitra.com"}/search?name=${this.state.search}&by=product`);
   }
 
   render() {
@@ -1431,7 +1437,10 @@ const footer_Header = props => {
                 children: "Follow Us"
               }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
                 className: "social-media-wrapper",
-                children: [/*#__PURE__*/jsx_runtime_.jsx("a", {
+                children: [/*#__PURE__*/jsx_runtime_.jsx("img", {
+                  className: "logo-social",
+                  src: "/static/icons/whatsapp.svg"
+                }), /*#__PURE__*/jsx_runtime_.jsx("a", {
                   href: "mailto:sales@eramitra.com",
                   children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                     className: "material-icons white",

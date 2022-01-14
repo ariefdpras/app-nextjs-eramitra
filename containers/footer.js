@@ -112,12 +112,12 @@ const Header= (props) => {
                   </div>
                   <h2>Follow Us</h2>
                   <div className="social-media-wrapper">
-                    {/* <a href="https://wa.me/6281234567890">
+                    {/* <a href="https://wa.me/6281234567890"> */}
                       <img
                         className="logo-social"
                         src="/static/icons/whatsapp.svg"
                       />
-                    </a> */}
+                    {/* </a> */}
                     {/* <img className="logo-social" src="/static/icons/facebook.svg" />
                                       <img className="logo-social" src="/static/icons/linkedin.svg" /> */}
                     <a href="mailto:sales@eramitra.com">

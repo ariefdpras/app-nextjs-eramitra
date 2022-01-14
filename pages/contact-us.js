@@ -25,6 +25,101 @@ const Home = (props) => {
     message: ""
   })
 
+  
+  const setContactName = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      contact: {
+        ...TempDataForm.contact,
+        name: e.target.value
+      }
+    }))
+  }
+
+  
+  const setContactCompany = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      contact: {
+        ...TempDataForm.contact,
+        company: e.target.value
+      }
+    }))
+  }
+
+  const setContactEmail = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      contact: {
+        ...TempDataForm.contact,
+        email: e.target.value
+      }
+    }))
+  }
+
+
+  const setContactPhone = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      contact: {
+        ...TempDataForm.contact,
+        phone: e.target.value
+      }
+    }))
+  }
+
+  const setInstrumentName = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      instrument: {
+        ...TempDataForm.instrument,
+        name: e.target.value
+      }
+    }))
+  }
+
+  const setInstrumentBrand = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      instrument: {
+        ...TempDataForm.instrument,
+        brand: e.target.value
+      }
+    }))
+  }
+
+
+  const setInstrumentModel = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      instrument: {
+        ...TempDataForm.instrument,
+        model: e.target.value
+      }
+    }))
+  }
+
+  const setInstrumentSerial = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      instrument: {
+        ...TempDataForm.instrument,
+        serial: e.target.value
+      }
+    }))
+  }
+
+  const setMessage = (e) => {
+    setDataForm((TempDataForm) => ({
+      ...TempDataForm,
+      message: e.target.value
+    }))
+  }
+
+  const emailSend = () => {
+    window.open(`mailto:sales@eramitra.com?subject=Customer Service Form&body=Name: ${TempDataForm.contact.name || ''} %0d%0aPhone: ${TempDataForm.contact.phone || ''}  %0d%0aEmail: ${TempDataForm.contact.email || ''} %0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0aInstrument: ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.brand || ''} ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.model || ''} (Serial Number: ${TempDataForm.instrument.serial || ''})%0d%0aMessage: ${TempDataForm.message || ''}`, '_blank');
+  };
+  
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -145,21 +240,21 @@ const Home = (props) => {
                   />
                   <h6>Contact Information</h6>
                   <div className="form-group">
-                    <input type="text" placeholder="Name"/>
-                    <input type="text" placeholder="Company (optional)"/>
-                    <input type="text" placeholder="Email"/>
-                    <input type="text" placeholder="Phone"/>
+                    <input type="text" placeholder="Name" onChange={setContactName}/>
+                    <input type="text" placeholder="Company (optional)" onChange={setContactCompany}/>
+                    <input type="text" placeholder="Email" onChange={setContactEmail}/>
+                    <input type="text" placeholder="Phone" onChange={setContactPhone}/>
                   </div>
                   <h6>Instrument Information</h6>
                   <div className="form-group">
-                    <input type="text" placeholder="Name"/>
-                    <input type="text" placeholder="Brand"/>
-                    <input type="text" placeholder="Model"/>
-                    <input type="text" placeholder="Serial Number"/>
+                    <input type="text" placeholder="Name" onChange={setInstrumentName}/>
+                    <input type="text" placeholder="Brand" onChange={setInstrumentBrand}/>
+                    <input type="text" placeholder="Model" onChange={setInstrumentModel}/>
+                    <input type="text" placeholder="Serial Number" onChange={setInstrumentSerial}/>
                   </div>
                   <h6>Message</h6>
-                  <textarea rows="5" placeholder="Message"/>
-                  <a className="btn-submit" href={`${process.env.ROOT_DOMAIN}/checkout`}>Submit</a>
+                  <textarea rows="5" placeholder="Message" onChange={setMessage}/>
+                  <a className="btn-submit" onClick={() => emailSend()}>Submit</a>
             
                 </div>
               </div>

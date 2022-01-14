@@ -3,15 +3,28 @@ import Section from "../components/section";
 import Slider from "react-slick";
 
 const Home = (props) => {
-  
-	const settings = {
+ 
+  const settings = {
 		dots: true,
 		arrows: true,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 4,
+		slidesToShow: 2,
 		slidesToScroll: 1,
-    variableWidth: true
+    variableWidth: true,
+    centerMode: true
+    
+	};
+
+  const settings2 = {
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+    variableWidth: true,
+    centerMode: true
 	};
 
   return (
@@ -28,11 +41,14 @@ const Home = (props) => {
                 <img src="http://cdn.eramitra.com/images_article/original/DSC00749.jpg" />
               </div>
               <h3 className="section-title">About Us</h3>
-              <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	
-              Equipment,	and	Services. We	are	highly	experienced	and	a	trusted	partner	for	
-              Government	Institutions,	Universities,	and	Industries	to	
-              supply,	install,	and	provide	after	sales	services	in	the	area	
-              of	scientific	and	laboratory	equipment	since	1999.</p>
+              <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	Equipment,	and	Services.	Established	in	Jakarta,	
+We	are	committed	to	provide	the	best	service,	open	communication,	and	proactively	giving	suggestion	
+and	alternate	solution	to	support	our	principals	and	customers.	
+To	be	the	best	in	Scientific	and	Laboratory	Equipment	industry,	PT	Era	Mitra	Perdana	is	supported	by	
+highly	qualified	personnel,	high	quality	product,	and	optimum	after	sales	service.	
+We	are	highly	experienced	and	a	trusted	partner	for	Government	Institutions,	Universities,	and	
+Industries	to	supply,	install,	and	provide	after	sales	services	in	the	area	of	scientific	and	laboratory	
+equipment	since	1999.</p>
             </div>
             <style>
               {`
@@ -99,11 +115,8 @@ const Home = (props) => {
               <div className="vision-about-wrapper">
                 <div className="about-us-description">
                   <h3 className="section-title">Vision</h3>
-                  <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	
-                  Equipment,	and	Services. We	are	highly	experienced	and	a	trusted	partner	for	
-                  Government	Institutions,	Universities,	and	Industries	to	
-                  supply,	install,	and	provide	after	sales	services	in	the	area	
-                  of	scientific	and	laboratory	equipment	since	1999.</p>
+                  <p className="section-description">To	be	the	best	and	most	reliable	partner	for	our	principals	and	clients	in	Scientific	and	Laboratory	
+Equipment	Industry.</p>
                 </div>
                 <img src="/static/images/vision.svg" />
               </div>
@@ -163,11 +176,11 @@ const Home = (props) => {
                 <img src="/static/images/mission.svg" />
                 <div className="mission-description">
                   <h3 className="section-title">Mission</h3>
-                  <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	
-                  Equipment,	and	Services. We	are	highly	experienced	and	a	trusted	partner	for	
-                  Government	Institutions,	Universities,	and	Industries	to	
-                  supply,	install,	and	provide	after	sales	services	in	the	area	
-                  of	scientific	and	laboratory	equipment	since	1999.</p>
+                  <p className="section-description">
+                  - Provide	high	quality	product	and	services	with	competitive	price	<br></br>
+                  - Be	proactive	during	the	end-to-end	process	in	supporting	principals	and	clients	<br></br>
+                  - Continuously	learning	and	sharing	insights	regarding	Indonesian	Scientific	and	Laboratory Industry	<br></br>
+                  - Company	digitalization	to	provide	easier	access	for	consumers</p>
                 </div>
               </div>
             </div>
@@ -232,17 +245,21 @@ const Home = (props) => {
                   <div className="values-card">
                     <img className="values-img" src="/static/images/bond.svg"/>
                     <h6>Bond</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel</p>
+                    <p>We	aim	to	be	the	best	and	most	reliable	partner	for	all	stakeholders	which	we	believe	started	
+from	having	a	strong	bond.</p>
                   </div>
                   <div className="values-card">
                     <img className="values-img" src="/static/images/performance.svg"/>
                     <h6>Performance</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel</p>
+                    <p>	We	are	committed	to	perform	in	the	best	way	possible	in	all	projects	by	being	a	
+proactive	partner.</p>
                   </div>
                   <div className="values-card">
                     <img className="values-img" src="/static/images/process.svg"/>
                     <h6>Process</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel</p>
+                    <p>We	believe	process	is	an	important	part	in	all	projects	and	are	committed	to	be	a	reliable	
+partner	for	our	stakeholders	along	the	process.
+</p>
                   </div>
                 </div>
               </div>
@@ -370,7 +387,7 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="what-we-do-best-wrapper">
                   <h3 className="section-title">What We Do Best</h3>
-                  <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus. </p>
+                  <p className="section-description">We offer the best solution for Scientific, Laboratory Equipment, and Services</p>
                       
                   <div className="main-content">
                     <div className="card-wrapper">
@@ -511,41 +528,116 @@ const Home = (props) => {
             </style>
           </Section>
 
+        
           <Section 
-            element_id="our-client" 
+            element_id="brands" 
             background="#FBFBFB"  
-            height="700px" >
+            height="263px" >
             <div className="container-inner">
+              <div className="brands-wrapper">
+                
+                <div className="brands-slider desktop">
+                  <Slider {...settings}>
+                      <div className="brands-item">
+                        <img src={`https://svr.eramitra.com/images/pertamina.png`} />
+                      </div>
+                      <div className="brands-item">
+                        <img src={`https://svr.eramitra.com/images/bmkg.png`} />
+                      </div>
+                  </Slider>
+                </div>
 
-              <div className="our-client-wrapper">
-              <h3 className="section-title">Our Clients</h3>
-              <div className="map-wrapper"><img src="/static/images/map.svg" /></div>
+                <div className="brands-slider mobile">
+                  <Slider {...settings2}>
+                 
+                  <div className="brands-item">
+                        <img src={`https://svr.eramitra.com/images/pertamina.png`} />
+                      </div>
+                      <div className="brands-item">
+                        <img src={`https://svr.eramitra.com/images/bmkg.png`} />
+                      </div>
+                  </Slider>
+                </div>
+                <div className="brands-description">
+                  <h3 className="section-title">Our clients</h3>
+                  <p className="section-description">Meet our clients</p>
+                </div>
               </div>
             </div>
             <style>
               {`
-                .our-client-wrapper {
+                .brands-wrapper {
                   height: 100%;
                   display: flex;
-                  flex-direction: column;
                   align-items: center;
-                  justify-content: center;
+                  justify-content: space-between;
                 }
 
-                .map-wrapper {
-                  margin-top: 20px;
+                .brands-wrapper .section-title {
+                  margin: 0;
+                }
+                
+                .brands-wrapper .section-description {
+                  max-width: 280px;
+                }
+
+                .brands-slider.desktop {
+                  width: 70%;
+                  margin-right: 54px;
+                }
+
+                .brands-slider.mobile {
+                  display: none;
+                }
+
+
+                .brands-item {
+                  height: 30px;
                   display: flex;
                   justify-content: center;
                 }
-                .map-wrapper img {
-                  width: 90%;
+
+                .brands-item img{
+                  height: 30px;
+                  width: auto;
+                  margin: 0 20px;
                 }
 
+                
                 @media only screen and (max-width: 800px){
-                  .our-client {
-                    height: 300px;
-                  }
+                    .brands-wrapper {
+                      flex-direction: column-reverse;
+                      justify-content: center;
+                    }
 
+                    
+                    .brands-slider.mobile {
+                      display: block;
+                      width: 100%;
+                      margin-right: 0 !important;
+                      padding: 0 20px;
+                    }
+
+                    .brands-slider.desktop {
+                      display: none;
+                    }
+
+                    .brands-item {
+                      height: 30px;
+                      display: flex;
+                      justify-content: center;
+                    }
+    
+                    .brands-item img{
+                      height: 30px;
+                      width: auto;
+                      margin: 0 20px;
+                    }
+
+                    .brands-description {
+                      margin-bottom: 25px;
+                    }
+    
                 }
               `}
             </style>

@@ -50,11 +50,13 @@ const Home = (props) => {
           }
           setCart(tempCart)
           localStorage.setItem("cart", JSON.stringify(tempCart))
+          alert("Successfully add to cart!")
         } else {
           tempCart = cart
           tempCart.push(data)
           setCart(tempCart)
           localStorage.setItem("cart", JSON.stringify(tempCart))
+          alert("Successfully add to cart!")
         }
 
 
@@ -83,9 +85,9 @@ const Home = (props) => {
                     </div>
                     <div className="right-product">
                       <div className="product-detail">
-                        <p className="product-category">{props.detail.Application.name} - {props.detail.Industry.name}</p>
+                        <p className="product-category">{props.detail.Application && props.detail.Application.name} {props.detail.Application && props.detail.Industry && ' - '} {props.detail.Industry && props.detail.Industry.name}</p>
                         <h4 className="product-name">{props.detail.name}</h4>
-                        <h6 className="product-brand">{props.detail.Brand.name}</h6>
+                        <h6 className="product-brand">{props.detail.Brand && props.detail.Brand.name}</h6>
                         <div className="price-wrapper">
                           <h6 className="product-price">{number(props.detail.price)}</h6>
                           { props.detail.price == 0 && 
@@ -111,7 +113,7 @@ const Home = (props) => {
                       </div>
                       <div className="product-descriptions">
                         <h6>Description</h6>
-                        <p>{props.detail.description}</p>
+                        <div dangerouslySetInnerHTML={{__html: props.detail.description}}></div>
                       </div>
 
                     </div>

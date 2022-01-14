@@ -187,6 +187,7 @@ const Home = props => {
                 .left-products {
                     width: 250px;
                     margin-right: 54px;
+                    margin-bottom: 50px;
                 }
 
                 .right-products {

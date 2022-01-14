@@ -387,7 +387,7 @@ const Home = props => {
               children: "What We Do Best"
             }), /*#__PURE__*/jsx_runtime_.jsx("p", {
               className: "section-description",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus. "
+              children: "We offer the best solution for Scientific, Laboratory Equipment, and Services"
             }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "main-content",
               children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
@@ -576,7 +576,7 @@ const Home = props => {
                 children: "Brands"
               }), /*#__PURE__*/jsx_runtime_.jsx("p", {
                 className: "section-description",
-                children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                children: "Meet our principals"
               })]
             })]
           })
@@ -677,7 +677,7 @@ const Home = props => {
                 children: "Discover"
               }), /*#__PURE__*/jsx_runtime_.jsx("p", {
                 className: "section-description",
-                children: "Discover our latest news and info. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus."
+                children: "Discover our latest news and info"
               })]
             }), /*#__PURE__*/jsx_runtime_.jsx("div", {
               className: "discover-slider",

@@ -224,8 +224,10 @@ const Cart = (props) => {
       
 
                 @media only screen and (max-width: 800px){
+
                     .cart-menu-wrapper {
                         width: 85vw;
+                        padding: 40px 20px !important;
                     }
 
                     .cart-title {
@@ -264,6 +266,10 @@ const Cart = (props) => {
                         text-align: center;
                         width: 100%;
                         
+                    }
+
+                    .product-counter p {
+                        margin: 0 5px !important;
                     }
                 }
                 `}

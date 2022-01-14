@@ -19,6 +19,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_slick__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5282);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -31,9 +37,20 @@ const Home = props => {
     arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    variableWidth: true
+    variableWidth: true,
+    centerMode: true
+  };
+  const settings2 = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    centerMode: true
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
     title: "About Us | PT. Era Mitra Perdana",
@@ -59,7 +76,7 @@ const Home = props => {
             children: "About Us"
           }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
             className: "section-description",
-            children: "PT. Era Mitra Perdana provides Scientific, Laboratory Equipment, and Services. We are highly experienced and a trusted partner for Government Institutions, Universities, and Industries to supply, install, and provide after sales services in the area of scientific and laboratory equipment since 1999."
+            children: "PT. Era Mitra Perdana provides Scientific, Laboratory Equipment, and Services. Established in Jakarta, We are committed to provide the best service, open communication, and proactively giving suggestion and alternate solution to support our principals and customers. To be the best in Scientific and Laboratory Equipment industry, PT Era Mitra Perdana is supported by highly qualified personnel, high quality product, and optimum after sales service. We are highly experienced and a trusted partner for Government Institutions, Universities, and Industries to supply, install, and provide after sales services in the area of scientific and laboratory equipment since 1999."
           })]
         }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("style", {
           children: `
@@ -132,7 +149,7 @@ const Home = props => {
                 children: "Vision"
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
                 className: "section-description",
-                children: "PT. Era Mitra Perdana provides Scientific, Laboratory Equipment, and Services. We are highly experienced and a trusted partner for Government Institutions, Universities, and Industries to supply, install, and provide after sales services in the area of scientific and laboratory equipment since 1999."
+                children: "To be the best and most reliable partner for our principals and clients in Scientific and Laboratory Equipment Industry."
               })]
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
               src: "/static/images/vision.svg"
@@ -195,9 +212,9 @@ const Home = props => {
               children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
                 className: "section-title",
                 children: "Mission"
-              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
                 className: "section-description",
-                children: "PT. Era Mitra Perdana provides Scientific, Laboratory Equipment, and Services. We are highly experienced and a trusted partner for Government Institutions, Universities, and Industries to supply, install, and provide after sales services in the area of scientific and laboratory equipment since 1999."
+                children: ["- Provide high quality product and services with competitive price ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "- Be proactive during the end-to-end process in supporting principals and clients ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "- Continuously learning and sharing insights regarding Indonesian Scientific and Laboratory Industry ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "- Company digitalization to provide easier access for consumers"]
               })]
             })]
           })
@@ -267,7 +284,7 @@ const Home = props => {
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
                   children: "Bond"
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
-                  children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel"
+                  children: "We aim to be the best and most reliable partner for all stakeholders which we believe started from having a strong bond."
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "values-card",
@@ -277,7 +294,7 @@ const Home = props => {
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
                   children: "Performance"
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
-                  children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel"
+                  children: " We are committed to perform in the best way possible in all projects by being a proactive partner."
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "values-card",
@@ -287,7 +304,7 @@ const Home = props => {
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
                   children: "Process"
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
-                  children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel"
+                  children: "We believe process is an important part in all projects and are committed to be a reliable partner for our stakeholders along the process."
                 })]
               })]
             })]
@@ -416,7 +433,7 @@ const Home = props => {
               children: "What We Do Best"
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
               className: "section-description",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue risus, tempus ac leo vel, laoreet congue quam. Sed convallis gravida maximus. "
+              children: "We offer the best solution for Scientific, Laboratory Equipment, and Services"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "main-content",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -571,47 +588,128 @@ const Home = props => {
               `
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_components_section__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
-        element_id: "our-client",
+        element_id: "brands",
         background: "#FBFBFB",
-        height: "700px",
+        height: "263px",
         children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
           className: "container-inner",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "our-client-wrapper",
-            children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
-              className: "section-title",
-              children: "Our Clients"
+            className: "brands-wrapper",
+            children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+              className: "brands-slider desktop",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((react_slick__WEBPACK_IMPORTED_MODULE_2___default()), _objectSpread(_objectSpread({}, settings), {}, {
+                children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+                  className: "brands-item",
+                  children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                    src: `https://svr.eramitra.com/images/pertamina.png`
+                  })
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+                  className: "brands-item",
+                  children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                    src: `https://svr.eramitra.com/images/bmkg.png`
+                  })
+                })]
+              }))
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
-              className: "map-wrapper",
-              children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
-                src: "/static/images/map.svg"
-              })
+              className: "brands-slider mobile",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((react_slick__WEBPACK_IMPORTED_MODULE_2___default()), _objectSpread(_objectSpread({}, settings2), {}, {
+                children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+                  className: "brands-item",
+                  children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                    src: `https://svr.eramitra.com/images/pertamina.png`
+                  })
+                }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("div", {
+                  className: "brands-item",
+                  children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
+                    src: `https://svr.eramitra.com/images/bmkg.png`
+                  })
+                })]
+              }))
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "brands-description",
+              children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
+                className: "section-title",
+                children: "Our clients"
+              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
+                className: "section-description",
+                children: "Meet our clients"
+              })]
             })]
           })
         }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("style", {
           children: `
-                .our-client-wrapper {
+                .brands-wrapper {
                   height: 100%;
                   display: flex;
-                  flex-direction: column;
                   align-items: center;
-                  justify-content: center;
+                  justify-content: space-between;
                 }
 
-                .map-wrapper {
-                  margin-top: 20px;
+                .brands-wrapper .section-title {
+                  margin: 0;
+                }
+                
+                .brands-wrapper .section-description {
+                  max-width: 280px;
+                }
+
+                .brands-slider.desktop {
+                  width: 70%;
+                  margin-right: 54px;
+                }
+
+                .brands-slider.mobile {
+                  display: none;
+                }
+
+
+                .brands-item {
+                  height: 30px;
                   display: flex;
                   justify-content: center;
                 }
-                .map-wrapper img {
-                  width: 90%;
+
+                .brands-item img{
+                  height: 30px;
+                  width: auto;
+                  margin: 0 20px;
                 }
 
+                
                 @media only screen and (max-width: 800px){
-                  .our-client {
-                    height: 300px;
-                  }
+                    .brands-wrapper {
+                      flex-direction: column-reverse;
+                      justify-content: center;
+                    }
 
+                    
+                    .brands-slider.mobile {
+                      display: block;
+                      width: 100%;
+                      margin-right: 0 !important;
+                      padding: 0 20px;
+                    }
+
+                    .brands-slider.desktop {
+                      display: none;
+                    }
+
+                    .brands-item {
+                      height: 30px;
+                      display: flex;
+                      justify-content: center;
+                    }
+    
+                    .brands-item img{
+                      height: 30px;
+                      width: auto;
+                      margin: 0 20px;
+                    }
+
+                    .brands-description {
+                      margin-bottom: 25px;
+                    }
+    
                 }
               `
         })]

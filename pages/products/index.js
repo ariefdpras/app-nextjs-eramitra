@@ -106,6 +106,7 @@ const Home = (props) => {
                 .left-products {
                     width: 250px;
                     margin-right: 54px;
+                    margin-bottom: 50px;
                 }
 
                 .right-products {
@@ -290,7 +291,7 @@ export async function getServerSideProps(req) {
   const getProducts = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct`)
   const products = await getProducts.json()
 
-  return { props: { products: products, brands: brands, industries: industries, applications: applications }}
+  return { props: { products: products.data, brands: brands, industries: industries, applications: applications }}
 }
 
 export default Home;

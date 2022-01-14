@@ -5,178 +5,22 @@ exports.id = 72;
 exports.ids = [72];
 exports.modules = {
 
-/***/ 3322:
+/***/ 1492:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ news_info),
-  "getServerSideProps": () => (/* binding */ getServerSideProps)
-});
-
-// EXTERNAL MODULE: ./containers/layout.js + 5 modules
-var layout = __webpack_require__(9861);
-// EXTERNAL MODULE: ./components/section.js
-var section = __webpack_require__(974);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(9297);
-var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(5282);
-;// CONCATENATED MODULE: ./components/article/ArticleCard.js
-
-
-
-
-class ArticleCard extends (external_react_default()).Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const props = this.props;
-    return /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
-      className: "article-card",
-      children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
-        className: "article-picture-wrapper",
-        children: /*#__PURE__*/jsx_runtime_.jsx("img", {
-          className: "article-picture",
-          src: `https://svr.eramitra.com/images/${props.picture}`
-        })
-      }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
-        className: "article-description",
-        children: [/*#__PURE__*/jsx_runtime_.jsx("p", {
-          className: "article-date",
-          children: props.date
-        }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("h6", {
-          className: "article-name",
-          children: [props.name, " "]
-        }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-          href: `${"https://staging.eramitra.com"}/news-info/${props.slug}`,
-          children: /*#__PURE__*/jsx_runtime_.jsx("div", {
-            className: "btn-read-card",
-            children: "Read Article"
-          })
-        })]
-      }), /*#__PURE__*/jsx_runtime_.jsx("style", {
-        children: `
-                    .article-card {
-                        width: 200px;
-                    }
-
-                    .article-picture-wrapper {
-                        width: 100%;
-                        border-radius: 20px;
-                    }
-
-                    .article-picture {
-                        width: 200px;
-                        height: 200px;
-                        object-fit: cover;
-                    }
-
-                    .article-description {
-                        margin-top: 10px;
-                    }
-
-                    .article-date {
-                        font-family: Calibri;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 14px;
-                        line-height: 17px;
-                        color: #C4C4C4;
-                        margin: 0 0 10px 0;
-                    }
-
-                    .article-name {
-                        font-family: Bahnschrift;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 18px;
-                        line-height: 22px;
-                        color: #000000;
-                        margin: 0 0 24px 0;
-                        width: 200px;
-                    }
-
-                    .btn-read-card {
-                        font-family: Bahnschrift;
-                        font-size: 18px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 22px;
-                        letter-spacing: 0em;
-                        text-align: left;
-
-                        width: fit-content;
-                        color: #1BA58A;
-                        padding: 4px 16px;
-                        border: 1px solid #1BA58A;
-                        border-radius: 4px;
-                        margin: 0;
-                    }
-
-
-                    @media only screen and (max-width: 800px){
-
-                        .article-date {
-                            font-family: Calibri;
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 12px;
-                            line-height: 15px;
-                            margin: 0 0 8px 0;
-                        }
-
-                    .article-card {
-                        width: 126px;
-                    }
-
-                    .article-picture {
-                        width: 126px;
-                        height: 126px;
-                        object-fit: cover;
-                    }
-
-                        .article-name {
-                            font-family: Bahnschrift;
-                            font-size: 14px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 17px;
-                            letter-spacing: 0em;
-                            text-align: left;
-                            margin: 0 0 16px 0;
-                            width: 126px;
-                        }
-
-                        .btn-read-card {
-                            font-family: Bahnschrift;
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 14px;
-                            line-height: 17px;
-                            /* identical to box height */
-
-                            text-align: center;
-                        }
-                    }
-
-                `
-      })]
-    });
-  }
-
-}
-
-/* harmony default export */ const article_ArticleCard = (ArticleCard);
-// EXTERNAL MODULE: ./helpers/utils.js
-var utils = __webpack_require__(2820);
-;// CONCATENATED MODULE: ./pages/news-info/index.js
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var Containers_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9861);
+/* harmony import */ var Components_section__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(974);
+/* harmony import */ var Components_article_ArticleCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4807);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9297);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var Helpers_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2820);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5282);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -186,14 +30,14 @@ var utils = __webpack_require__(2820);
 
 
 const Home = props => {
-  return /*#__PURE__*/(0,jsx_runtime_.jsxs)(layout/* default */.Z, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(Containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
     title: "News & Info | PT. Era Mitra Perdana",
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
-    children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "container",
-      children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)(section/* default */.Z, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(Components_section__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
         element_id: "news-info",
         background: "#1BA58A",
         height: "650px",
@@ -202,34 +46,34 @@ const Home = props => {
           vertical: "bottom",
           horizontal: "left"
         }],
-        children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
+        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
           className: "container-inner",
-          children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "news-info-wrapper",
-            children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
+            children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
               className: "news-info-cover",
-              children: /*#__PURE__*/jsx_runtime_.jsx("img", {
+              children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("img", {
                 src: props.articles.data[0] ? typeof props.articles.data[0].cover !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].cover}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg"
               })
-            }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "news-info-description",
-              children: [/*#__PURE__*/jsx_runtime_.jsx("p", {
-                children: (0,utils/* utc_to_local_short */.vQ)(props.articles.data[0].createdAt)
-              }), /*#__PURE__*/jsx_runtime_.jsx("h6", {
+              children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("p", {
+                children: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_4__/* .utc_to_local_short */ .vQ)(props.articles.data[0].createdAt)
+              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h6", {
                 children: props.articles.data[0].title
-              }), /*#__PURE__*/jsx_runtime_.jsx("p", {
+              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("p", {
                 className: "news-info-content",
-                children: (0,utils/* truncate_text */.vP)(props.articles.data[0].content, 150)
-              }), /*#__PURE__*/jsx_runtime_.jsx("a", {
+                children: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_4__/* .truncate_text */ .vP)(props.articles.data[0].content, 150)
+              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/news-info/${props.articles.data[0].id}`,
-                children: /*#__PURE__*/jsx_runtime_.jsx("div", {
+                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
                   className: "btn-read",
                   children: "Read Article"
                 })
               })]
             })]
           })
-        }), /*#__PURE__*/jsx_runtime_.jsx("style", {
+        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("style", {
           children: `
                 .news-info {
                   height: 100%;
@@ -420,25 +264,25 @@ const Home = props => {
               }
               `
         })]
-      }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "container-inner",
-        children: [/*#__PURE__*/jsx_runtime_.jsx("h3", {
+        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h3", {
           className: "section-title-underline",
           children: "Latest Articles"
-        }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
           className: "article-wrapper",
-          children: props.articles && props.articles.data && props.articles.data.map((article, idx) => /*#__PURE__*/jsx_runtime_.jsx("div", {
+          children: props.articles && props.articles.data && props.articles.data.map((article, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
             className: "article-card-wrapper",
-            children: /*#__PURE__*/jsx_runtime_.jsx(article_ArticleCard, {
+            children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx(Components_article_ArticleCard__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
               picture: article.cover,
               name: article.title,
               slug: article.id,
-              date: (0,utils/* utc_to_local_short */.vQ)(article.createdAt)
+              date: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_4__/* .utc_to_local_short */ .vQ)(article.createdAt)
             }, idx)
           }, idx))
         })]
       })]
-    }), /*#__PURE__*/jsx_runtime_.jsx("style", {
+    }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("style", {
       children: `
             .container {
               width: 100vw;
@@ -531,7 +375,7 @@ async function getServerSideProps() {
     }
   };
 }
-/* harmony default export */ const news_info = (Home);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 
 /***/ }),
 
@@ -647,7 +491,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,862,974], () => (__webpack_exec__(3322)));
+var __webpack_exports__ = __webpack_require__.X(0, [664,862,974,807], () => (__webpack_exec__(1492)));
 module.exports = __webpack_exports__;
 
 })();
