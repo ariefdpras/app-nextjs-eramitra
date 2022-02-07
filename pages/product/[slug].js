@@ -3,8 +3,16 @@ import Breadcrumb from "Components/breadcrumb/breadcrumb";
 import React, { useState, useEffect } from 'react'
 import { number } from "Helpers/utils";
 import e from "cors";
+import Slider from "react-slick";
 
 const Home = (props) => {
+  
+  const [cart, setCart] = useState([])
+  const [value, setValue] = useState(0)
+  const [activeTab, setActiveTab] = useState('')
+  const [activeImage, setActiveImage] = useState(props.detail.Pictures && props.detail.Pictures[0].name)
+  const [activeIndex, setActiveIndex] = useState(0)
+  
     const breadcrumbs = [
       {
         title: "Products",
@@ -16,9 +24,16 @@ const Home = (props) => {
       }
     ]
 
-
-    const [cart, setCart] = useState([])
-    const [value, setValue] = useState(0)
+    const settings = {
+      dots: true,
+      arrows: true,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 3,
+      infinite: true,
+      slidesToScroll: 1,
+    };
+    
 
     useEffect(() => {
         if(localStorage.getItem("cart")) {
@@ -58,10 +73,8 @@ const Home = (props) => {
           localStorage.setItem("cart", JSON.stringify(tempCart))
           alert("Successfully add to cart!")
         }
-
-
       }
-  }
+    }
   
   return (
       <Layout
@@ -81,13 +94,89 @@ const Home = (props) => {
                 </div>
                 <div className="product-detail-container">
                     <div className="left-product">
-                      <img className="image-big" src={`https://svr.eramitra.com/images/${props.detail.img}`} />
+                      <img className="image-big" src={`https://svr.eramitra.com/images/${activeImage}`} />
+                      <div className="product-image-slider">
+                        <Slider {...settings}>
+                          { props.detail.Pictures && props.detail.Pictures.map((product, idx ) =>
+                          <a className={activeIndex == idx ? `product-image active`: `product-image`} key={idx} onClick={() => { setActiveIndex(idx); setActiveImage(product.name) }}>
+                            <div className={`product-image-content-${idx}`}>
+                            </div>
+                            <style>
+                              {
+                                `
+
+                                .product-image-slider {
+                                  padding: 20px;
+                                  margin: 0 20px;
+                                }
+
+                                .product-image{
+                                  width: 80px;
+                                  height: 80px;
+                                  margin: 0 5px;
+                                  cursor: pointer;
+                                }
+
+                                .active .product-image-content-${idx}{
+                                  border: 1px solid #1BA58A;
+                                }
+
+                                .product-image-content-${idx} {
+                                  background: url(https://svr.eramitra.com/images/${product.name});
+                                  width: 80px;
+                                  height: 80px;
+                                  background-size: cover;
+                                }
+
+                                .slick-prev:before {
+                                  font-family: 'Bahnschrift';
+                                  content: '<';
+                                  color: black;
+                                  font-size: 20px;
+                                }
+                                
+                                .slick-next:before {
+                                  font-family: 'Bahnschrift';
+                                  content: ">";
+                                  color: black;
+                                  font-size: 20px;
+                                }
+
+                                .product-image-slider .slick-next {
+                                  right: -20px;
+                                }
+
+                                .product-image-slider .slick-prev {
+                                  left: -20px;
+                                  z-index: 5;
+                                }
+
+                                @media only screen and (max-width: 800px){
+                                  .product-image{
+                                    width: 100px;
+                                    height: 100px;
+                                  }
+                                  .product-image-content-${idx} {
+                                
+                                    width: 100px;
+                                    height: 100px;
+                                  }
+            
+                                }
+                                `
+                              }
+                            </style>
+                          </a>)}
+                        
+                        </Slider>
+                      </div>
                     </div>
                     <div className="right-product">
                       <div className="product-detail">
-                        <p className="product-category">{props.detail.Application && props.detail.Application.name} {props.detail.Application && props.detail.Industry && ' - '} {props.detail.Industry && props.detail.Industry.name}</p>
-                        <h4 className="product-name">{props.detail.name}</h4>
                         <h6 className="product-brand">{props.detail.Brand && props.detail.Brand.name}</h6>
+                        <h4 className="product-name">{props.detail.name}</h4>
+                        <p className="product-category">{props.detail.Application && props.detail.Application.name} {props.detail.Application && props.detail.Industry && ' - '} {props.detail.Industry && props.detail.Industry.name}</p>
+                        
                         <div className="price-wrapper">
                           <h6 className="product-price">{number(props.detail.price)}</h6>
                           { props.detail.price == 0 && 
@@ -168,7 +257,7 @@ const Home = (props) => {
                 .right-product .product-name {
                   font-family: Bahnschrift;
                   font-style: normal;
-                  font-weight: 600;
+                  font-weight: 500;
                   font-size: 24px;
                   line-height: 29px;
                   margin: 0 0 10px 0;
@@ -180,10 +269,12 @@ const Home = (props) => {
                   font-style: normal;
                   font-weight: normal;
                   font-size: 20px;
+                  font-weight: 600;
                   line-height: 24px;
 
                   color: #000000;
-                  margin: 0 0 20px 0;
+                  margin: 0 0 10px 0;
+                  text-transform: uppercase;
                 }
 
                 .right-product .price-wrapper {
@@ -274,6 +365,10 @@ const Home = (props) => {
                   text-transform: uppercase;
                   width: 100%;
                   margin-left: 30px;
+              }
+
+              .product-descriptions ul, .product-descriptions ol {
+                margin-left: -20px !important;
               }
 
                 @media only screen and (max-width: 800px){

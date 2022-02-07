@@ -592,13 +592,13 @@ partner	for	our	stakeholders	along	the	process.
 
 
                 .brands-item {
-                  height: 30px;
+                  height: 40px;
                   display: flex;
                   justify-content: center;
                 }
 
                 .brands-item img{
-                  height: 30px;
+                  height: 40px;
                   width: auto;
                   margin: 0 20px;
                 }

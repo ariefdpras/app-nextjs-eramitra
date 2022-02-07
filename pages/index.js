@@ -25,6 +25,8 @@ const Home = (props) => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
     variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
 	};
 
   const settings3 = {
@@ -63,7 +65,7 @@ const Home = (props) => {
                         height: 80vh;
                       }
                       .banner-item-content-${idx} {
-                        background: url(https://svr.eramitra.com/images/${banner.img});
+                        background: url(https://svr.eramitra.com/images/${banner.Picture.name});
                         width: 100vw;
                         height: 80vh;
                         background-size: cover;
@@ -358,7 +360,7 @@ const Home = (props) => {
                   <Slider {...settings}>
                     { props.brands && props.brands.map((brand, idx ) =>
                       <div className="brands-item" key={idx}>
-                        <img src={`https://svr.eramitra.com/images/${brand.img}`} />
+                      { typeof brand.Picture !== undefined && <img src={`https://svr.eramitra.com/images/${brand.Picture.name}`} /> }
                       </div>)
                     }
                   </Slider>
@@ -368,7 +370,7 @@ const Home = (props) => {
                   <Slider {...settings2}>
                     { props.brands && props.brands.map((brand, idx ) =>
                       <div className="brands-item" key={idx}>
-                        <img src={`https://svr.eramitra.com/images/${brand.img}`} />
+                        { typeof brand.Picture !== undefined && <img src={`https://svr.eramitra.com/images/${brand.Picture.name}`} /> }
                       </div>)
                     }
                   </Slider>
@@ -407,13 +409,13 @@ const Home = (props) => {
 
 
                 .brands-item {
-                  height: 30px;
+                  height: 40px;
                   display: flex;
                   justify-content: center;
                 }
 
                 .brands-item img{
-                  height: 30px;
+                  height: 40px;
                   width: auto;
                   margin: 0 20px;
                 }
@@ -481,7 +483,7 @@ const Home = (props) => {
                 {  props.articles && props.articles.data && props.articles.data.map((article, idx) => 
                     <div className="article-card-wrapper" key={idx}>
                       <ArticleCard
-                        picture={article.cover}
+                        picture={article.Picture && article.Picture.name}
                         name={article.title}
                         slug={article.id}
                         date={utc_to_local_short(article.createdAt)}

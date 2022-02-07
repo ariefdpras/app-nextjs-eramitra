@@ -210,7 +210,9 @@ const Home = props => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: true
+    variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 5000
   };
   const settings3 = {
     dots: true,
@@ -245,7 +247,7 @@ const Home = props => {
                         height: 80vh;
                       }
                       .banner-item-content-${idx} {
-                        background: url(https://svr.eramitra.com/images/${banner.img});
+                        background: url(https://svr.eramitra.com/images/${banner.Picture.name});
                         width: 100vw;
                         height: 80vh;
                         background-size: cover;
@@ -554,8 +556,8 @@ const Home = props => {
               children: /*#__PURE__*/jsx_runtime_.jsx((external_react_slick_default()), _objectSpread(_objectSpread({}, settings), {}, {
                 children: props.brands && props.brands.map((brand, idx) => /*#__PURE__*/jsx_runtime_.jsx("div", {
                   className: "brands-item",
-                  children: /*#__PURE__*/jsx_runtime_.jsx("img", {
-                    src: `https://svr.eramitra.com/images/${brand.img}`
+                  children: typeof brand.Picture !== undefined && /*#__PURE__*/jsx_runtime_.jsx("img", {
+                    src: `https://svr.eramitra.com/images/${brand.Picture.name}`
                   })
                 }, idx))
               }))
@@ -564,8 +566,8 @@ const Home = props => {
               children: /*#__PURE__*/jsx_runtime_.jsx((external_react_slick_default()), _objectSpread(_objectSpread({}, settings2), {}, {
                 children: props.brands && props.brands.map((brand, idx) => /*#__PURE__*/jsx_runtime_.jsx("div", {
                   className: "brands-item",
-                  children: /*#__PURE__*/jsx_runtime_.jsx("img", {
-                    src: `https://svr.eramitra.com/images/${brand.img}`
+                  children: typeof brand.Picture !== undefined && /*#__PURE__*/jsx_runtime_.jsx("img", {
+                    src: `https://svr.eramitra.com/images/${brand.Picture.name}`
                   })
                 }, idx))
               }))
@@ -608,13 +610,13 @@ const Home = props => {
 
 
                 .brands-item {
-                  height: 30px;
+                  height: 40px;
                   display: flex;
                   justify-content: center;
                 }
 
                 .brands-item img{
-                  height: 30px;
+                  height: 40px;
                   width: auto;
                   margin: 0 20px;
                 }
@@ -685,7 +687,7 @@ const Home = props => {
                 children: props.articles && props.articles.data && props.articles.data.map((article, idx) => /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
                   className: "article-card-wrapper",
                   children: [/*#__PURE__*/jsx_runtime_.jsx(ArticleCardHome, {
-                    picture: article.cover,
+                    picture: article.Picture && article.Picture.name,
                     name: article.title,
                     slug: article.id,
                     date: (0,utils/* utc_to_local_short */.vQ)(article.createdAt)

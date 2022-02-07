@@ -94,7 +94,7 @@ const Home = props => {
               children: [" ", props.brands && props.brands.map((brand, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/products/brand/${brand.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
-                  className: "group-list",
+                  className: props.detail ? props.detail.name === brand.name ? `group-list active` : `group-list` : `group-list`,
                   children: brand.name
                 })
               }, idx))]
@@ -123,7 +123,7 @@ const Home = props => {
               children: [" ", props.industries && props.industries.map((industry, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/products/industry/${industry.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
-                  className: "group-list",
+                  className: props.detail ? props.detail.name === industry.name ? `group-list active` : `group-list` : `group-list`,
                   children: industry.name
                 })
               }, idx))]
@@ -152,7 +152,7 @@ const Home = props => {
               children: [" ", props.applications && props.applications.map((application, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/products/application/${application.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
-                  className: "group-list",
+                  className: props.detail ? props.detail.name === application.name ? `group-list active` : `group-list` : `group-list`,
                   children: application.name
                 })
               }, idx))]
@@ -169,7 +169,7 @@ const Home = props => {
               className: "products-wrapper",
               children: props.products && props.products.map((product, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx(Components_product_ProductCard__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
                 id: product.id,
-                picture: product.img,
+                picture: product.Pictures && product.Pictures[0] && product.Pictures[0].name,
                 category: `${product.Application ? product.Application.name : ""}`,
                 brand: product.Brand ? product.Brand.name : "",
                 name: product.name,
@@ -246,7 +246,10 @@ const Home = props => {
 
                 .group-list:hover {
                   color: #1BA58A;
+                }
 
+                .group-list.active {
+                  font-weight: 600;
                 }
 
 

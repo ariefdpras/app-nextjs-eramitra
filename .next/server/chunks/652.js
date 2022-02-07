@@ -38,10 +38,7 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "product-description",
-          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("p", {
-            className: "product-category",
-            children: props.category
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h6", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h6", {
             className: "product-name",
             children: [props.brand, " - ", props.name, " "]
           }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("p", {
@@ -58,7 +55,7 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
                         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
                         border-radius: 20px;
                         height: 400px;
-                        width: 100%;
+                        width: 220px;
                     }
 
                     .product-picture-wrapper {
@@ -67,8 +64,9 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
                     }
 
                     .product-picture {
-                        max-width: 200px;
-                        height: 200px;
+                        max-width: 220px;
+                        height: 220px;
+                        padding: 10px;
                         object-fit: cover;
                     }
 

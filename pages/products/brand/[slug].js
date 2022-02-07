@@ -51,7 +51,7 @@ const Home = (props) => {
 
                         {
                             isBrands && <div className="group-list-wrapper"> {props.brands && props.brands.map((brand, idx) => <a 
-                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`}><p className="group-list">{brand.name}</p></a>)}</div>
+                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`}><p className={props.detail ? props.detail.name === brand.name ? `group-list active` : `group-list` : `group-list`}>{brand.name}</p></a>)}</div>
                           }
                         <div className="category-group">
                           <h3 className="category-side-title ">
@@ -63,8 +63,8 @@ const Home = (props) => {
                         </div>
 
                           {
-                            isIndustry && <div className="group-list-wrapper"> {props.industries && props.industries.map((industry, idx) => <a 
-                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/industry/${industry.id}`}><p className="group-list">{industry.name}</p></a>)}</div>
+                            isIndustry && <div className="group-list-wrapper"> {props.industries && props.industries.map((industry, idx) => <a  
+                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/industry/${industry.id}`}><p className={props.detail ? props.detail.name === industry.name ? `group-list active` : `group-list` : `group-list`}>{industry.name}</p></a>)}</div>
                           }
                         <div className="category-group">
                           <h3 className="category-side-title ">
@@ -76,7 +76,7 @@ const Home = (props) => {
                         </div>
                           {
                             isApplication && <div className="group-list-wrapper"> {props.applications && props.applications.map((application, idx) => <a 
-                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/application/${application.id}`}><p className="group-list">{application.name}</p></a>)}</div>
+                              key={idx} href={`${process.env.ROOT_DOMAIN}/products/application/${application.id}`}><p className={props.detail ? props.detail.name === application.name ? `group-list active` : `group-list` : `group-list`}>{application.name}</p></a>)}</div>
                           }
                     </div>
                     <div className="right-products">
@@ -89,7 +89,7 @@ const Home = (props) => {
                             { props.products && props.products.map((product, idx) => 
                                 <ProductCard 
                                 id={product.id}
-                                picture={product.img}
+                                picture={product.Pictures && product.Pictures[0] && product.Pictures[0].name}
                                 category={`${product.Application ? product.Application.name : ""}`}
                                 brand={product.Brand ? product.Brand.name : ""}
                                 name={product.name}
@@ -168,7 +168,10 @@ const Home = (props) => {
 
                 .group-list:hover {
                   color: #1BA58A;
+                }
 
+                .group-list.active {
+                  font-weight: 600;
                 }
 
 

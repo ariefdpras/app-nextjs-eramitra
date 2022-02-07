@@ -28,7 +28,7 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="news-info-wrapper">
                   <div className="news-info-cover">
-                    <img src={props.articles.data[0] ? typeof props.articles.data[0].cover !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].cover}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" } />
+                    <img src={props.articles.data[0] ? typeof props.articles.data[0].cover !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" } />
                   </div>
                   <div className="news-info-description">
                     <p>{utc_to_local_short(props.articles.data[0].createdAt)}</p>
@@ -238,7 +238,7 @@ const Home = (props) => {
                 { props.articles && props.articles.data && props.articles.data.map((article, idx) => 
                     <div className="article-card-wrapper" key={idx}>
                       <ArticleCard
-                        picture={article.cover}
+                        picture={article.Picture && article.Picture.name}
                         name={article.title}
                         slug={article.id}
                         date={utc_to_local_short(article.createdAt)}

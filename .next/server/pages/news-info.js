@@ -53,7 +53,7 @@ const Home = props => {
             children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
               className: "news-info-cover",
               children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("img", {
-                src: props.articles.data[0] ? typeof props.articles.data[0].cover !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].cover}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg"
+                src: props.articles.data[0] ? typeof props.articles.data[0].cover !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "news-info-description",
@@ -274,7 +274,7 @@ const Home = props => {
           children: props.articles && props.articles.data && props.articles.data.map((article, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
             className: "article-card-wrapper",
             children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx(Components_article_ArticleCard__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
-              picture: article.cover,
+              picture: article.Picture && article.Picture.name,
               name: article.title,
               slug: article.id,
               date: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_4__/* .utc_to_local_short */ .vQ)(article.createdAt)

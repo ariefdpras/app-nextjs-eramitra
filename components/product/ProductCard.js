@@ -15,7 +15,7 @@ class ProductCard extends React.Component {
             <div className="product-picture-wrapper">
             <img className="product-picture" src={`https://svr.eramitra.com/images/${props.picture}`} /></div>
             <div className="product-description">
-                <p className="product-category">{props.category}</p>
+                {/* <p className="product-category">{props.category}</p> */}
                 <h6 className="product-name">{props.brand} - {props.name} </h6>
                 <p className="product-price">{number(props.price)}</p>
                 {
@@ -30,7 +30,7 @@ class ProductCard extends React.Component {
                         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
                         border-radius: 20px;
                         height: 400px;
-                        width: 100%;
+                        width: 220px;
                     }
 
                     .product-picture-wrapper {
@@ -39,8 +39,9 @@ class ProductCard extends React.Component {
                     }
 
                     .product-picture {
-                        max-width: 200px;
-                        height: 200px;
+                        max-width: 220px;
+                        height: 220px;
+                        padding: 10px;
                         object-fit: cover;
                     }
 
