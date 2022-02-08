@@ -10,7 +10,7 @@ const Home = (props) => {
   const [cart, setCart] = useState([])
   const [value, setValue] = useState(0)
   const [activeTab, setActiveTab] = useState('')
-  const [activeImage, setActiveImage] = useState(props.detail.Pictures && props.detail.Pictures[0].name)
+  const [activeImage, setActiveImage] = useState(props.detail.Pictures && props.detail.Pictures.length > 0 && props.detail.Pictures[0].name)
   const [activeIndex, setActiveIndex] = useState(0)
   
     const breadcrumbs = [
@@ -175,8 +175,14 @@ const Home = (props) => {
                       <div className="product-detail">
                         <h6 className="product-brand">{props.detail.Brand && props.detail.Brand.name}</h6>
                         <h4 className="product-name">{props.detail.name}</h4>
-                        <p className="product-category">{props.detail.Application && props.detail.Application.name} {props.detail.Application && props.detail.Industry && ' - '} {props.detail.Industry && props.detail.Industry.name}</p>
-                        
+                        <div className="tags-wrapper">
+                          { props.detail.Applications && props.detail.Applications.length > 0 && props.detail.Applications.map((app) => 
+                            <p className="tags" key={idx} >{ app.name }</p>
+                          )}
+                          { props.detail.Industries && props.detail.Industries.length > 0 && props.detail.Industries.map((app) => 
+                            <p className="tags" key={idx} >{ app.name }</p>
+                          )}
+                        </div>
                         <div className="price-wrapper">
                           <h6 className="product-price">{number(props.detail.price)}</h6>
                           { props.detail.price == 0 && 
@@ -366,6 +372,33 @@ const Home = (props) => {
                   width: 100%;
                   margin-left: 30px;
               }
+
+              .tags {
+                font-family: Bahnschrift;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+                cursor: pointer;
+                padding: 3px 10px;
+                color: #1BA58A;
+                border: 1px solid #1BA58A;
+                background: #FFFFFF;
+                cursor: default;
+                border-radius: 20px;
+                text-align: center;
+                text-transform: uppercase;
+                width: fit-content;
+                margin: 0 5px 5px 0 !important;
+            }
+
+            .tags-wrapper {
+              display: flex;
+              flex-wrap: wrap;
+              margin-bottom: 15px;
+            }
 
               .product-descriptions ul, .product-descriptions ol {
                 margin-left: -20px !important;

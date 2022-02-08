@@ -62,9 +62,7 @@ const Home = (props) => {
                               { props.search && props.search.products && props.search.products.map((product, idx) => 
                                   <ProductCard
                                   id={product.id}
-                                  picture={product.img}
-                                  category={`${product.Application.name}`}
-                                  brand={product.Brand.name}
+                                  picture={product.Pictures && product.Pictures[0] && product.Pictures[0].name}
                                   name={product.name}
                                   price={product.price}
                                   key={idx}/>

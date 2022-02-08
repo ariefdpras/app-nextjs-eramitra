@@ -360,7 +360,7 @@ const Home = (props) => {
                   <Slider {...settings}>
                     { props.brands && props.brands.map((brand, idx ) =>
                       <div className="brands-item" key={idx}>
-                      { typeof brand.Picture !== undefined && <img src={`https://svr.eramitra.com/images/${brand.Picture.name}`} /> }
+                      { brand.Picture && brand.Picture.name && <img src={`https://svr.eramitra.com/images/${brand.Picture.name}`} /> }
                       </div>)
                     }
                   </Slider>
@@ -370,7 +370,7 @@ const Home = (props) => {
                   <Slider {...settings2}>
                     { props.brands && props.brands.map((brand, idx ) =>
                       <div className="brands-item" key={idx}>
-                        { typeof brand.Picture !== undefined && <img src={`https://svr.eramitra.com/images/${brand.Picture.name}`} /> }
+                        { brand.Picture && brand.Picture.name && <img src={`https://svr.eramitra.com/images/${brand.Picture.name}`} /> }
                       </div>)
                     }
                   </Slider>
