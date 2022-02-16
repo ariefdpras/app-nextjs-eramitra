@@ -62,7 +62,7 @@ const Home = props => {
   } = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0);
   const breadcrumbs = [{
     title: "Products",
-    url: "http://localhost:3001" + "/products/"
+    url: "https://staging.eramitra.com" + "/products/"
   }, {
     title: props.detail.name,
     url: "http://google.com"
@@ -129,7 +129,7 @@ const Home = props => {
           className: "breadcrumb-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
             breadcrumbs: breadcrumbs,
-            url: "http://localhost:3001"
+            url: "https://staging.eramitra.com"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "product-detail-container",
@@ -577,13 +577,13 @@ const Home = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://staging.eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"https://staging.eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getProduct = await fetch(`${"http://localhost:3001"}/api/getProduct/${req.query.slug}`);
+  const getProduct = await fetch(`${"https://staging.eramitra.com"}/api/getProduct/${req.query.slug}`);
   const product = await getProduct.json();
   return {
     props: {

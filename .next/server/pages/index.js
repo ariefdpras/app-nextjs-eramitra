@@ -52,7 +52,7 @@ class ArticleCard extends (external_react_default()).Component {
           className: "article-date",
           children: props.date
         }), /*#__PURE__*/jsx_runtime_.jsx("a", {
-          href: `${"http://localhost:3001"}/news-info/${props.slug}`,
+          href: `${"https://staging.eramitra.com"}/news-info/${props.slug}`,
           children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("h6", {
             className: "article-name",
             children: [props.name, " "]
@@ -813,7 +813,7 @@ const Home = props => {
             }), /*#__PURE__*/jsx_runtime_.jsx("div", {
               className: "btn-wrapper",
               children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-                href: `${"http://localhost:3001"}/career`,
+                href: `${"https://staging.eramitra.com"}/career`,
                 children: "More Info"
               })
             })]
@@ -957,15 +957,15 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://staging.eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getBanner = await fetch(`${"http://localhost:3001"}/api/getBanner`);
+  const getBanner = await fetch(`${"https://staging.eramitra.com"}/api/getBanner`);
   const banner = await getBanner.json();
-  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"https://staging.eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getArticles = await fetch(`${"http://localhost:3001"}/api/getArticle`);
+  const getArticles = await fetch(`${"https://staging.eramitra.com"}/api/getArticle`);
   const articles = await getArticles.json();
   return {
     props: {

@@ -41,7 +41,7 @@ class ArticleCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
           className: "article-name",
           children: [props.name, " "]
         }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("a", {
-          href: `${"http://localhost:3001"}/news-info/${props.slug}`,
+          href: `${"https://staging.eramitra.com"}/news-info/${props.slug}`,
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("div", {
             className: "btn-read-card",
             children: "Read Article"

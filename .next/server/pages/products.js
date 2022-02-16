@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 const Home = props => {
   const breadcrumbs = [{
     title: "Products",
-    url: "http://localhost:3001" + "/products"
+    url: "https://staging.eramitra.com" + "/products"
   }];
   const {
     0: isBrands,
@@ -57,7 +57,7 @@ const Home = props => {
           className: "breadcrumb-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
             breadcrumbs: breadcrumbs,
-            url: "http://localhost:3001"
+            url: "https://staging.eramitra.com"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "products-container",
@@ -89,7 +89,7 @@ const Home = props => {
             }), isBrands && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "group-list-wrapper",
               children: [" ", props.brands && props.brands.map((brand, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
-                href: `${"http://localhost:3001"}/products/brand/${brand.id}`,
+                href: `${"https://staging.eramitra.com"}/products/brand/${brand.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
                   className: props.detail ? props.detail.name === brand.name ? `group-list active` : `group-list` : `group-list`,
                   children: brand.name
@@ -118,7 +118,7 @@ const Home = props => {
             }), isIndustry && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "group-list-wrapper",
               children: [" ", props.industries && props.industries.map((industry, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
-                href: `${"http://localhost:3001"}/products/industry/${industry.id}`,
+                href: `${"https://staging.eramitra.com"}/products/industry/${industry.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
                   className: props.detail ? props.detail.name === industry.name ? `group-list active` : `group-list` : `group-list`,
                   children: industry.name
@@ -147,7 +147,7 @@ const Home = props => {
             }), isApplication && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "group-list-wrapper",
               children: [" ", props.applications && props.applications.map((application, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
-                href: `${"http://localhost:3001"}/products/application/${application.id}`,
+                href: `${"https://staging.eramitra.com"}/products/application/${application.id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
                   className: props.detail ? props.detail.name === application.name ? `group-list active` : `group-list` : `group-list`,
                   children: application.name
@@ -353,13 +353,13 @@ const Home = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://staging.eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustries = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
+  const getIndustries = await fetch(`${"https://staging.eramitra.com"}/api/getIndustry`);
   const industries = await getIndustries.json();
-  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getProducts = await fetch(`${"http://localhost:3001"}/api/getProduct`);
+  const getProducts = await fetch(`${"https://staging.eramitra.com"}/api/getProduct`);
   const products = await getProducts.json();
   return {
     props: {

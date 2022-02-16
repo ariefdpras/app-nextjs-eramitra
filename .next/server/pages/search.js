@@ -34,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 const Home = props => {
   const breadcrumbs = [{
     title: "Search",
-    url: "http://localhost:3001" + "/products"
+    url: "https://staging.eramitra.com" + "/products"
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(Containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
     title: "Search | PT. Era Mitra Perdana",
@@ -49,7 +49,7 @@ const Home = props => {
           className: "breadcrumb-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
             breadcrumbs: breadcrumbs,
-            url: "http://localhost:3001"
+            url: "https://staging.eramitra.com"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "products-container",
@@ -61,7 +61,7 @@ const Home = props => {
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("div", {
               className: "group-list-wrapper",
               children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("a", {
-                href: `${"http://localhost:3001"}/search?name=${props.query.name}&by=product`,
+                href: `${"https://staging.eramitra.com"}/search?name=${props.query.name}&by=product`,
                 children: props.query && typeof props.query.by !== undefined ? props.query.by === "product" ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("b", {
                   children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("p", {
                     className: "group-list",
@@ -78,7 +78,7 @@ const Home = props => {
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("div", {
               className: "group-list-wrapper",
               children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("a", {
-                href: `${"http://localhost:3001"}/search?name=${props.query.name}&by=article`,
+                href: `${"https://staging.eramitra.com"}/search?name=${props.query.name}&by=article`,
                 children: props.query && typeof props.query.by !== undefined ? props.query.by === "article" ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("b", {
                   children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("p", {
                     className: "group-list",
@@ -309,13 +309,13 @@ const Home = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://staging.eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustries = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
+  const getIndustries = await fetch(`${"https://staging.eramitra.com"}/api/getIndustry`);
   const industries = await getIndustries.json();
-  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getSearch = await fetch(`${"http://localhost:3001"}/api/searchData/${req.query.name}`);
+  const getSearch = await fetch(`${"https://staging.eramitra.com"}/api/searchData/${req.query.name}`);
   const search = await getSearch.json();
   return {
     props: {

@@ -65,7 +65,7 @@ const Home = props => {
                 className: "news-info-content",
                 children: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_4__/* .truncate_text */ .vP)(props.articles.data[0].content, 150)
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("a", {
-                href: `${"http://localhost:3001"}/news-info/${props.articles.data[0].id}`,
+                href: `${"https://staging.eramitra.com"}/news-info/${props.articles.data[0].id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
                   className: "btn-read",
                   children: "Read Article"
@@ -358,13 +358,13 @@ const Home = props => {
 };
 
 async function getServerSideProps() {
-  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
+  const getBrands = await fetch(`${"https://staging.eramitra.com"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"https://staging.eramitra.com"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
+  const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getArticles = await fetch(`${"http://localhost:3001"}/api/getArticle`);
+  const getArticles = await fetch(`${"https://staging.eramitra.com"}/api/getArticle`);
   const articles = await getArticles.json();
   return {
     props: {
