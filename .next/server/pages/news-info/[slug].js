@@ -180,13 +180,13 @@ const Articles = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"https://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"https://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getArticle = await fetch(`${"https://staging.eramitra.com"}/api/getArticle/${req.query.slug}`);
+  const getArticle = await fetch(`${"http://localhost:3001"}/api/getArticle/${req.query.slug}`);
   const article = await getArticle.json();
   return {
     props: {

@@ -62,7 +62,7 @@ const Home = props => {
   } = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0);
   const breadcrumbs = [{
     title: "Products",
-    url: "https://staging.eramitra.com" + "/products/"
+    url: "http://localhost:3001" + "/products/"
   }, {
     title: props.detail.name,
     url: "http://google.com"
@@ -129,7 +129,7 @@ const Home = props => {
           className: "breadcrumb-wrapper",
           children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
             breadcrumbs: breadcrumbs,
-            url: "https://staging.eramitra.com"
+            url: "http://localhost:3001"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "product-detail-container",
@@ -141,7 +141,7 @@ const Home = props => {
             }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("div", {
               className: "product-image-slider",
               children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx((react_slick__WEBPACK_IMPORTED_MODULE_5___default()), _objectSpread(_objectSpread({}, settings), {}, {
-                children: props.detail.Pictures && props.detail.Pictures.map((product, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
+                children: props.detail.Pictures && props.detail.Pictures.length > 1 && props.detail.Pictures.map((product, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
                   className: activeIndex == idx ? `product-image active` : `product-image`,
                   onClick: () => {
                     setActiveIndex(idx);
@@ -153,13 +153,13 @@ const Home = props => {
                     children: `
 
                                 .product-image-slider {
-                                  padding: 20px;
-                                  margin: 0 20px;
+                                  padding: 10px;
+                                  margin: 0 10px;
                                 }
 
                                 .product-image{
-                                  width: 80px;
-                                  height: 80px;
+                                  width: 70px;
+                                  height: 70px;
                                   margin: 0 5px;
                                   cursor: pointer;
                                 }
@@ -227,10 +227,10 @@ const Home = props => {
                 children: props.detail.name
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                 className: "tags-wrapper",
-                children: [props.detail.Applications && props.detail.Applications.length > 0 && props.detail.Applications.map(app => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("p", {
+                children: [props.detail.Applications && props.detail.Applications.length > 0 && props.detail.Applications.map((app, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("p", {
                   className: "tags",
                   children: app.name
-                }, idx)), props.detail.Industries && props.detail.Industries.length > 0 && props.detail.Industries.map(app => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("p", {
+                }, idx)), props.detail.Industries && props.detail.Industries.length > 0 && props.detail.Industries.map((app, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx("p", {
                   className: "tags",
                   children: app.name
                 }, idx))]
@@ -577,13 +577,13 @@ const Home = props => {
 };
 
 async function getServerSideProps(req) {
-  const getBrands = await fetch(`${"https://staging.eramitra.com"}/api/getBrands`);
+  const getBrands = await fetch(`${"http://localhost:3001"}/api/getBrands`);
   const brands = await getBrands.json();
-  const getIndustry = await fetch(`${"https://staging.eramitra.com"}/api/getIndustry`);
+  const getIndustry = await fetch(`${"http://localhost:3001"}/api/getIndustry`);
   const industries = await getIndustry.json();
-  const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
+  const getApplication = await fetch(`${"http://localhost:3001"}/api/getApplication`);
   const applications = await getApplication.json();
-  const getProduct = await fetch(`${"https://staging.eramitra.com"}/api/getProduct/${req.query.slug}`);
+  const getProduct = await fetch(`${"http://localhost:3001"}/api/getProduct/${req.query.slug}`);
   const product = await getProduct.json();
   return {
     props: {

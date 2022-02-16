@@ -97,7 +97,7 @@ const Home = (props) => {
                       <img className="image-big" src={`https://svr.eramitra.com/images/${activeImage}`} />
                       <div className="product-image-slider">
                         <Slider {...settings}>
-                          { props.detail.Pictures && props.detail.Pictures.map((product, idx ) =>
+                          { props.detail.Pictures && props.detail.Pictures.length > 1 && props.detail.Pictures.map((product, idx) =>
                           <a className={activeIndex == idx ? `product-image active`: `product-image`} key={idx} onClick={() => { setActiveIndex(idx); setActiveImage(product.name) }}>
                             <div className={`product-image-content-${idx}`}>
                             </div>
@@ -106,13 +106,13 @@ const Home = (props) => {
                                 `
 
                                 .product-image-slider {
-                                  padding: 20px;
-                                  margin: 0 20px;
+                                  padding: 10px;
+                                  margin: 0 10px;
                                 }
 
                                 .product-image{
-                                  width: 80px;
-                                  height: 80px;
+                                  width: 70px;
+                                  height: 70px;
                                   margin: 0 5px;
                                   cursor: pointer;
                                 }
@@ -176,10 +176,10 @@ const Home = (props) => {
                         <h6 className="product-brand">{props.detail.Brand && props.detail.Brand.name}</h6>
                         <h4 className="product-name">{props.detail.name}</h4>
                         <div className="tags-wrapper">
-                          { props.detail.Applications && props.detail.Applications.length > 0 && props.detail.Applications.map((app) => 
+                          { props.detail.Applications && props.detail.Applications.length > 0 && props.detail.Applications.map((app, idx) => 
                             <p className="tags" key={idx} >{ app.name }</p>
                           )}
-                          { props.detail.Industries && props.detail.Industries.length > 0 && props.detail.Industries.map((app) => 
+                          { props.detail.Industries && props.detail.Industries.length > 0 && props.detail.Industries.map((app, idx) => 
                             <p className="tags" key={idx} >{ app.name }</p>
                           )}
                         </div>
