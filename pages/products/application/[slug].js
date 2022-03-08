@@ -88,7 +88,7 @@ const Home = (props) => {
                             { props.products && props.products.map((product, idx) => 
                                 <ProductCard
                                 id={product.id}
-                                picture={product.Pictures && product.Pictures[0] && product.Pictures[0].name}
+                                picture={product.Pictures && product.Pictures[0] && product.Pictures[0].name }
                                 category={`${product.Application ? product.Application.name : ""}`}
                                 brand={product.Brand ? product.Brand.name : ""}
                                 name={product.name}

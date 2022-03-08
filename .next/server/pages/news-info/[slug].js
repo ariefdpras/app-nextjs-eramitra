@@ -38,7 +38,7 @@ const Articles = props => {
           children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("div", {
             className: "header-img",
             children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("img", {
-              src: props.article.cover ? `https://svr.eramitra.com/images/${props.article.cover}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg"
+              src: props.article.Picture ? `https://svr.eramitra.com/images/${props.article.Picture.name}` : "/static/images/not-found.jpg"
             })
           }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("h3", {
             className: "section-title",

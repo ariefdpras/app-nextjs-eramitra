@@ -139,8 +139,7 @@ const Home = (props) => {
                                         <div className="product-cart-wrapper" 
                                         key={idx}>
                                             <ProductCardCart
-                                                picture={item.product.img}
-                                                category={`${item.product.Application.name}`}
+                                                picture={item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].path}
                                                 brand={item.product.Brand.name}
                                                 name={item.product.name}
                                                 price={item.product.price}

@@ -75,8 +75,8 @@ const Header= (props) => {
                 <div className="location-group">
                   <h2>Branch Office - Surabaya</h2>
                   <p>Jl. Kebon Sari V No. 7G - Surabaya</p>
-                  <div className="icon-text"><span className="material-icons">phone</span><p> +62-21-86612458 (Fax: +62-21-86612365)</p></div>
-                  <div className="icon-text"><span className="material-icons">mail_outline</span><p>sales@eramitra.com</p></div>
+                  <div className="icon-text"><span className="material-icons">phone</span><p> +62-31-8298235 (Fax: +62-31-8298235)</p></div>
+                  <div className="icon-text"><span className="material-icons">mail_outline</span><p>emp.sby@eramitra.com</p></div>
                 </div>
               </div>
               <div className="reach-us">
@@ -114,14 +114,14 @@ const Header= (props) => {
                   <div className="social-media-wrapper">
                     {/* <a href="https://wa.me/6281234567890"> */}
                       <img
-                        className="logo-social"
+                        className="logo-social logo-wa"
                         src="/static/icons/whatsapp.svg"
                       />
                     {/* </a> */}
                     {/* <img className="logo-social" src="/static/icons/facebook.svg" />
                                       <img className="logo-social" src="/static/icons/linkedin.svg" /> */}
                     <a href="mailto:sales@eramitra.com">
-                      <span className="material-icons white">
+                      <span className="material-icons white logo-mail">
                       mail
                       </span>
                     </a>
@@ -246,6 +246,13 @@ const Header= (props) => {
                   margin-bottom: 16px;
                 }
 
+                .logo-mail {
+                  font-size: 26px;
+                }
+
+                .logo-wa {
+                  height: 26px !important;
+                }
                 .form-reach-us input, .form-reach-us textarea {
                   font-family: Calibri;
                   width: 100%;    
@@ -443,7 +450,7 @@ const Header= (props) => {
                 }
 
                 .logo-social {
-                  height: 24px;
+                  height: 22px;
                 }
 
                 .social-media-wrapper .material-icons {

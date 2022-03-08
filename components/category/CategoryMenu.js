@@ -20,6 +20,10 @@ class CategoryMenu extends React.Component {
   render() {
     const props = this.props
 
+    const brandTotal = props.brands && props.brands.length / 3;
+    const applicationTotal = props.brands && props.applications.length / 3;
+    const industriesTotal = props.brands && props.industries.length / 3;
+
     return (
         <div className="category-menu">
             <div className="container-inner">
@@ -49,41 +53,178 @@ class CategoryMenu extends React.Component {
             </div>
             <div className="right-category-menu">
                 <div className="right-category-inner">
-                {
-                    this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
-                    
-                        <div className="category-side-name" key={idx}>
-                            <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
-                            key={idx}>
-                                    {brand.name}
-                            </a>
-                        </div>
-                    )
-                }
+                    <div className="category-col">
+                    {
+                        this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
+                            { 
+                                console.log(brandTotal)
+                                if(idx > brandTotal) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
+                                    key={idx}>
+                                            {brand.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
 
-                {
-                    this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
-                    
-                    <div className="category-side-name" key={idx}>
-                        <a href={`${process.env.ROOT_DOMAIN}/products/application/${app.id}`} 
-                        key={idx}>
-                                {app.name}
-                        </a>
-                    </div>
-                    )
-                }
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
+                            { 
+                                if(idx < brandTotal || idx > brandTotal*2) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
+                                    key={idx}>
+                                            {brand.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
 
-                {
-                    this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
-                    
-                    <div className="category-side-name" key={idx}>
-                        <a  href={`${process.env.ROOT_DOMAIN}/products/industry/${ind.id}`} 
-                        key={idx}>
-                                {ind.name}
-                        </a>
-                    </div>
-                    )
-                }</div>
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
+                            { 
+                                if(idx < brandTotal*2 || idx > brandTotal*3) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`} 
+                                    key={idx}>
+                                            {brand.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
+                            { 
+                                if(idx > applicationTotal) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a href={`${process.env.ROOT_DOMAIN}/products/application/${app.id}`} 
+                                    key={idx}>
+                                            {app.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
+                            { 
+                                if(idx < applicationTotal || idx > applicationTotal*2) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a href={`${process.env.ROOT_DOMAIN}/products/application/${app.id}`} 
+                                    key={idx}>
+                                            {app.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
+                            { 
+                                if(idx < applicationTotal*2 || idx > applicationTotal*3) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a href={`${process.env.ROOT_DOMAIN}/products/application/${app.id}`} 
+                                    key={idx}>
+                                            {app.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
+                            { 
+                                if(idx > industriesTotal) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a  href={`${process.env.ROOT_DOMAIN}/products/industry/${ind.id}`} 
+                                    key={idx}>
+                                            {ind.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
+                            { 
+                                if(idx < industriesTotal || idx > industriesTotal*2) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a  href={`${process.env.ROOT_DOMAIN}/products/industry/${ind.id}`} 
+                                    key={idx}>
+                                            {ind.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
+                            { 
+                                if(idx < industriesTotal*2 || idx > industriesTotal*3) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a  href={`${process.env.ROOT_DOMAIN}/products/industry/${ind.id}`} 
+                                    key={idx}>
+                                            {ind.name}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+
+
+
+               </div>
             </div>
             </div>
             </div>

@@ -53,7 +53,7 @@ const Home = props => {
             children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
               className: "news-info-cover",
               children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("img", {
-                src: props.articles.data[0] ? typeof props.articles.data[0].cover !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg"
+                src: props.articles.data[0] ? typeof props.articles.data[0].Picture !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "/static/images/not-found.jpg" : "/static/images/not-found.jpg"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "news-info-description",
@@ -61,9 +61,6 @@ const Home = props => {
                 children: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_4__/* .utc_to_local_short */ .vQ)(props.articles.data[0].createdAt)
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h6", {
                 children: props.articles.data[0].title
-              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("p", {
-                className: "news-info-content",
-                children: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_4__/* .truncate_text */ .vP)(props.articles.data[0].content, 150)
               }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/news-info/${props.articles.data[0].id}`,
                 children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("div", {
@@ -154,10 +151,23 @@ const Home = props => {
 
               @media only screen and (max-width: 800px){
 
-                .news-info .section-title-underline {
+                .section-title-underline {
                   margin-left: 20px;
                 }
                 
+                .article-content img {
+                  width: 100% !important;
+                  height: auto;
+                }
+
+                .article-content p {
+                  text-indent: 0pt !important;
+                }
+
+                .article-content {
+                  word-break: break-word;
+                }
+
                 .news-info-cover {
                   width: 170px;
                   height: 100px;

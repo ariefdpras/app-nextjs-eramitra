@@ -13,7 +13,7 @@ class ProductCard extends React.Component {
         <div className="product-card">
             <a href={`${process.env.ROOT_DOMAIN}/product/${props.id}`}>
             <div className="product-picture-wrapper">
-            <img className="product-picture" src={`https://svr.eramitra.com/images/${props.picture}`} /></div>
+            <img className="product-picture" src={props.picture ? `https://svr.eramitra.com/images/${props.picture}` : "/static/images/not-found.jpg"} /></div>
             <div className="product-description">
                 {/* <p className="product-category">{props.category}</p> */}
                 <h6 className="product-name">{props.brand} - {props.name} </h6>

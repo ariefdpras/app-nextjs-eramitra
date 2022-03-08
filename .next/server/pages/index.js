@@ -44,7 +44,7 @@ class ArticleCard extends (external_react_default()).Component {
         className: "article-picture-wrapper",
         children: /*#__PURE__*/jsx_runtime_.jsx("img", {
           className: "article-picture",
-          src: `https://svr.eramitra.com/images/${props.picture}`
+          src: props.picture ? `https://svr.eramitra.com/images/${props.picture}` : "/static/images/not-found.jpg"
         })
       }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
         className: "article-description",
@@ -338,6 +338,10 @@ const Home = props => {
                   margin-right: 75px;
                 }
 
+                .about-us-wrapper .section-description {
+                  text-align: justify !important;
+                }
+
                 .about-us .icon-shape-1 {
                   display: none;
                 }
@@ -387,9 +391,9 @@ const Home = props => {
             children: [/*#__PURE__*/jsx_runtime_.jsx("h3", {
               className: "section-title",
               children: "What We Do Best"
-            }), /*#__PURE__*/jsx_runtime_.jsx("p", {
+            }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("p", {
               className: "section-description",
-              children: "We offer the best solution for Scientific, Laboratory Equipment, and Services"
+              children: ["We offer the best solution for ", /*#__PURE__*/jsx_runtime_.jsx("br", {}), "Scientific, Laboratory Equipment, and Services"]
             }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "main-content",
               children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
@@ -578,7 +582,7 @@ const Home = props => {
                 children: "Brands"
               }), /*#__PURE__*/jsx_runtime_.jsx("p", {
                 className: "section-description",
-                children: "Meet our principals"
+                children: "Meet our Principals"
               })]
             })]
           })
@@ -659,7 +663,7 @@ const Home = props => {
                 }
               `
         })]
-      }), /*#__PURE__*/(0,jsx_runtime_.jsxs)(section/* default */.Z, {
+      }), /*#__PURE__*/jsx_runtime_.jsx(section/* default */.Z, {
         element_id: "discover",
         background: "#FFFFFF",
         height: "768px",
@@ -668,7 +672,7 @@ const Home = props => {
           vertical: "top",
           horizontal: "left"
         }],
-        children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
+        children: /*#__PURE__*/jsx_runtime_.jsx("div", {
           className: "container-inner",
           children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
             className: "discover-wrapper",
@@ -728,10 +732,22 @@ const Home = props => {
                         bottom: 10px;
                       }
 
+                      .discover-wrapper {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                      }
+      
+                      .discover-wrapper .section-description {
+                        max-width: 350px;
+                      }
+                      
+
                       @media only screen and (max-width: 800px){
                         .discover {
                           height: auto !important;
-                          padding: 100px 0;
+                          padding: 40px 0 40px 0;
                         }
                         .discover-slider {
                           width: 100%;
@@ -754,6 +770,15 @@ const Home = props => {
                         .discover-description {
                           margin-right: 0px !important;
                         }
+
+                        .discover .icon-shape-0.left {
+                          width: 15%;
+                        }
+      
+                        .discover-wrapper {
+                          flex-direction: column;
+                          justify-content: center;
+                        }
                       }
                       `
                   })]
@@ -761,32 +786,7 @@ const Home = props => {
               }))
             })]
           })
-        }), /*#__PURE__*/jsx_runtime_.jsx("style", {
-          children: `
-                .discover-wrapper {
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                }
-
-                .discover-wrapper .section-description {
-                  max-width: 350px;
-                }
-
-                @media only screen and (max-width: 800px){
-                  .discover .icon-shape-0.left {
-                    width: 25%;
-                  }
-
-                  .discover-wrapper {
-                    flex-direction: column;
-                    justify-content: center;
-                  }
-                }
-                
-              `
-        })]
+        })
       }), /*#__PURE__*/(0,jsx_runtime_.jsxs)(section/* default */.Z, {
         element_id: "career",
         background: "#1BA58A",

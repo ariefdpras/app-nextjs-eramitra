@@ -43,7 +43,7 @@ const Home = (props) => {
               <h3 className="section-title">About Us</h3>
               <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	Equipment,	and	Services.	Established	in	Jakarta,	
 We	are	committed	to	provide	the	best	service,	open	communication,	and	proactively	giving	suggestion	
-and	alternate	solution	to	support	our	principals	and	customers.	
+and	alternate	solution	to	support	our	principals	and	customers.	<br></br><br></br>
 To	be	the	best	in	Scientific	and	Laboratory	Equipment	industry,	PT	Era	Mitra	Perdana	is	supported	by	
 highly	qualified	personnel,	high	quality	product,	and	optimum	after	sales	service.	
 We	are	highly	experienced	and	a	trusted	partner	for	Government	Institutions,	Universities,	and	
@@ -74,9 +74,11 @@ equipment	since	1999.</p>
                   border-radius: 20px;
                 }
 
+
                 .header-about .section-title, .header-about .section-description {
                   text-align: center;
                   width: 55%;
+                  max-width: 700px;
                 }
 
 
@@ -177,10 +179,13 @@ Equipment	Industry.</p>
                 <div className="mission-description">
                   <h3 className="section-title">Mission</h3>
                   <p className="section-description">
-                  - Provide	high	quality	product	and	services	with	competitive	price	<br></br>
-                  - Be	proactive	during	the	end-to-end	process	in	supporting	principals	and	clients	<br></br>
-                  - Continuously	learning	and	sharing	insights	regarding	Indonesian	Scientific	and	Laboratory Industry	<br></br>
-                  - Company	digitalization	to	provide	easier	access	for	consumers</p>
+                    <ul className="section-mission">
+                        <li>Provide	high	quality	product	and	services	with	competitive	price</li>
+                        <li>Be	proactive	during	the	end-to-end	process	in	supporting	principals	and	clients</li>
+                        <li>Continuously	learning	and	sharing	insights	regarding	Indonesian	Scientific	and	Laboratory Industry</li>
+                        <li>Company	digitalization	to	provide	easier	access	for	consumers</li>
+                    </ul>
+                  </p>
                 </div>
               </div>
             </div>
@@ -200,11 +205,15 @@ Equipment	Industry.</p>
                   margin-right: 75px;
                 }
 
+                .section-mission {
+                  margin-left: -20px;
+                }
 
                 @media only screen and (max-width: 800px){
 
                   .mission-about {
-                    height: 400px !important;
+                    height: auto !important;
+                    padding: 40px 0px;
                   }
 
                   .mission-about-wrapper {
@@ -220,6 +229,13 @@ Equipment	Industry.</p>
                   }
                   .mission-about .icon-shape-0 {
                     display: none;
+                  }
+
+                  .mission-about .section-description {
+                    text-align: justify;
+                  }
+                  .section-mission {
+                    margin-left: -20px;
                   }
                 }
               `}
@@ -243,19 +259,19 @@ Equipment	Industry.</p>
                 <h3 className="section-title">Values</h3>
                 <div className="values-card-wrapper">
                   <div className="values-card">
-                    <img className="values-img" src="/static/images/bond.svg"/>
+                    <img className="values-img other-perform" src="/static/images/bond.svg"/>
                     <h6>Bond</h6>
                     <p>We	aim	to	be	the	best	and	most	reliable	partner	for	all	stakeholders	which	we	believe	started	
 from	having	a	strong	bond.</p>
                   </div>
                   <div className="values-card">
-                    <img className="values-img" src="/static/images/performance.svg"/>
+                    <img className="values-img " src="/static/images/performance.svg"/>
                     <h6>Performance</h6>
                     <p>	We	are	committed	to	perform	in	the	best	way	possible	in	all	projects	by	being	a	
 proactive	partner.</p>
                   </div>
                   <div className="values-card">
-                    <img className="values-img" src="/static/images/process.svg"/>
+                    <img className="values-img other-perform" src="/static/images/process.svg"/>
                     <h6>Process</h6>
                     <p>We	believe	process	is	an	important	part	in	all	projects	and	are	committed	to	be	a	reliable	
 partner	for	our	stakeholders	along	the	process.
@@ -288,6 +304,10 @@ partner	for	our	stakeholders	along	the	process.
                   display: flex;
                   flex-direction: column;
                   align-items: center;
+                }
+
+                .other-perform {
+                  padding: 10px;
                 }
 
 

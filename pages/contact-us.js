@@ -117,7 +117,12 @@ const Home = (props) => {
   }
 
   const emailSend = () => {
-    window.open(`mailto:sales@eramitra.com?subject=Customer Service Form&body=Name: ${TempDataForm.contact.name || ''} %0d%0aPhone: ${TempDataForm.contact.phone || ''}  %0d%0aEmail: ${TempDataForm.contact.email || ''} %0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0aInstrument: ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.brand || ''} ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.model || ''} (Serial Number: ${TempDataForm.instrument.serial || ''})%0d%0aMessage: ${TempDataForm.message || ''}`, '_blank');
+    if(!TempDataForm.issue.value || !TempDataForm.contact.name || !TempDataForm.contact.phone || !TempDataForm.contact.email || !TempDataForm.instrument.name || !TempDataForm.instrument.brand) {
+      alert("Please fill in the required field!");
+      return;
+    } else {
+      window.open(`mailto:sales@eramitra.com?subject=Customer Service Form&body=Name: ${TempDataForm.contact.name || ''} %0d%0aPhone: ${TempDataForm.contact.phone || ''}  %0d%0aEmail: ${TempDataForm.contact.email || ''} %0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0aInstrument: ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.brand || ''} ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.model || ''} (Serial Number: ${TempDataForm.instrument.serial || ''})%0d%0aMessage: ${TempDataForm.message || ''}`, '_blank');
+    }
   };
   
   const customStyles = {
@@ -223,7 +228,7 @@ const Home = (props) => {
                   <h4>Customer Service</h4>
                   <Select
                     className="issue-select"
-                    placeholder="Issue"
+                    placeholder="Issue *"
                     id="id_issue_select"
                     options={[{ value: "Sales Inquiries", label: "Sales Inquiries"}, { value: "Technical Inquiries", label: "Technical Inquiries"}, { value: "Application Inquiries", label: "Application Inquiries"}]}
                     onChange={(e) =>
@@ -240,15 +245,15 @@ const Home = (props) => {
                   />
                   <h6>Contact Information</h6>
                   <div className="form-group">
-                    <input type="text" placeholder="Name" onChange={setContactName}/>
+                    <input type="text" placeholder="Name *" onChange={setContactName}/>
                     <input type="text" placeholder="Company (optional)" onChange={setContactCompany}/>
-                    <input type="text" placeholder="Email" onChange={setContactEmail}/>
-                    <input type="text" placeholder="Phone" onChange={setContactPhone}/>
+                    <input type="text" placeholder="Email *" onChange={setContactEmail}/>
+                    <input type="text" placeholder="Phone *" onChange={setContactPhone}/>
                   </div>
                   <h6>Instrument Information</h6>
                   <div className="form-group">
-                    <input type="text" placeholder="Name" onChange={setInstrumentName}/>
-                    <input type="text" placeholder="Brand" onChange={setInstrumentBrand}/>
+                    <input type="text" placeholder="Name *" onChange={setInstrumentName}/>
+                    <input type="text" placeholder="Brand *" onChange={setInstrumentBrand}/>
                     <input type="text" placeholder="Model" onChange={setInstrumentModel}/>
                     <input type="text" placeholder="Serial Number" onChange={setInstrumentSerial}/>
                   </div>

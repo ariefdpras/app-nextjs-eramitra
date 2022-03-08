@@ -14,7 +14,7 @@ const Articles = (props) => {
             <img className="green-tetra-img" src="/static/images/green-tetra.svg" />
             <div className="header-about-wrapper">
               <div className="header-img">
-                <img src={props.article.cover ? `https://svr.eramitra.com/images/${props.article.cover}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" } />
+                <img src={props.article.Picture ? `https://svr.eramitra.com/images/${props.article.Picture.name}` : "/static/images/not-found.jpg" } />
               </div>
               <h3 className="section-title">{props.article.title}</h3>
             </div>

@@ -173,10 +173,32 @@ const Home = (props) => {
     
 
                 @media only screen and (max-width: 800px){
+
+                  .products-container {
+                    flex-direction: column;
+                  }
                   .left-products {
-                    display: none;
+                    width: 100%;
                   }
   
+                  .category-side-title {
+
+                    font-size: 14px;
+                    line-height: 16px;
+                    padding: 0 0 8px 0;
+                  }
+
+                  
+                    .group-list {
+                      font-family: Calibri;
+                      font-size: 14px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: 16px;
+                      letter-spacing: 0em;
+                      text-align: left;
+                    }
+
                   .breadcrumb-wrapper {
                     display: none;
                   }
@@ -212,6 +234,15 @@ const Home = (props) => {
                     grid-gap: 10px;
                     grid-template-columns: repeat(2, 1fr);
                     margin-bottom: 60px;
+                  }
+
+                  .article-wrapper {
+                    
+                    display: grid;
+                    width: 100%;
+                    grid-gap: 10px;
+                    grid-template-columns: repeat(2, 1fr);
+                    margin: 0 0 60px 0;
                   }
                 }
               `}

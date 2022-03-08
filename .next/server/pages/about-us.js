@@ -74,9 +74,9 @@ const Home = props => {
           }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
             className: "section-title",
             children: "About Us"
-          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
             className: "section-description",
-            children: "PT. Era Mitra Perdana provides Scientific, Laboratory Equipment, and Services. Established in Jakarta, We are committed to provide the best service, open communication, and proactively giving suggestion and alternate solution to support our principals and customers. To be the best in Scientific and Laboratory Equipment industry, PT Era Mitra Perdana is supported by highly qualified personnel, high quality product, and optimum after sales service. We are highly experienced and a trusted partner for Government Institutions, Universities, and Industries to supply, install, and provide after sales services in the area of scientific and laboratory equipment since 1999."
+            children: ["PT. Era Mitra Perdana provides Scientific, Laboratory Equipment, and Services. Established in Jakarta, We are committed to provide the best service, open communication, and proactively giving suggestion and alternate solution to support our principals and customers. ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "To be the best in Scientific and Laboratory Equipment industry, PT Era Mitra Perdana is supported by highly qualified personnel, high quality product, and optimum after sales service. We are highly experienced and a trusted partner for Government Institutions, Universities, and Industries to supply, install, and provide after sales services in the area of scientific and laboratory equipment since 1999."]
           })]
         }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("style", {
           children: `
@@ -102,9 +102,11 @@ const Home = props => {
                   border-radius: 20px;
                 }
 
+
                 .header-about .section-title, .header-about .section-description {
                   text-align: center;
                   width: 55%;
+                  max-width: 700px;
                 }
 
 
@@ -212,9 +214,20 @@ const Home = props => {
               children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
                 className: "section-title",
                 children: "Mission"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+              }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
                 className: "section-description",
-                children: ["- Provide high quality product and services with competitive price ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "- Be proactive during the end-to-end process in supporting principals and clients ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "- Continuously learning and sharing insights regarding Indonesian Scientific and Laboratory Industry ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "- Company digitalization to provide easier access for consumers"]
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+                  className: "section-mission",
+                  children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("li", {
+                    children: "Provide high quality product and services with competitive price"
+                  }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("li", {
+                    children: "Be proactive during the end-to-end process in supporting principals and clients"
+                  }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("li", {
+                    children: "Continuously learning and sharing insights regarding Indonesian Scientific and Laboratory Industry"
+                  }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("li", {
+                    children: "Company digitalization to provide easier access for consumers"
+                  })]
+                })
               })]
             })]
           })
@@ -234,11 +247,15 @@ const Home = props => {
                   margin-right: 75px;
                 }
 
+                .section-mission {
+                  margin-left: -20px;
+                }
 
                 @media only screen and (max-width: 800px){
 
                   .mission-about {
-                    height: 400px !important;
+                    height: auto !important;
+                    padding: 40px 0px;
                   }
 
                   .mission-about-wrapper {
@@ -254,6 +271,13 @@ const Home = props => {
                   }
                   .mission-about .icon-shape-0 {
                     display: none;
+                  }
+
+                  .mission-about .section-description {
+                    text-align: justify;
+                  }
+                  .section-mission {
+                    margin-left: -20px;
                   }
                 }
               `
@@ -279,7 +303,7 @@ const Home = props => {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "values-card",
                 children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
-                  className: "values-img",
+                  className: "values-img other-perform",
                   src: "/static/images/bond.svg"
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
                   children: "Bond"
@@ -289,7 +313,7 @@ const Home = props => {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "values-card",
                 children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
-                  className: "values-img",
+                  className: "values-img ",
                   src: "/static/images/performance.svg"
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
                   children: "Performance"
@@ -299,7 +323,7 @@ const Home = props => {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "values-card",
                 children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("img", {
-                  className: "values-img",
+                  className: "values-img other-perform",
                   src: "/static/images/process.svg"
                 }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h6", {
                   children: "Process"
@@ -333,6 +357,10 @@ const Home = props => {
                   display: flex;
                   flex-direction: column;
                   align-items: center;
+                }
+
+                .other-perform {
+                  padding: 10px;
                 }
 
 

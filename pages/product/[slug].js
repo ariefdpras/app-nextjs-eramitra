@@ -9,7 +9,8 @@ const Home = (props) => {
   
   const [cart, setCart] = useState([])
   const [value, setValue] = useState(0)
-  const [activeTab, setActiveTab] = useState('')
+  const [activeTab, setActiveTab] = useState("description")
+  const [activeModal, setActiveModal] = useState(false)
   const [activeImage, setActiveImage] = useState(props.detail.Pictures && props.detail.Pictures.length > 0 && props.detail.Pictures[0].name)
   const [activeIndex, setActiveIndex] = useState(0)
   
@@ -87,6 +88,23 @@ const Home = (props) => {
 
         <div className="container">
             <div className="container-inner">
+                {
+                  activeModal && 
+                  <div className="modal-picture">
+                      <div className="modal-picture-inner">
+                        <div className="btn-container">
+                          <div className="btn-close" onClick={() => setActiveModal(false)}><span className="material-icons">
+                              close
+                              </span></div>
+                        </div>
+                        <img className="image-big" src={`https://svr.eramitra.com/images/${activeImage}`} />
+                      </div>
+                  </div>
+                }   
+                {
+                  activeModal && 
+                  <div className="modal-backdrop"/>
+                }
                 <div className="breadcrumb-wrapper">
                     <Breadcrumb
                         breadcrumbs={breadcrumbs}
@@ -94,7 +112,7 @@ const Home = (props) => {
                 </div>
                 <div className="product-detail-container">
                     <div className="left-product">
-                      <img className="image-big" src={`https://svr.eramitra.com/images/${activeImage}`} />
+                      <img className="image-big" onClick={() => setActiveModal(true)} src={`https://svr.eramitra.com/images/${activeImage}`} />
                       <div className="product-image-slider">
                         <Slider {...settings}>
                           { props.detail.Pictures && props.detail.Pictures.length > 1 && props.detail.Pictures.map((product, idx) =>
@@ -153,13 +171,17 @@ const Home = (props) => {
 
                                 @media only screen and (max-width: 800px){
                                   .product-image{
-                                    width: 100px;
-                                    height: 100px;
+                                    width: 70px;
+                                    height: 70px;
                                   }
                                   .product-image-content-${idx} {
                                 
-                                    width: 100px;
-                                    height: 100px;
+                                    width: 70px;
+                                    height: 70px;
+                                  }
+                                  
+                                  .product-image-slider {
+                                    width: 100%;
                                   }
             
                                 }
@@ -207,8 +229,24 @@ const Home = (props) => {
                         </div>
                       </div>
                       <div className="product-descriptions">
-                        <h6>Description</h6>
-                        <div dangerouslySetInnerHTML={{__html: props.detail.description}}></div>
+                        <div className="product-tab">
+                          <h6 className={ activeTab == "description" && "active"} onClick={() => setActiveTab("description")}>Description</h6>
+                          <h6 className={ activeTab == "catalog" && "active"} onClick={() => setActiveTab("catalog")}>Catalog</h6>
+                          <h6 className={ activeTab == "video" && "active"} onClick={() => setActiveTab("video")}>Video</h6>
+                        </div>
+                        { activeTab == "description" &&
+                          <div dangerouslySetInnerHTML={{__html: props.detail.description}}></div>
+                        }
+                         { activeTab == "catalog" && props.detail.brochure ?
+                          <div className="catalog-section">Click <a className="catalog-click" src="http://google.com">here</a> to open the brochure</div>
+                          :  activeTab == "catalog" &&
+                          <div className="catalog-section">No catalog(s) available</div>
+                        }
+                        { activeTab == "video" && props.detail.video ?
+                          <div><iframe src={`https://www.youtube.com/embed/${props.video}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
+                          : activeTab == "video" && 
+                          <div className="catalog-section">No video available</div>
+                        }
                       </div>
 
                     </div>
@@ -229,24 +267,12 @@ const Home = (props) => {
                   width: 420px;
                   height: 420px;
                   object-fit: cover;
+                  cursor: pointer;
                 }
 
                 .right-product {
                     width: calc(100% - 420px);
                     margin-bottom: 80px;
-                }
-
-                .right-product .product-descriptions h6 {
-                  font-family: Bahnschrift;
-                  font-style: normal;
-                  font-weight: normal;
-                  font-size: 20px;
-                  line-height: 24px;
-                  padding-bottom: 21px;
-                  margin: 0;
-                  border-bottom: 1px solid #3F3D56;
-                  color: #1BA58A;
-                  text-transform: uppercase;
                 }
 
                 .right-product .product-category {
@@ -264,8 +290,8 @@ const Home = (props) => {
                   font-family: Bahnschrift;
                   font-style: normal;
                   font-weight: 500;
-                  font-size: 24px;
-                  line-height: 29px;
+                  font-size: 28px;
+                  line-height: 32px;
                   margin: 0 0 10px 0;
                   color: #000000;
                 }
@@ -331,6 +357,38 @@ const Home = (props) => {
                 .product-counter .disable {
                   pointer-events: none;
                   opacity: 0.3;
+                }
+
+                .product-tab {
+                  display: flex;
+                  border-bottom: 1px solid #a3a3a3;
+                  margin-bottom: 20px;
+                }
+
+                .product-tab h6 {
+                  padding: 0 20px 16px 20px;
+                  font-family: Calibri;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 20px;
+                  line-height: 24px;
+                  margin: 0;
+                  color: #000000;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                }
+
+                .product-tab .active {
+                  padding: 0 20px 16px 20px;
+                  font-family: Calibri;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 20px;
+                  line-height: 24px;
+                  margin: 0;
+                  border-bottom: 2px solid #1BA58A;
+                  color: #1BA58A;
+                  text-transform: uppercase;
                 }
 
                 .product-counter p {
@@ -400,12 +458,91 @@ const Home = (props) => {
               margin-bottom: 15px;
             }
 
+            .catalog-click {
+              text-decoration: underline;
+              cursor: pointer;
+              color: #1BA58A;
+            }
+
               .product-descriptions ul, .product-descriptions ol {
                 margin-left: -20px !important;
               }
 
+              .catalog-section {
+                font-family: Calibri;
+                font-style: normal;
+                font-size: 18px;
+                line-height: 20px;
+                margin: 0;
+                color: #000000;
+              }
+
+              .modal-picture {
+                
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+
+              .modal-picture-inner {
+                width: 800px;
+                height: 600px;
+                background-color: #FFFFFF;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                border-radius: 10px;
+                z-index: 5;
+              }
+
+              .modal-picture-inner img {
+                height: 100%;
+              }
+
+              .modal-backdrop {
+                width: 100vw;
+                height: 100vh;
+                opacity: 0.5;
+                background-color: #000000;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1;
+              }
+
+              .modal-picture .btn-close {
+                cursor: pointer;
+              }
+
+              .modal-picture .btn-container {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+              }
+
+              iframe {
+                width: 100%;
+                height: auto;
+              }
                 @media only screen and (max-width: 800px){
                
+                  .catalog-section {
+                    font-family: Calibri;
+                    font-style: normal;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin: 0;
+                    color: #000000;
+                  }
+
                   .product-detail-container {
                     flex-direction: column;
                   }
@@ -430,6 +567,49 @@ const Home = (props) => {
 
                   .right-product .product-name {
                     margin: 0 0 5px 0;
+                    font-size: 20px;
+                  }
+
+                  .right-product .product-brand {
+                    margin: 0 0 5px 0;
+                    font-size: 16px;
+                    line-height: 20px;
+                  }
+
+                  .tags {
+                    font-size: 10px;
+                    line-height: 15px;
+                    padding: 2px 7px;
+                    margin: 0 3px 3px 0 !important;
+                }
+
+                .btn-add {
+                  margin: 10px 0;
+                  font-size: 14px;
+                  line-height: 18px;
+                }
+
+                  .right-product .product-price {
+                    font-size: 20px;
+                    line-height: 24px;
+                  }
+
+                  .right-product .product-warning {
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin: 5px 0 0 0 !important;
+                  }
+
+                  .product-tab h6 {
+                    font-size: 14px;
+                    line-height: 18px;    
+                    padding: 0 12px 8px 12px;
+                  }
+
+                  .product-tab .active {
+                    font-size: 14px;
+                    line-height: 18px;    
+                    padding: 0 12px 8px 12px;
                   }
 
                   .right-product .price-wrapper {
@@ -438,6 +618,32 @@ const Home = (props) => {
 
                   .cart-product-wrapper {
                     margin-bottom: 30px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                  }
+
+                  .modal-picture-inner {
+                    width: 300px;
+                    height: 300px;
+                    background-color: #FFFFFF;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px;
+                    border-radius: 10px;
+                    z-index: 5;
+                  }
+
+                  .product-tab {
+                    overflow-x: auto;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                  }
+
+                  iframe {
+                    width: 100%;
                   }
                 }
               `}

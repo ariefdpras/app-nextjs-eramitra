@@ -57,9 +57,8 @@ const Cart = (props) => {
                         props.cart && props.cart.map((item, idx) => 
                             <div className="product-cart-wrapper" key={idx}>
                                 <ProductCardCart
-                                    picture={item.product.img}
-                                    category={`${item.product.Application.name}`}
-                                    brand={item.product.Brand.name}
+                                     picture={item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].path}
+                                     brand={item.product.Brand.name}
                                     name={item.product.name}
                                     price={item.product.price}
                                     key={idx}
@@ -135,7 +134,7 @@ const Cart = (props) => {
                         overflow-y: auto;
                         display: flex;
                         flex-direction: column;
-                        height: 100vh;
+                        flex-grow: 1;
                     }
 
                     .cart-total {

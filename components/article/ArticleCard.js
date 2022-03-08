@@ -11,7 +11,7 @@ class ArticleCard extends React.Component {
     return (
         <div className="article-card">
             <div className="article-picture-wrapper">
-            <img className="article-picture" src={`https://svr.eramitra.com/images/${props.picture}`} /></div>
+            <img className="article-picture" src={props.picture ? `https://svr.eramitra.com/images/${props.picture}` : "/static/images/not-found.jpg"} /></div>
             <div className="article-description">
                 <p className="article-date">{props.date}</p>
                 <h6 className="article-name">{props.name} </h6>

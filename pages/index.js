@@ -158,6 +158,10 @@ const Home = (props) => {
                   margin-right: 75px;
                 }
 
+                .about-us-wrapper .section-description {
+                  text-align: justify !important;
+                }
+
                 .about-us .icon-shape-1 {
                   display: none;
                 }
@@ -208,7 +212,7 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="what-we-do-best-wrapper">
                   <h3 className="section-title">What We Do Best</h3>
-                  <p className="section-description">We offer the best solution for Scientific, Laboratory Equipment, and Services</p>
+                  <p className="section-description">We offer the best solution for <br></br>Scientific, Laboratory Equipment, and Services</p>
                       
                   <div className="main-content">
                     <div className="card-wrapper">
@@ -377,7 +381,7 @@ const Home = (props) => {
                 </div>
                 <div className="brands-description">
                   <h3 className="section-title">Brands</h3>
-                  <p className="section-description">Meet our principals</p>
+                  <p className="section-description">Meet our Principals</p>
                 </div>
               </div>
             </div>
@@ -526,10 +530,22 @@ const Home = (props) => {
                         bottom: 10px;
                       }
 
+                      .discover-wrapper {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                      }
+      
+                      .discover-wrapper .section-description {
+                        max-width: 350px;
+                      }
+                      
+
                       @media only screen and (max-width: 800px){
                         .discover {
                           height: auto !important;
-                          padding: 100px 0;
+                          padding: 40px 0 40px 0;
                         }
                         .discover-slider {
                           width: 100%;
@@ -552,6 +568,15 @@ const Home = (props) => {
                         .discover-description {
                           margin-right: 0px !important;
                         }
+
+                        .discover .icon-shape-0.left {
+                          width: 15%;
+                        }
+      
+                        .discover-wrapper {
+                          flex-direction: column;
+                          justify-content: center;
+                        }
                       }
                       `
                     }
@@ -562,32 +587,6 @@ const Home = (props) => {
               </div>
               </div>
             </div>
-            <style>
-              {`
-                .discover-wrapper {
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                }
-
-                .discover-wrapper .section-description {
-                  max-width: 350px;
-                }
-
-                @media only screen and (max-width: 800px){
-                  .discover .icon-shape-0.left {
-                    width: 25%;
-                  }
-
-                  .discover-wrapper {
-                    flex-direction: column;
-                    justify-content: center;
-                  }
-                }
-                
-              `}
-            </style>
           </Section>
           <Section 
             element_id="career" 

@@ -28,12 +28,11 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="news-info-wrapper">
                   <div className="news-info-cover">
-                    <img src={props.articles.data[0] ? typeof props.articles.data[0].cover !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" : "http://cdn.eramitra.com/images_article/original/DSC00749.jpg" } />
+                    <img src={props.articles.data[0] ? typeof props.articles.data[0].Picture !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "/static/images/not-found.jpg" : "/static/images/not-found.jpg" } />
                   </div>
                   <div className="news-info-description">
                     <p>{utc_to_local_short(props.articles.data[0].createdAt)}</p>
                     <h6>{props.articles.data[0].title}</h6>
-                    <p className="news-info-content">{truncate_text(props.articles.data[0].content, 150)}</p>
                     <a href={`${process.env.ROOT_DOMAIN}/news-info/${props.articles.data[0].id}`}><div className="btn-read">Read Article</div></a>
                   </div>
              </div>
@@ -119,10 +118,23 @@ const Home = (props) => {
 
               @media only screen and (max-width: 800px){
 
-                .news-info .section-title-underline {
+                .section-title-underline {
                   margin-left: 20px;
                 }
                 
+                .article-content img {
+                  width: 100% !important;
+                  height: auto;
+                }
+
+                .article-content p {
+                  text-indent: 0pt !important;
+                }
+
+                .article-content {
+                  word-break: break-word;
+                }
+
                 .news-info-cover {
                   width: 170px;
                   height: 100px;

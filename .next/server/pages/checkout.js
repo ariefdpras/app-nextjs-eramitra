@@ -168,8 +168,7 @@ const Home = props => {
                 children: cart && cart.map((item, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                   className: "product-cart-wrapper",
                   children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx(Components_cart_Product__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
-                    picture: item.product.img,
-                    category: `${item.product.Application.name}`,
+                    picture: item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].path,
                     brand: item.product.Brand.name,
                     name: item.product.name,
                     price: item.product.price

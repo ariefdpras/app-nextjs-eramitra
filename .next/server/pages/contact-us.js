@@ -137,7 +137,12 @@ const Home = props => {
   };
 
   const emailSend = () => {
-    window.open(`mailto:sales@eramitra.com?subject=Customer Service Form&body=Name: ${TempDataForm.contact.name || ''} %0d%0aPhone: ${TempDataForm.contact.phone || ''}  %0d%0aEmail: ${TempDataForm.contact.email || ''} %0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0aInstrument: ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.brand || ''} ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.model || ''} (Serial Number: ${TempDataForm.instrument.serial || ''})%0d%0aMessage: ${TempDataForm.message || ''}`, '_blank');
+    if (!TempDataForm.issue.value || !TempDataForm.contact.name || !TempDataForm.contact.phone || !TempDataForm.contact.email || !TempDataForm.instrument.name || !TempDataForm.instrument.brand) {
+      alert("Please fill in the required field!");
+      return;
+    } else {
+      window.open(`mailto:sales@eramitra.com?subject=Customer Service Form&body=Name: ${TempDataForm.contact.name || ''} %0d%0aPhone: ${TempDataForm.contact.phone || ''}  %0d%0aEmail: ${TempDataForm.contact.email || ''} %0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0aInstrument: ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.brand || ''} ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.model || ''} (Serial Number: ${TempDataForm.instrument.serial || ''})%0d%0aMessage: ${TempDataForm.message || ''}`, '_blank');
+    }
   };
 
   const customStyles = {
@@ -247,7 +252,7 @@ const Home = props => {
                 children: "Customer Service"
               }), /*#__PURE__*/jsx_runtime_.jsx((external_react_select_default()), {
                 className: "issue-select",
-                placeholder: "Issue",
+                placeholder: "Issue *",
                 id: "id_issue_select",
                 options: [{
                   value: "Sales Inquiries",
@@ -273,7 +278,7 @@ const Home = props => {
                 className: "form-group",
                 children: [/*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Name",
+                  placeholder: "Name *",
                   onChange: setContactName
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
@@ -281,11 +286,11 @@ const Home = props => {
                   onChange: setContactCompany
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Email",
+                  placeholder: "Email *",
                   onChange: setContactEmail
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Phone",
+                  placeholder: "Phone *",
                   onChange: setContactPhone
                 })]
               }), /*#__PURE__*/jsx_runtime_.jsx("h6", {
@@ -294,11 +299,11 @@ const Home = props => {
                 className: "form-group",
                 children: [/*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Name",
+                  placeholder: "Name *",
                   onChange: setInstrumentName
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",
-                  placeholder: "Brand",
+                  placeholder: "Brand *",
                   onChange: setInstrumentBrand
                 }), /*#__PURE__*/jsx_runtime_.jsx("input", {
                   type: "text",

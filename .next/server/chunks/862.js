@@ -258,6 +258,9 @@ class CategoryMenu extends (external_react_default()).Component {
 
   render() {
     const props = this.props;
+    const brandTotal = props.brands && props.brands.length / 3;
+    const applicationTotal = props.brands && props.applications.length / 3;
+    const industriesTotal = props.brands && props.industries.length / 3;
     return /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
       className: "category-menu",
       children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
@@ -289,25 +292,144 @@ class CategoryMenu extends (external_react_default()).Component {
             className: "right-category-menu",
             children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "right-category-inner",
-              children: [this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx) => /*#__PURE__*/jsx_runtime_.jsx("div", {
-                className: "category-side-name",
-                children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-                  href: `${"https://staging.eramitra.com"}/products/brand/${brand.id}`,
-                  children: brand.name
-                }, idx)
-              }, idx)), this.state.activeTab == "application" && props.applications && props.applications.map((app, idx) => /*#__PURE__*/jsx_runtime_.jsx("div", {
-                className: "category-side-name",
-                children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-                  href: `${"https://staging.eramitra.com"}/products/application/${app.id}`,
-                  children: app.name
-                }, idx)
-              }, idx)), this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx) => /*#__PURE__*/jsx_runtime_.jsx("div", {
-                className: "category-side-name",
-                children: /*#__PURE__*/jsx_runtime_.jsx("a", {
-                  href: `${"https://staging.eramitra.com"}/products/industry/${ind.id}`,
-                  children: ind.name
-                }, idx)
-              }, idx))]
+              children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx) => {
+                  console.log(brandTotal);
+
+                  if (idx > brandTotal) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/brand/${brand.id}`,
+                      children: brand.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx) => {
+                  if (idx < brandTotal || idx > brandTotal * 2) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/brand/${brand.id}`,
+                      children: brand.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx) => {
+                  if (idx < brandTotal * 2 || idx > brandTotal * 3) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/brand/${brand.id}`,
+                      children: brand.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "application" && props.applications && props.applications.map((app, idx) => {
+                  if (idx > applicationTotal) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/application/${app.id}`,
+                      children: app.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "application" && props.applications && props.applications.map((app, idx) => {
+                  if (idx < applicationTotal || idx > applicationTotal * 2) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/application/${app.id}`,
+                      children: app.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "application" && props.applications && props.applications.map((app, idx) => {
+                  if (idx < applicationTotal * 2 || idx > applicationTotal * 3) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/application/${app.id}`,
+                      children: app.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx) => {
+                  if (idx > industriesTotal) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/industry/${ind.id}`,
+                      children: ind.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx) => {
+                  if (idx < industriesTotal || idx > industriesTotal * 2) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/industry/${ind.id}`,
+                      children: ind.name
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx) => {
+                  if (idx < industriesTotal * 2 || idx > industriesTotal * 3) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: `${"https://staging.eramitra.com"}/products/industry/${ind.id}`,
+                      children: ind.name
+                    }, idx)
+                  }, idx);
+                })
+              })]
             })
           })]
         })
@@ -515,8 +637,7 @@ const Cart = props => {
         children: props.cart && props.cart.map((item, idx) => /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
           className: "product-cart-wrapper",
           children: [/*#__PURE__*/jsx_runtime_.jsx(Product/* default */.Z, {
-            picture: item.product.img,
-            category: `${item.product.Application.name}`,
+            picture: item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].path,
             brand: item.product.Brand.name,
             name: item.product.name,
             price: item.product.price
@@ -608,7 +729,7 @@ const Cart = props => {
                         overflow-y: auto;
                         display: flex;
                         flex-direction: column;
-                        height: 100vh;
+                        flex-grow: 1;
                     }
 
                     .cart-total {
@@ -1337,7 +1458,7 @@ const footer_Header = props => {
                   className: "material-icons",
                   children: "phone"
                 }), /*#__PURE__*/jsx_runtime_.jsx("p", {
-                  children: " +62-21-86612458 (Fax: +62-21-86612365)"
+                  children: " +62-31-8298235 (Fax: +62-31-8298235)"
                 })]
               }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
                 className: "icon-text",
@@ -1345,7 +1466,7 @@ const footer_Header = props => {
                   className: "material-icons",
                   children: "mail_outline"
                 }), /*#__PURE__*/jsx_runtime_.jsx("p", {
-                  children: "sales@eramitra.com"
+                  children: "emp.sby@eramitra.com"
                 })]
               })]
             })]
@@ -1438,12 +1559,12 @@ const footer_Header = props => {
               }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
                 className: "social-media-wrapper",
                 children: [/*#__PURE__*/jsx_runtime_.jsx("img", {
-                  className: "logo-social",
+                  className: "logo-social logo-wa",
                   src: "/static/icons/whatsapp.svg"
                 }), /*#__PURE__*/jsx_runtime_.jsx("a", {
                   href: "mailto:sales@eramitra.com",
                   children: /*#__PURE__*/jsx_runtime_.jsx("span", {
-                    className: "material-icons white",
+                    className: "material-icons white logo-mail",
                     children: "mail"
                   })
                 }), /*#__PURE__*/jsx_runtime_.jsx("a", {
@@ -1576,6 +1697,13 @@ const footer_Header = props => {
                   margin-bottom: 16px;
                 }
 
+                .logo-mail {
+                  font-size: 26px;
+                }
+
+                .logo-wa {
+                  height: 26px !important;
+                }
                 .form-reach-us input, .form-reach-us textarea {
                   font-family: Calibri;
                   width: 100%;    
@@ -1773,7 +1901,7 @@ const footer_Header = props => {
                 }
 
                 .logo-social {
-                  height: 24px;
+                  height: 22px;
                 }
 
                 .social-media-wrapper .material-icons {
@@ -2049,10 +2177,9 @@ function Layout({
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "vQ": () => (/* binding */ utc_to_local_short),
-/* harmony export */   "vP": () => (/* binding */ truncate_text),
 /* harmony export */   "Rx": () => (/* binding */ number)
 /* harmony export */ });
-/* unused harmony exports moment_date, utc_to_local */
+/* unused harmony exports moment_date, utc_to_local, truncate_text */
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2470);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 
