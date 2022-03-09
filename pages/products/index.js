@@ -1,7 +1,8 @@
 import Layout from "Containers/layout" 
 import ProductCard from "Components/product/ProductCard";
 import Breadcrumb from "Components/breadcrumb/breadcrumb";
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import Pagination from "Components/pagination";
 
 const Home = (props) => {
     const breadcrumbs = [
@@ -14,7 +15,7 @@ const Home = (props) => {
     const [isBrands, toggleBrands] = useState(false)
     const [isApplication, toggleApplication] = useState(false)
     const [isIndustry, toggleIndustry] = useState(false)
-    
+  
   
   return (
       <Layout
@@ -22,7 +23,8 @@ const Home = (props) => {
         
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} 
+        industries={props.industries}
+        catalogue={props.catalogue}  
         >     
 
         <div className="container">
@@ -94,6 +96,10 @@ const Home = (props) => {
                                 key={idx}/>
                             )}
                         </div>
+                        
+                      {/* <Pagination
+                          totalPages = {props.totalPage}>
+                        </Pagination> */}
                     </div>
                 </div>
             </div>
@@ -115,6 +121,7 @@ const Home = (props) => {
 
                 .banner-products {
                     width: 100%;
+                    margin-bottom: 40px;
                 }
 
                 .category-side-title {
@@ -250,6 +257,7 @@ const Home = (props) => {
                 line-height: 58px;
                 color: #000000;
                 width: fit-content;
+                margin-bottom: 20px;
             }
 
             .section-title-underline:after {
@@ -295,7 +303,10 @@ export async function getServerSideProps(req) {
   const getProducts = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct`)
   const products = await getProducts.json()
 
-  return { props: { products: products.data, brands: brands, industries: industries, applications: applications }}
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
+
+  return { props: { products: products.data, totalPage: products.totalPages, brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
 }
 
 export default Home;

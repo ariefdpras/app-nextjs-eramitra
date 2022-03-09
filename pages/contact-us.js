@@ -121,7 +121,8 @@ const Home = (props) => {
       alert("Please fill in the required field!");
       return;
     } else {
-      window.open(`mailto:sales@eramitra.com?subject=Customer Service Form&body=Name: ${TempDataForm.contact.name || ''} %0d%0aPhone: ${TempDataForm.contact.phone || ''}  %0d%0aEmail: ${TempDataForm.contact.email || ''} %0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0aInstrument: ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.brand || ''} ${TempDataForm.instrument.name || ''} ${TempDataForm.instrument.model || ''} (Serial Number: ${TempDataForm.instrument.serial || ''})%0d%0aMessage: ${TempDataForm.message || ''}`, '_blank');
+      window.open(`mailto:sales@eramitra.com?subject=Customer Service Form - ${TempDataForm.issue.label}&body=Hi Era Mitra Perdana, I would like to know more information regarding below details.%0d%0a%0d%0aInstrument Information %0d%0aBrand: ${TempDataForm.instrument.brand || ''} %0d%0aName: ${TempDataForm.instrument.name || ''} %0d%0aModel: ${TempDataForm.instrument.model || ''}  %0d%0aSerial Number: ${TempDataForm.instrument.serial || ''}%0d%0a%0d%0a${TempDataForm.message || ''}%0d%0a%0d%0aPlease contact me through below Contact Information: %0d%0aName: ${TempDataForm.contact.name || ''}%0d%0aPhone: ${TempDataForm.contact.phone || ''}%0d%0aEmail: ${TempDataForm.contact.email || ''}%0d%0aCompany: ${TempDataForm.contact.company || ''} %0d%0a%0d%0aLooking forward to the information and more collaboration with EMP. %0d%0aI would also like to receive updates from Era Mitra Perdana regarding news, info, and other advertising purposes.  %0d%0a %0d%0aThank you,%0d%0aRegards. 
+`, '_blank');
     }
   };
   
@@ -202,7 +203,8 @@ const Home = (props) => {
         title="Contact Us | PT. Era Mitra Perdana"
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} > 
+        industries={props.industries}
+        catalogue={props.catalogue}   > 
         <div className="container">
         <Section 
             element_id="contact-us" 
@@ -582,7 +584,11 @@ export async function getServerSideProps() {
   const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
   const applications = await getApplication.json()
 
-  return { props: { brands: brands, industries: industries, applications: applications }}
+  
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
+
+  return { props: { brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
 }
 
 export default Home;

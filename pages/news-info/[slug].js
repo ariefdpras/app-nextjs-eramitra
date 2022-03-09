@@ -8,7 +8,8 @@ const Articles = (props) => {
         title={props.article.title ? `${props.article.title} || PT. Era Mitra Perdana` : "Article || PT. Era Mitra Perdana"}
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} >      
+        industries={props.industries}
+        catalogue={props.catalogue} >      
         <div className="container">
           <div className="header-about">
             <img className="green-tetra-img" src="/static/images/green-tetra.svg" />
@@ -16,7 +17,21 @@ const Articles = (props) => {
               <div className="header-img">
                 <img src={props.article.Picture ? `https://svr.eramitra.com/images/${props.article.Picture.name}` : "/static/images/not-found.jpg" } />
               </div>
-              <h3 className="section-title">{props.article.title}</h3>
+              <h3 className="section-title">{props.article.title}</h3>  
+              <div className="share-content">
+                  <p>Share this article:</p>
+                    <a onClick={() => { window.navigator.clipboard.writeText(`${process.env.ROOT_DOMAIN}/news-info/${props.query}`); alert("Link is copied!")}}>
+                      <span className="material-icons logo-link">
+                      link
+                      </span>
+                    </a>
+                    <a href={`https://twitter.com/intent/tweet?url=${process.env.ROOT_DOMAIN}/news-info/${props.query}&text=Hi I just read this article ${props.article.title} by Era Mitra Perdana check this out!`}>
+                      <img className="logo-social logo-social-article" src="/static/icons/twitter.png" />
+                    </a>
+                    <a href={`https://www.facebook.com/sharer.php?s=100&p[url]=https%3A%2F%2Fstaging.eramitra.com%2Fnews-info%2F${props.query}&p[title]=${props.article.title}&p[summary]=Summary`}>
+                      <img className="logo-social logo-social-article" src="/static/icons/facebook.png" />
+                    </a>
+              </div>
             </div>
             <style>
               {`
@@ -28,11 +43,26 @@ const Articles = (props) => {
                   padding-bottom: 30px;
                 }
 
+                .logo-link, .logo-social-article {
+                  margin-right: 10px;
+                  cursor: pointer;
+                }
+
                 .header-img {
                   width: 566px;
                   height: 345px;
                   border-radius: 20px;
                   margin-bottom: 70px;
+                }
+
+                .share-content {
+                  display: flex;
+                }
+
+                .share-content p {
+                  margin: 0 10px 0 0;
+                  color: #0B9A7E;
+                  font-weight: 600;
                 }
 
                 .header-img img {
@@ -80,6 +110,7 @@ const Articles = (props) => {
           </div>
 
           <div className="container-inner">
+            
               <div className="article-content" dangerouslySetInnerHTML={{__html: props.article.content}}></div>
           </div>
         </div>
@@ -135,6 +166,11 @@ const Articles = (props) => {
                 margin-bottom: 10px;
               }
 
+              .share-content p {
+                font-size: 14px;
+                margin: 0 10px 0 0;
+              }
+
               .section-description {
                 font-family: Calibri;
                 font-style: italic;
@@ -168,7 +204,11 @@ export async function getServerSideProps(req) {
   const getArticle = await fetch(`${process.env.ROOT_DOMAIN}/api/getArticle/${req.query.slug}`)
   const article = await getArticle.json()
 
-  return { props: { article: article, brands: brands, industries: industries, applications: applications }}
+  
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
+
+  return { props: { article: article, brands: brands, industries: industries, applications: applications, catalogue: catalogue, query: req.query.slug }}
 }
 
 export default Articles;

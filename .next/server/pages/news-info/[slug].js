@@ -26,6 +26,7 @@ const Articles = props => {
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
+    catalogue: props.catalogue,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "container",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -43,6 +44,32 @@ const Articles = props => {
           }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("h3", {
             className: "section-title",
             children: props.article.title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "share-content",
+            children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("p", {
+              children: "Share this article:"
+            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("a", {
+              onClick: () => {
+                window.navigator.clipboard.writeText(`${"https://staging.eramitra.com"}/news-info/${props.query}`);
+                alert("Link is copied!");
+              },
+              children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("span", {
+                className: "material-icons logo-link",
+                children: "link"
+              })
+            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("a", {
+              href: `https://twitter.com/intent/tweet?url=${"https://staging.eramitra.com"}/news-info/${props.query}&text=Hi I just read this article ${props.article.title} by Era Mitra Perdana check this out!`,
+              children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("img", {
+                className: "logo-social logo-social-article",
+                src: "/static/icons/twitter.png"
+              })
+            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("a", {
+              href: `https://www.facebook.com/sharer.php?s=100&p[url]=https%3A%2F%2Fstaging.eramitra.com%2Fnews-info%2F${props.query}&p[title]=${props.article.title}&p[summary]=Summary`,
+              children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("img", {
+                className: "logo-social logo-social-article",
+                src: "/static/icons/facebook.png"
+              })
+            })]
           })]
         }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx("style", {
           children: `
@@ -54,11 +81,26 @@ const Articles = props => {
                   padding-bottom: 30px;
                 }
 
+                .logo-link, .logo-social-article {
+                  margin-right: 10px;
+                  cursor: pointer;
+                }
+
                 .header-img {
                   width: 566px;
                   height: 345px;
                   border-radius: 20px;
                   margin-bottom: 70px;
+                }
+
+                .share-content {
+                  display: flex;
+                }
+
+                .share-content p {
+                  margin: 0 10px 0 0;
+                  color: #0B9A7E;
+                  font-weight: 600;
                 }
 
                 .header-img img {
@@ -164,6 +206,11 @@ const Articles = props => {
                 margin-bottom: 10px;
               }
 
+              .share-content p {
+                font-size: 14px;
+                margin: 0 10px 0 0;
+              }
+
               .section-description {
                 font-family: Calibri;
                 font-style: italic;
@@ -188,12 +235,16 @@ async function getServerSideProps(req) {
   const applications = await getApplication.json();
   const getArticle = await fetch(`${"https://staging.eramitra.com"}/api/getArticle/${req.query.slug}`);
   const article = await getArticle.json();
+  const getCatalogue = await fetch(`${"https://staging.eramitra.com"}/api/getCatalogue`);
+  const catalogue = await getCatalogue.json();
   return {
     props: {
       article: article,
       brands: brands,
       industries: industries,
-      applications: applications
+      applications: applications,
+      catalogue: catalogue,
+      query: req.query.slug
     }
   };
 }

@@ -1,7 +1,7 @@
 import Layout from "Containers/layout" 
 import ProductCard from "Components/product/ProductCard";
 import Breadcrumb from "Components/breadcrumb/breadcrumb";
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 
 const Home = (props) => {
     const breadcrumbs = [
@@ -26,7 +26,8 @@ const Home = (props) => {
         
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} 
+        industries={props.industries}
+        catalogue={props.catalogue}  
         >     
 
         <div className="container">
@@ -98,6 +99,9 @@ const Home = (props) => {
                                 key={idx}/>
                             )}
                         </div>
+                        {/* <Pagination
+                          totalPages = {props.totalPage}>
+                        </Pagination> */}
                     </div>
                 </div>
             </div>
@@ -302,7 +306,11 @@ export async function getServerSideProps(req) {
   const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry/${req.query.slug}`)
   const industry = await getIndustry.json()
 
-  return { props: { detail: industry, products: products.data, brands: brands, industries: industries, applications: applications }}
+  
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
+
+  return { props: { detail: industry, totalPage: products.totalPages, products: products.data, brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
 }
 
 export default Home;

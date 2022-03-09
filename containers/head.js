@@ -30,8 +30,8 @@ const WebHead = (props) => {
         <link
           rel="stylesheet"
           href="/static/fonts/Bahnschrift.TTF"
-          rel="stylesheet"
         />
+
         <script src="https://kit.fontawesome.com/abed9966b6.js" crossorigin="anonymous"></script>
 
       </Head>

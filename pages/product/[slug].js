@@ -82,7 +82,8 @@ const Home = (props) => {
         title={`${props.detail.name} | PT. Era Mitra Perdana`}
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} 
+        industries={props.industries}
+        catalogue={props.catalogue}  
         cart={cart}
         >     
 
@@ -727,8 +728,10 @@ export async function getServerSideProps(req) {
   const getProduct = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct/${req.query.slug}`)
   const product = await getProduct.json()
 
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
 
-  return { props: { detail: product, brands: brands, industries: industries, applications: applications }}
+  return { props: { detail: product, brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
 }
 
 export default Home;

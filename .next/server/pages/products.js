@@ -5,21 +5,130 @@ exports.id = 345;
 exports.ids = [345];
 exports.modules = {
 
-/***/ 4673:
+/***/ 7830:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var Containers_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9861);
-/* harmony import */ var Components_product_ProductCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3652);
-/* harmony import */ var Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2641);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9297);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5282);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ products),
+  "getServerSideProps": () => (/* binding */ getServerSideProps)
+});
+
+// EXTERNAL MODULE: ./containers/layout.js + 5 modules
+var layout = __webpack_require__(9861);
+// EXTERNAL MODULE: ./components/product/ProductCard.js
+var ProductCard = __webpack_require__(3652);
+// EXTERNAL MODULE: ./components/breadcrumb/breadcrumb.js
+var breadcrumb = __webpack_require__(2641);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(9297);
+;// CONCATENATED MODULE: external "react-bootstrap"
+const external_react_bootstrap_namespaceObject = require("react-bootstrap");
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(5282);
+;// CONCATENATED MODULE: ./components/pagination.js
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+class PaginationHandler extends (/* unused pure expression or super */ null && (Component)) {
+  constructor(_props) {
+    super(_props);
+
+    _defineProperty(this, "pagingHandler", () => {
+      let offset = parseInt(event.target.id);
+      this.setState({
+        active: offset
+      });
+      this.props.pageHandler(event.target.id - 1);
+    });
+
+    _defineProperty(this, "nextHandler", () => {
+      let active = this.state.active;
+      this.setState({
+        active: active + 1
+      });
+      this.props.pageHandler(active + 1);
+    });
+
+    _defineProperty(this, "backHandler", () => {
+      let active = this.state.active;
+      this.setState({
+        active: active - 1
+      });
+      this.props.pageHandler(active - 1);
+    });
+
+    _defineProperty(this, "renderPageNumbers", (pageNumbers, totalPages) => {
+      let {
+        active
+      } = this.state;
+      return /*#__PURE__*/_jsxs(Pagination, {
+        children: [/*#__PURE__*/_jsx(Pagination.Prev, {
+          disabled: active < 3,
+          onClick: active > 3 && this.backHandler
+        }), pageNumbers.map(number => {
+          if (parseInt(active) > 3 && number >= parseInt(active) - 3 && number <= parseInt(active) + 3) {
+            return /*#__PURE__*/_jsx(Pagination.Item, {
+              id: number,
+              active: number == active,
+              onClick: this.pagingHandler,
+              children: number
+            });
+          } else if (parseInt(active) < 4 && number < 8) {
+            return /*#__PURE__*/_jsx(Pagination.Item, {
+              id: number,
+              active: number == active,
+              onClick: this.pagingHandler,
+              children: number
+            });
+          } else {
+            return null;
+          }
+        }), /*#__PURE__*/_jsx(Pagination.Next, {
+          onClick: active <= totalPages - 3 && this.nextHandler
+        })]
+      });
+    });
+
+    _defineProperty(this, "buildComponent", (props, state) => {
+      const {
+        totalPages,
+        query
+      } = props;
+      const pageNumbers = [];
+
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+
+      return /*#__PURE__*/_jsx("div", {
+        className: "pull-right",
+        children: this.renderPageNumbers(pageNumbers, totalPages)
+      });
+    });
+
+    this.state = {
+      paging: {
+        offset: 0,
+        limit: 10
+      },
+      active: 0
+    };
+  }
+
+  render() {
+    return this.buildComponent(this.props, this.state);
+  }
+
+}
+;// CONCATENATED MODULE: ./pages/products/index.js
+
 
 
 
@@ -35,136 +144,137 @@ const Home = props => {
   const {
     0: isBrands,
     1: toggleBrands
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+  } = (0,external_react_.useState)(false);
   const {
     0: isApplication,
     1: toggleApplication
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+  } = (0,external_react_.useState)(false);
   const {
     0: isIndustry,
     1: toggleIndustry
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Containers_layout__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z, {
+  } = (0,external_react_.useState)(false);
+  return /*#__PURE__*/(0,jsx_runtime_.jsxs)(layout/* default */.Z, {
     title: "Products | PT. Era Mitra Perdana",
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    catalogue: props.catalogue,
+    children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
       className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
         className: "container-inner",
-        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("div", {
+        children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
           className: "breadcrumb-wrapper",
-          children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx(Components_breadcrumb_breadcrumb__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
+          children: /*#__PURE__*/jsx_runtime_.jsx(breadcrumb/* default */.Z, {
             breadcrumbs: breadcrumbs,
             url: "https://staging.eramitra.com"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
           className: "products-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
             className: "left-products",
-            children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("h3", {
+            children: [/*#__PURE__*/jsx_runtime_.jsx("h3", {
               className: "category-side-title green",
               children: "Products"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "category-group",
-              children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("h3", {
+              children: [/*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-title ",
                 children: "Brands"
-              }), isBrands ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              }), isBrands ? /*#__PURE__*/jsx_runtime_.jsx("a", {
                 onClick: () => toggleBrands(false),
                 className: "button-expand",
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("span", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                   className: "material-icons",
                   children: "expand_less"
                 })
-              }) : /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              }) : /*#__PURE__*/jsx_runtime_.jsx("a", {
                 onClick: () => toggleBrands(true),
                 className: "button-expand",
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("span", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                   className: "material-icons",
                   children: "expand_more"
                 })
               })]
-            }), isBrands && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), isBrands && /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "group-list-wrapper",
-              children: [" ", props.brands && props.brands.map((brand, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              children: [" ", props.brands && props.brands.map((brand, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/products/brand/${brand.id}`,
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("p", {
                   className: props.detail ? props.detail.name === brand.name ? `group-list active` : `group-list` : `group-list`,
                   children: brand.name
                 })
               }, idx))]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "category-group",
-              children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("h3", {
+              children: [/*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-title ",
                 children: "Industry"
-              }), isIndustry ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              }), isIndustry ? /*#__PURE__*/jsx_runtime_.jsx("a", {
                 onClick: () => toggleIndustry(false),
                 className: "button-expand",
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("span", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                   className: "material-icons",
                   children: "expand_less"
                 })
-              }) : /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              }) : /*#__PURE__*/jsx_runtime_.jsx("a", {
                 onClick: () => toggleIndustry(true),
                 className: "button-expand",
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("span", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                   className: "material-icons",
                   children: "expand_more"
                 })
               })]
-            }), isIndustry && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), isIndustry && /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "group-list-wrapper",
-              children: [" ", props.industries && props.industries.map((industry, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              children: [" ", props.industries && props.industries.map((industry, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/products/industry/${industry.id}`,
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("p", {
                   className: props.detail ? props.detail.name === industry.name ? `group-list active` : `group-list` : `group-list`,
                   children: industry.name
                 })
               }, idx))]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "category-group",
-              children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("h3", {
+              children: [/*#__PURE__*/jsx_runtime_.jsx("h3", {
                 className: "category-side-title ",
                 children: "Application"
-              }), isApplication ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              }), isApplication ? /*#__PURE__*/jsx_runtime_.jsx("a", {
                 onClick: () => toggleApplication(false),
                 className: "button-expand",
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("span", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                   className: "material-icons",
                   children: "expand_less"
                 })
-              }) : /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              }) : /*#__PURE__*/jsx_runtime_.jsx("a", {
                 onClick: () => toggleApplication(true),
                 className: "button-expand",
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("span", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("span", {
                   className: "material-icons",
                   children: "expand_more"
                 })
               })]
-            }), isApplication && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            }), isApplication && /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: "group-list-wrapper",
-              children: [" ", props.applications && props.applications.map((application, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("a", {
+              children: [" ", props.applications && props.applications.map((application, idx) => /*#__PURE__*/jsx_runtime_.jsx("a", {
                 href: `${"https://staging.eramitra.com"}/products/application/${application.id}`,
-                children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("p", {
+                children: /*#__PURE__*/jsx_runtime_.jsx("p", {
                   className: props.detail ? props.detail.name === application.name ? `group-list active` : `group-list` : `group-list`,
                   children: application.name
                 })
               }, idx))]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
             className: "right-products",
-            children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("img", {
+            children: [/*#__PURE__*/jsx_runtime_.jsx("img", {
               className: "banner-products",
               src: "/static/images/banner-products.svg"
-            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("br", {}), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("h3", {
+            }), /*#__PURE__*/jsx_runtime_.jsx("br", {}), /*#__PURE__*/jsx_runtime_.jsx("h3", {
               className: "section-title-underline",
               children: "Products"
-            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("div", {
+            }), /*#__PURE__*/jsx_runtime_.jsx("div", {
               className: "products-wrapper",
-              children: props.products && props.products.map((product, idx) => /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx(Components_product_ProductCard__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
+              children: props.products && props.products.map((product, idx) => /*#__PURE__*/jsx_runtime_.jsx(ProductCard/* default */.Z, {
                 id: product.id,
                 picture: product.Pictures && product.Pictures[0] && product.Pictures[0].name,
                 category: `${product.Application}`,
@@ -175,7 +285,7 @@ const Home = props => {
             })]
           })]
         })]
-      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("style", {
+      }), /*#__PURE__*/jsx_runtime_.jsx("style", {
         children: `
                 .products-container {
                     display: flex;
@@ -193,6 +303,7 @@ const Home = props => {
 
                 .banner-products {
                     width: 100%;
+                    margin-bottom: 40px;
                 }
 
                 .category-side-title {
@@ -293,7 +404,7 @@ const Home = props => {
                 }
               `
       })]
-    }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx("style", {
+    }), /*#__PURE__*/jsx_runtime_.jsx("style", {
       children: `
             .container {
               width: 100vw;
@@ -327,6 +438,7 @@ const Home = props => {
                 line-height: 58px;
                 color: #000000;
                 width: fit-content;
+                margin-bottom: 20px;
             }
 
             .section-title-underline:after {
@@ -361,16 +473,20 @@ async function getServerSideProps(req) {
   const applications = await getApplication.json();
   const getProducts = await fetch(`${"https://staging.eramitra.com"}/api/getProduct`);
   const products = await getProducts.json();
+  const getCatalogue = await fetch(`${"https://staging.eramitra.com"}/api/getCatalogue`);
+  const catalogue = await getCatalogue.json();
   return {
     props: {
       products: products.data,
+      totalPage: products.totalPages,
       brands: brands,
       industries: industries,
-      applications: applications
+      applications: applications,
+      catalogue: catalogue
     }
   };
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+/* harmony default export */ const products = (Home);
 
 /***/ }),
 
@@ -493,7 +609,7 @@ module.exports = require("styled-jsx/style");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,862,641,652], () => (__webpack_exec__(4673)));
+var __webpack_exports__ = __webpack_require__.X(0, [664,862,641,652], () => (__webpack_exec__(7830)));
 module.exports = __webpack_exports__;
 
 })();

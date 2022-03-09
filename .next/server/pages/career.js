@@ -254,6 +254,7 @@ const Home = props => {
     applications: props.applications,
     brands: props.brands,
     industries: props.industries,
+    catalogue: props.catalogue,
     children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
       className: "container",
       children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)(section/* default */.Z, {
@@ -426,12 +427,15 @@ async function getServerSideProps() {
   const industries = await getIndustry.json();
   const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplication.json();
+  const getCatalogue = await fetch(`${"https://staging.eramitra.com"}/api/getCatalogue`);
+  const catalogue = await getCatalogue.json();
   return {
     props: {
       careers: careers,
       brands: brands,
       industries: industries,
-      applications: applications
+      applications: applications,
+      catalogue: catalogue
     }
   };
 }

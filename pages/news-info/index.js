@@ -12,7 +12,8 @@ const Home = (props) => {
         title="News &amp; Info | PT. Era Mitra Perdana"
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} > 
+        industries={props.industries}
+        catalogue={props.catalogue}  > 
         <div className="container">
         <Section 
             element_id="news-info" 
@@ -352,8 +353,10 @@ export async function getServerSideProps() {
   const getArticles = await fetch(`${process.env.ROOT_DOMAIN}/api/getArticle`)
   const articles = await getArticles.json()
 
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
 
-  return { props: { articles: articles, brands: brands, industries: industries, applications: applications }}
+  return { props: { articles: articles, brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
 }
 
 export default Home;

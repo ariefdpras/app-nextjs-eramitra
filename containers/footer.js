@@ -56,7 +56,8 @@ const Header= (props) => {
 
 
     const emailSend = () => {
-      window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Name: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''} %0d%0aMessage: ${csData.message || ''}`, '_blank');
+      window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Hi Era Mitra Perdana, I would like to know more information regarding below details.%0d%0a%0d%0a${csData.message ? csData.message + "%0d%0a%0d%0a": ''}Please contact me through below Contact Information:%0d%0aName: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''} %0d%0aLooking forward to the information and more collaboration with EMP. I would also like to receive updates from Era Mitra Perdana regarding news, info, and other advertising purposes.  %0d%0a%0d%0aThank you,%0d%0aRegards.
+      `, '_blank');
     };
 
     return (
@@ -112,14 +113,12 @@ const Header= (props) => {
                   </div>
                   <h2>Follow Us</h2>
                   <div className="social-media-wrapper">
-                    {/* <a href="https://wa.me/6281234567890"> */}
+                    <a href="https://wa.me/6281212918004">
                       <img
                         className="logo-social logo-wa"
                         src="/static/icons/whatsapp.svg"
                       />
-                    {/* </a> */}
-                    {/* <img className="logo-social" src="/static/icons/facebook.svg" />
-                                      <img className="logo-social" src="/static/icons/linkedin.svg" /> */}
+                    </a>
                     <a href="mailto:sales@eramitra.com">
                       <span className="material-icons white logo-mail">
                       mail

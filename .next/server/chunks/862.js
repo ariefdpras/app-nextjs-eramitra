@@ -224,8 +224,7 @@ const WebHead = props => {
       href: "/static/styles/css/style.css"
     }), /*#__PURE__*/jsx_runtime_.jsx("link", {
       rel: "stylesheet",
-      href: "/static/fonts/Bahnschrift.TTF",
-      rel: "stylesheet"
+      href: "/static/fonts/Bahnschrift.TTF"
     }), /*#__PURE__*/jsx_runtime_.jsx("script", {
       src: "https://kit.fontawesome.com/abed9966b6.js",
       crossorigin: "anonymous"
@@ -261,6 +260,7 @@ class CategoryMenu extends (external_react_default()).Component {
     const brandTotal = props.brands && props.brands.length / 3;
     const applicationTotal = props.brands && props.applications.length / 3;
     const industriesTotal = props.brands && props.industries.length / 3;
+    const catalogueTotal = props.catalogue && props.catalogue.length / 3;
     return /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
       className: "category-menu",
       children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
@@ -287,6 +287,12 @@ class CategoryMenu extends (external_react_default()).Component {
                 className: this.state.activeTab == "application" ? "category-side-title active" : "category-side-title",
                 children: "Application"
               })
+            }), /*#__PURE__*/jsx_runtime_.jsx("a", {
+              onMouseOver: () => this.handleClick("catalogue"),
+              children: /*#__PURE__*/jsx_runtime_.jsx("h3", {
+                className: this.state.activeTab == "catalogue" ? "category-side-title active" : "category-side-title",
+                children: "Catalogue"
+              })
             })]
           }), /*#__PURE__*/jsx_runtime_.jsx("div", {
             className: "right-category-menu",
@@ -295,8 +301,6 @@ class CategoryMenu extends (external_react_default()).Component {
               children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
                 className: "category-col",
                 children: this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx) => {
-                  console.log(brandTotal);
-
                   if (idx > brandTotal) {
                     return;
                   }
@@ -427,6 +431,59 @@ class CategoryMenu extends (external_react_default()).Component {
                       href: `${"https://staging.eramitra.com"}/products/industry/${ind.id}`,
                       children: ind.name
                     }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx) => {
+                  if (idx > catalogueTotal) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: cat.url,
+                      children: cat.title
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx) => {
+                  if (idx < catalogueTotal || idx > catalogueTotal * 2) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/jsx_runtime_.jsx("div", {
+                    className: "category-side-name",
+                    children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                      href: cat.url,
+                      children: cat.title
+                    }, idx)
+                  }, idx);
+                })
+              }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                className: "category-col",
+                children: this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx) => {
+                  if (idx < catalogueTotal * 2 || idx > catalogueTotal * 3) {
+                    return;
+                  }
+
+                  return /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
+                    className: "category-side-catalogue",
+                    children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
+                      className: `category-side-banner-${idx}`
+                    }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+                      className: "category-side-name",
+                      children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+                        href: cat.url,
+                        children: cat.title
+                      }, idx)
+                    }), /*#__PURE__*/jsx_runtime_.jsx("style", {
+                      children: `
+                                        `
+                    })]
                   }, idx);
                 })
               })]
@@ -1013,7 +1070,8 @@ class Header extends (external_react_default()).Component {
         }), /*#__PURE__*/jsx_runtime_.jsx(category_CategoryMenu, {
           brands: props.brands,
           applications: props.applications,
-          industries: props.industries
+          industries: props.industries,
+          catalogue: props.catalogue
         })]
       }), this.state.isToggleOn && /*#__PURE__*/jsx_runtime_.jsx("div", {
         className: "sidebar-background mobile-only",
@@ -1149,7 +1207,8 @@ class Header extends (external_react_default()).Component {
       }), !this.state.isToggleOn && this.state.isProduct && /*#__PURE__*/jsx_runtime_.jsx(category_CategoryMenu, {
         brands: props.brands,
         applications: props.applications,
-        industries: props.industries
+        industries: props.industries,
+        catalogue: props.catalogue
       }), /*#__PURE__*/jsx_runtime_.jsx("style", {
         children: `
                 .desktop-only {
@@ -1408,7 +1467,8 @@ const footer_Header = props => {
   };
 
   const emailSend = () => {
-    window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Name: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''} %0d%0aMessage: ${csData.message || ''}`, '_blank');
+    window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Hi Era Mitra Perdana, I would like to know more information regarding below details.%0d%0a%0d%0a${csData.message ? csData.message + "%0d%0a%0d%0a" : ''}Please contact me through below Contact Information:%0d%0aName: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''} %0d%0aLooking forward to the information and more collaboration with EMP. I would also like to receive updates from Era Mitra Perdana regarding news, info, and other advertising purposes.  %0d%0a%0d%0aThank you,%0d%0aRegards.
+      `, '_blank');
   };
 
   return /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
@@ -1558,9 +1618,12 @@ const footer_Header = props => {
                 children: "Follow Us"
               }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
                 className: "social-media-wrapper",
-                children: [/*#__PURE__*/jsx_runtime_.jsx("img", {
-                  className: "logo-social logo-wa",
-                  src: "/static/icons/whatsapp.svg"
+                children: [/*#__PURE__*/jsx_runtime_.jsx("a", {
+                  href: "https://wa.me/6281212918004",
+                  children: /*#__PURE__*/jsx_runtime_.jsx("img", {
+                    className: "logo-social logo-wa",
+                    src: "/static/icons/whatsapp.svg"
+                  })
                 }), /*#__PURE__*/jsx_runtime_.jsx("a", {
                   href: "mailto:sales@eramitra.com",
                   children: /*#__PURE__*/jsx_runtime_.jsx("span", {
@@ -2112,7 +2175,8 @@ function Layout({
   brands,
   applications,
   industries,
-  cart
+  cart,
+  catalogue
 }) {
   const {
     0: cartData,
@@ -2131,7 +2195,8 @@ function Layout({
         cart: cart || cartData,
         brands: brands,
         applications: applications,
-        industries: industries
+        industries: industries,
+        catalogue: catalogue
       }), /*#__PURE__*/jsx_runtime_.jsx("div", {
         className: "margin-container"
       }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {

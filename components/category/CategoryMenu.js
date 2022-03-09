@@ -23,6 +23,7 @@ class CategoryMenu extends React.Component {
     const brandTotal = props.brands && props.brands.length / 3;
     const applicationTotal = props.brands && props.applications.length / 3;
     const industriesTotal = props.brands && props.industries.length / 3;
+    const catalogueTotal = props.catalogue && props.catalogue.length / 3;
 
     return (
         <div className="category-menu">
@@ -49,6 +50,13 @@ class CategoryMenu extends React.Component {
                         Application
                     </h3>
                 </a>
+
+                <a 
+                    onMouseOver={() => this.handleClick("catalogue")} >  
+                    <h3 className={this.state.activeTab == "catalogue" ? "category-side-title active" : "category-side-title" }>
+                        Catalogue
+                    </h3>
+                </a>
        
             </div>
             <div className="right-category-menu">
@@ -57,7 +65,6 @@ class CategoryMenu extends React.Component {
                     {
                         this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
                             { 
-                                console.log(brandTotal)
                                 if(idx > brandTotal) {
                                     return;
                                 }
@@ -222,7 +229,69 @@ class CategoryMenu extends React.Component {
                     }
                  </div>
 
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx ) =>
+                            { 
+                                if(idx > catalogueTotal) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a  href={cat.url} 
+                                    key={idx}>
+                                            {cat.title}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
 
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx ) =>
+                            { 
+                                if(idx < catalogueTotal || idx > catalogueTotal*2) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-name" key={idx}>
+                                    <a  href={cat.url} 
+                                    key={idx}>
+                                            {cat.title}
+                                    </a>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
+
+                 <div className="category-col">
+                    {
+                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx ) =>
+                            { 
+                                if(idx < catalogueTotal*2 || idx > catalogueTotal*3) {
+                                    return;
+                                }
+                                return (
+                                <div className="category-side-catalogue" key={idx}>
+                                    <div className={`category-side-banner-${idx}`} />
+                                    <div className="category-side-name">
+                                        <a  href={cat.url} 
+                                        key={idx}>
+                                                {cat.title}
+                                        </a>
+                                    </div>
+                                    <style>
+                                        {`
+                                        `}
+                                    </style>
+                                </div>)
+                            }
+                        )
+                    }
+                 </div>
 
                </div>
             </div>

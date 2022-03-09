@@ -32,7 +32,8 @@ const Home = (props) => {
         title="About Us | PT. Era Mitra Perdana"
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} >      
+        industries={props.industries}
+        catalogue={props.catalogue}   >      
         <div className="container">
           <div className="header-about">
             <img className="green-tetra-img" src="/static/images/green-tetra.svg" />
@@ -744,7 +745,11 @@ export async function getServerSideProps() {
   const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
   const applications = await getApplication.json()
 
-  return { props: { brands: brands, industries: industries, applications: applications }}
+  
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
+
+  return { props: { brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
 }
 
 export default Home;

@@ -21,7 +21,8 @@ const Home = (props) => {
         
         applications={props.applications}
         brands={props.brands}
-        industries={props.industries} 
+        industries={props.industries}
+        catalogue={props.catalogue}  
         >     
 
         <div className="container">
@@ -327,7 +328,11 @@ export async function getServerSideProps(req) {
   const getSearch = await fetch(`${process.env.ROOT_DOMAIN}/api/searchData/${req.query.name}`)
   const search = await getSearch.json()
 
-  return { props: { search: search, brands: brands, industries: industries, applications: applications, query: req.query }}
+  
+  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
+  const catalogue = await getCatalogue.json()
+
+  return { props: { search: search, brands: brands, industries: industries, applications: applications, catalogue: catalogue, query: req.query }}
 }
 
 export default Home;

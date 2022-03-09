@@ -3,7 +3,7 @@ import Header from "./header";
 import Footer from "./footer";
 import React, {useState, useEffect} from 'react'
 
-export default function Layout( { children, title, brands, applications, industries, cart }) {
+export default function Layout( { children, title, brands, applications, industries, cart, catalogue}) {
   const [cartData, setCart] = useState([])
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function Layout( { children, title, brands, applications, industr
       <WebHead title={title}/>
 
       <main>
-        <Header cart={cart || cartData} brands={brands} applications={applications} industries={industries}/>
+        <Header cart={cart || cartData} brands={brands} applications={applications} industries={industries} catalogue={catalogue}/>
         <div className="margin-container"></div>
         <div className="main-content">{children} </div>
         <Footer />

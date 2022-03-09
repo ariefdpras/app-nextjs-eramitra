@@ -9,6 +9,7 @@
   "/api/getBrands/[id]": "pages/api/getBrands/[id].js",
   "/api/getBrands": "pages/api/getBrands.js",
   "/api/getCareer": "pages/api/getCareer.js",
+  "/api/getCatalogue": "pages/api/getCatalogue.js",
   "/api/getIndustry/[id]": "pages/api/getIndustry/[id].js",
   "/api/getIndustry": "pages/api/getIndustry.js",
   "/api/getProduct/[id]": "pages/api/getProduct/[id].js",

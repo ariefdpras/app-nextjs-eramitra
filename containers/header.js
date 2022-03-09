@@ -127,7 +127,7 @@ class Header extends React.Component {
                 <img className="logo" src="/static/images/logo.png" />
             </a>
           </div>
-          <CategoryMenu brands={props.brands} applications={props.applications} industries={props.industries}/>
+          <CategoryMenu brands={props.brands} applications={props.applications} industries={props.industries} catalogue={props.catalogue}/>
       
         </div>
         }
@@ -250,7 +250,7 @@ class Header extends React.Component {
         )}
 
         { !this.state.isToggleOn && this.state.isProduct && (
-          <CategoryMenu brands={props.brands} applications={props.applications} industries={props.industries}/>
+          <CategoryMenu brands={props.brands} applications={props.applications} industries={props.industries} catalogue={props.catalogue}/>
         )}
 
         <style>
