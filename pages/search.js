@@ -101,6 +101,7 @@ const Home = (props) => {
 
                 .right-products {
                     width: calc(100% - 304px);
+                    margin-bottom: 100px;
                 }
 
                 .banner-products {

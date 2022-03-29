@@ -391,7 +391,7 @@ const Home = props => {
                   font-family: Bahnschrift;
                   font-style: normal;
                   font-weight: 500;
-                  font-size: 28px;
+                  font-size: 30px;
                   line-height: 32px;
                   margin: 0 0 10px 0;
                   color: #000000;

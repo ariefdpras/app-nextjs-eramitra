@@ -121,12 +121,15 @@ class ProductCardCart extends (react__WEBPACK_IMPORTED_MODULE_0___default().Comp
                     @media only screen and (max-width: 800px){
 
 
+                        .product-cart {
+                            align-items: center;
+                        }
                         .product-cart .product-category {
                             font-family: Bahnschrift;
-                            font-size: 14px;
+                            font-size: 12px;
                             font-style: normal;
                             font-weight: 400;
-                            line-height: 17px;
+                            line-height: 14px;
                             letter-spacing: 0em;
                             text-align: left;
                         }
@@ -136,7 +139,7 @@ class ProductCardCart extends (react__WEBPACK_IMPORTED_MODULE_0___default().Comp
                             font-size: 14px;
                             font-style: normal;
                             font-weight: 400;
-                            line-height: 17px;
+                            line-height: 14px;
                             letter-spacing: 0em;
                             text-align: left;
                         }
@@ -160,6 +163,11 @@ class ProductCardCart extends (react__WEBPACK_IMPORTED_MODULE_0___default().Comp
                             letter-spacing: 0em;
                             text-align: left;
                             
+                        }
+
+                        .product-cart .product-picture {
+                            width: 50px;
+                            height: 50px;    
                         }
                     }
                 `

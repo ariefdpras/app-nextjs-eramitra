@@ -24,7 +24,6 @@
   "/product/[slug]": "pages/product/[slug].js",
   "/products/application/[slug]": "pages/products/application/[slug].js",
   "/products/brand/[slug]": "pages/products/brand/[slug].js",
-  "/products": "pages/products.js",
   "/products/industry/[slug]": "pages/products/industry/[slug].js",
   "/search": "pages/search.js",
   "/_error": "pages/_error.js",

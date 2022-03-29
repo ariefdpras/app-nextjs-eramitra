@@ -16,7 +16,8 @@ class ProductCard extends React.Component {
             <img className="product-picture" src={props.picture ? `https://svr.eramitra.com/images/${props.picture}` : "/static/images/not-found.jpg"} /></div>
             <div className="product-description">
                 {/* <p className="product-category">{props.category}</p> */}
-                <h6 className="product-name">{props.brand} - {props.name} </h6>
+                <p className="product-brand">{props.brand} </p>
+                <h6 className="product-name">{props.name} </h6>
                 <p className="product-price">{number(props.price)}</p>
                 {
                     props.price == 0 && 
@@ -59,14 +60,26 @@ class ProductCard extends React.Component {
                         margin: 0 0 5px 0;
                     }
 
+                    .product-brand {
+
+                        font-family: Calibri;
+                        font-size: 16px;
+                        margin: 0 0 8px 0;
+                    }
+
                     .product-name {
                         font-family: Bahnschrift;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 18px;
+                        font-size: 17px;
                         line-height: 22px;
                         color: #000000;
-                        margin: 0 0 24px 0;
+                        margin: 0 0 12px 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
                     }
 
                     .product-price {

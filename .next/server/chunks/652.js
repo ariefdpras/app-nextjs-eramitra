@@ -38,9 +38,12 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "product-description",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h6", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+            className: "product-brand",
+            children: [props.brand, " "]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h6", {
             className: "product-name",
-            children: [props.brand, " - ", props.name, " "]
+            children: [props.name, " "]
           }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("p", {
             className: "product-price",
             children: (0,Helpers_utils__WEBPACK_IMPORTED_MODULE_1__/* .number */ .Rx)(props.price)
@@ -84,14 +87,26 @@ class ProductCard extends (react__WEBPACK_IMPORTED_MODULE_0___default().Componen
                         margin: 0 0 5px 0;
                     }
 
+                    .product-brand {
+
+                        font-family: Calibri;
+                        font-size: 16px;
+                        margin: 0 0 8px 0;
+                    }
+
                     .product-name {
                         font-family: Bahnschrift;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 18px;
+                        font-size: 17px;
                         line-height: 22px;
                         color: #000000;
-                        margin: 0 0 24px 0;
+                        margin: 0 0 12px 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
                     }
 
                     .product-price {

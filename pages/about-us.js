@@ -75,11 +75,17 @@ equipment	since	1999.</p>
                   border-radius: 20px;
                 }
 
-
-                .header-about .section-title, .header-about .section-description {
+                .header-about .section-title {
                   text-align: center;
                   width: 55%;
                   max-width: 700px;
+                }
+                
+                .header-about .section-description {
+                  text-align: center;
+                  width: 55%;
+                  max-width: 700px;
+                  text-align: justify !important;
                 }
 
 
@@ -93,6 +99,13 @@ equipment	since	1999.</p>
                     padding-bottom: 30px;
                   }
 
+                  .header-about .section-description {
+                    text-align: center;
+                    width: 100%;
+                    padding: 0 20px;
+                    text-align: justify !important;
+                  }
+  
                   .header-img {
                     width: 183px;
                     height: 111px;
@@ -208,7 +221,23 @@ Equipment	Industry.</p>
 
                 .section-mission {
                   margin-left: -20px;
+                  text-align: justify !important;
                 }
+
+                .slick-prev:before {
+                  font-family: 'Bahnschrift';
+                  content: '<';
+                  color: black;
+                  font-size: 20px;
+                }
+                
+                .slick-next:before {
+                  font-family: 'Bahnschrift';
+                  content: ">";
+                  color: black;
+                  font-size: 20px;
+                }
+
 
                 @media only screen and (max-width: 800px){
 
@@ -338,6 +367,10 @@ partner	for	our	stakeholders	along	the	process.
 
 
                 @media only screen and (max-width: 800px){
+                  .values {
+                    height: auto !important;
+                    padding: 40px 0;
+                  }
 
                   .values .icon-shape-0 {
                     width: 20% !important;
@@ -354,12 +387,19 @@ partner	for	our	stakeholders	along	the	process.
                   }
                  .values-card-wrapper {
                    flex-direction: column;
+                   margin-top: 20px;
                  }
 
                  .values-img {
+                  width: 20%;
+                  margin-bottom: 10px !important;
+                }
+                 .values-img.other-perform {
                    width: 30%;
                    margin-bottom: 10px !important;
                  }
+
+                
 
                  .values-card {
                    width: 80%;
@@ -388,6 +428,7 @@ partner	for	our	stakeholders	along	the	process.
                   margin: 0 !important;
                   
                  }
+
                 }
               `}
             </style>
@@ -408,7 +449,8 @@ partner	for	our	stakeholders	along	the	process.
             <div className="container-inner">
               <div className="what-we-do-best-wrapper">
                   <h3 className="section-title">What We Do Best</h3>
-                  <p className="section-description">We offer the best solution for Scientific, Laboratory Equipment, and Services</p>
+                  <p className="section-description desktop-only">We offer the best solution for Scientific, Laboratory Equipment, and Services</p>
+                  <p className="section-description mobile-only">We offer the best solution for Scientific, <br></br> Laboratory Equipment, and Services</p>
                       
                   <div className="main-content">
                     <div className="card-wrapper">
@@ -435,6 +477,15 @@ partner	for	our	stakeholders	along	the	process.
             </div>
             <style>
               {`
+
+                .mobile-only {
+                  display: none;
+                }
+
+                .desktop-only {
+                  display: block;
+                }
+
                 .what-we-do-best-wrapper {
                   height: 100%;
                   display: flex;
@@ -493,6 +544,13 @@ partner	for	our	stakeholders	along	the	process.
                 }
 
                 @media only screen and (max-width: 800px){
+                  .mobile-only {
+                    display: block;
+                  }
+                  
+                  .desktop-only {
+                    display: none;
+                  }
                   .what-we-do-best {
                     height: 452px !important;
                   }

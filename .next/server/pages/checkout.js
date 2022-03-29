@@ -509,11 +509,18 @@ const Home = props => {
                                 flex-direction: column;
                             }
 
+                            .left-checkout {
+                                width: 100%;
+                                margin-bottom: 30px;
+                            }
+                            
                             .right-checkout {
                                 width: 100%;
                             }
                             .checkout-menu-wrapper {
                                 width: 85vw;
+                                margin: 0 !important;
+                                padding: 20px;
                             }
 
                             .checkout-title {
@@ -531,7 +538,7 @@ const Home = props => {
                                 margin-bottom: 12px !important;
                                 padding-top: 12px !important;
                             }
-
+                            
                             .checkout-total h6 {
                                 font-family: Bahnschrift;
                                 font-size: 14px;
@@ -541,6 +548,17 @@ const Home = props => {
                                 letter-spacing: 0em;
                                 text-align: left;
                             }
+                            .checkout-menu .cart-total {
+                                padding-top: 10px;
+                                margin-bottom: 0px;
+
+                            .cart-total h6 {
+                                font-size: 14px !important;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 17px;
+                                letter-spacing: 0em;
+                            } 
 
                             .btn-checkout {
                                 font-family: Bahnschrift;
@@ -551,7 +569,64 @@ const Home = props => {
                                 letter-spacing: 0em;
                                 text-align: center;
                                 width: 100%;
-                                
+                            }
+
+                            .btn-counter {
+                                border: 1px solid #040404;
+                                border-radius: 8px;
+                                width: fit-content;
+                                padding: 3px 3px 0 3px;
+                                cursor: pointer;
+                            }
+
+                            .btn-counter .material-icons {
+                                font-size: 20px;
+                            }
+                            .checkout-detail-wrapper .product-counter p {
+                                margin: 0 18px;
+                                font-family: Bahnschrift;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 22px;
+                                letter-spacing: 0em;
+                                text-align: center;
+                                width: 10px;
+                            }
+
+                            .right-checkout h6 {
+                            
+                                font-size: 14px !important;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 17px;
+                                letter-spacing: 0em;
+                            }
+
+                            .right-checkout .form-group.half {
+                                width: 100% !important;
+                            }
+
+                            .right-checkout h4 {
+                                font-family: Bahnschrift;
+                                font-size: 20px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 22px;
+                                letter-spacing: 0em;
+                                text-align: center;
+                                margin: 0 0 20px 0;
+                            }
+
+                            .btn-submit {
+                                font-family: Bahnschrift;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 14px;
+                                letter-spacing: 0em;
+                                text-align: center;
+                                width: 100%;
                             }
                         }
                         `

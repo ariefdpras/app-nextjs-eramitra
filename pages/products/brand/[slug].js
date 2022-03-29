@@ -1,9 +1,13 @@
 import Layout from "Containers/layout" 
 import ProductCard from "Components/product/ProductCard";
 import Breadcrumb from "Components/breadcrumb/breadcrumb";
-import React, {useState} from 'react'
+import Pagination from '@material-ui/lab/Pagination';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router'
+
 
 const Home = (props) => {
+    const router = useRouter();
     const breadcrumbs = [
       {
         title: "Products",
@@ -14,11 +18,15 @@ const Home = (props) => {
         url: "http://google.com"
       }
     ]
+    console.log(props.query)
     
     const [isBrands, toggleBrands] = useState(true)
     const [isApplication, toggleApplication] = useState(false)
     const [isIndustry, toggleIndustry] = useState(false)
-    
+    const handleChange = (e, value) => {
+      router.push(`${process.env.ROOT_DOMAIN}/products/brand/${props.query.slug}?page=${value}`)
+      router.replace(`${process.env.ROOT_DOMAIN}/products/brand/${props.query.slug}?page=${value}`)
+    };
   
   return (
       <Layout
@@ -98,6 +106,14 @@ const Home = (props) => {
                                 key={idx}/>
                             )}
                         </div>
+                        
+                        <Pagination
+                          count={props.pagination}
+                          page={parseInt(props.query.page) || 1}
+                          showFirstButton 
+                          showLastButton
+                          onChange={handleChange}
+                        />
                     </div>
                 </div>
             </div>
@@ -115,6 +131,7 @@ const Home = (props) => {
 
                 .right-products {
                     width: calc(100% - 304px);
+                    margin-bottom: 100px;
                 }
 
                 .banner-products {
@@ -296,7 +313,7 @@ export async function getServerSideProps(req) {
   const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
   const applications = await getApplication.json()
 
-  const getProducts = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct?brand=${req.query.slug}`)
+  const getProducts = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct?brand=${req.query.slug}&page=${req.query.page || 1}`)
   const products = await getProducts.json()
 
   const getBrand = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands/${req.query.slug}`)
@@ -305,7 +322,7 @@ export async function getServerSideProps(req) {
   const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
   const catalogue = await getCatalogue.json()
 
-  return { props: { detail: brand, products: products.data, brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
+  return { props: { detail: brand, query: req.query, products: products.data, pagination: products && products.totalPages, brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
 }
 
 export default Home;
