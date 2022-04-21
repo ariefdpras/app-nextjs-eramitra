@@ -18,7 +18,6 @@ const Home = (props) => {
         url: "http://google.com"
       }
     ]
-    console.log(props.query)
     
     const [isBrands, toggleBrands] = useState(true)
     const [isApplication, toggleApplication] = useState(false)

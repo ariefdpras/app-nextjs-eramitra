@@ -41,7 +41,6 @@ const Home = props => {
     title: props.detail.name,
     url: "http://google.com"
   }];
-  console.log(props.query);
   const {
     0: isBrands,
     1: toggleBrands

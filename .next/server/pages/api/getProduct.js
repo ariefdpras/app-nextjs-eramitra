@@ -48,10 +48,9 @@ async function handler(req, res) {
   await (0,Lib_middleware__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(req, res, cors);
 
   try {
-    const getProducts = await fetch(`https://svr.eramitra.com/product?brand=${req.query.brand ? req.query.brand : ""}&industry=${req.query.industry ? req.query.industry : ""}&application=${req.query.application ? req.query.application : ""}&page=${req.query.page ? req.query.page : ""}`);
+    const getProducts = await fetch(`https://svr.eramitra.com/product?brand=${req.query.brand ? req.query.brand : ""}&industry=${req.query.industry ? req.query.industry : ""}&application=${req.query.application ? req.query.application : ""}&page=${req.query.page ? req.query.page : ""}&size=12`);
     const data = await getProducts.json();
     res.json(data);
-    console.log(res.json(data));
   } catch (err) {
     res.json({
       error: err
