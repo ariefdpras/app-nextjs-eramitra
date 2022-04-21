@@ -312,7 +312,7 @@ export async function getServerSideProps(req) {
   const applications = await getApplications.json()
 
 
-  const getProducts = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct?application=${req.query.slug}&page=${req.query.page || 1}`)
+  const getProducts = await fetch(`${process.env.ROOT_DOMAIN}/api/getProduct?application=${req.query.slug}&active=true&page=${req.query.page || 0}`)
   const products = await getProducts.json()
 
   const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication/${req.query.slug}`)

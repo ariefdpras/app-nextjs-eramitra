@@ -237,7 +237,7 @@ const Home = props => {
                   }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("li", {
                     children: "Be proactive during the end-to-end process in supporting principals and clients"
                   }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("li", {
-                    children: "Continuously learning and sharing insights regarding Indonesian Scientific and Laboratory Industry"
+                    children: "Continuously learning and sharing insights regarding Scientific and Laboratory Industry"
                   }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("li", {
                     children: "Company digitalization to provide easier access for consumers"
                   })]
@@ -501,12 +501,9 @@ const Home = props => {
             children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h3", {
               className: "section-title",
               children: "What We Do Best"
-            }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("p", {
-              className: "section-description desktop-only",
-              children: "We offer the best solution for Scientific, Laboratory Equipment, and Services"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
-              className: "section-description mobile-only",
-              children: ["We offer the best solution for Scientific, ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), " Laboratory Equipment, and Services"]
+              className: "section-description",
+              children: ["We offer the best solution for ", /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("br", {}), "Scientific, Laboratory Equipment, and Services"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "main-content",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {

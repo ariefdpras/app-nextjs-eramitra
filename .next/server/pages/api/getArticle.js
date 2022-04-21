@@ -48,7 +48,7 @@ async function handler(req, res) {
   await (0,Lib_middleware__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(req, res, cors);
 
   try {
-    const getArticles = await fetch(`https://svr.eramitra.com/article?status=active`);
+    const getArticles = await fetch(`https://svr.eramitra.com/article?sort=createdAt,desc&active=true`);
     const data = await getArticles.json();
     res.json(data);
   } catch (err) {

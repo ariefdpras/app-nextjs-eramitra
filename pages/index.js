@@ -57,20 +57,25 @@ const Home = (props) => {
                 { props.banner && props.banner.map((banner, idx ) =>
                 <div className={`banner-item`} key={idx}>
                   <div className={`banner-item-content-${idx}`}>
+                    <img src={`https://svr.eramitra.com/images/${banner.Picture.name}`} />
                   </div>
                   <style>
                     {
                       `
                       .banner-item{
-                        width: 100vw;
-                        height: 80vh;
+                       width: 100%;
+                       height: 100%;
                       }
                       .banner-item-content-${idx} {
-                        background: url(https://svr.eramitra.com/images/${banner.Picture.name});
-                        width: 100vw;
-                        height: 80vh;
-                        background-size: cover;
+                        width: 100%;
+                        height: 100%;
                       }
+
+                      .banner-item-content-${idx} img {
+                        width: 100vw;
+                        height: 100%;
+                      }
+
 
                       .slick-prev:before {
                         font-family: 'Bahnschrift';
@@ -110,7 +115,6 @@ const Home = (props) => {
                     }
                   </style>
                 </div>)}
-              
               </Slider>
             </div>
             </Section>

@@ -196,7 +196,7 @@ Equipment	Industry.</p>
                     <ul className="section-mission">
                         <li>Provide	high	quality	product	and	services	with	competitive	price</li>
                         <li>Be	proactive	during	the	end-to-end	process	in	supporting	principals	and	clients</li>
-                        <li>Continuously	learning	and	sharing	insights	regarding	Indonesian	Scientific	and	Laboratory Industry</li>
+                        <li>Continuously	learning	and	sharing	insights	regarding	Scientific	and	Laboratory Industry</li>
                         <li>Company	digitalization	to	provide	easier	access	for	consumers</li>
                     </ul>
                   </p>
@@ -449,8 +449,7 @@ partner	for	our	stakeholders	along	the	process.
             <div className="container-inner">
               <div className="what-we-do-best-wrapper">
                   <h3 className="section-title">What We Do Best</h3>
-                  <p className="section-description desktop-only">We offer the best solution for Scientific, Laboratory Equipment, and Services</p>
-                  <p className="section-description mobile-only">We offer the best solution for Scientific, <br></br> Laboratory Equipment, and Services</p>
+                  <p className="section-description">We offer the best solution for <br></br>Scientific, Laboratory Equipment, and Services</p>
                       
                   <div className="main-content">
                     <div className="card-wrapper">

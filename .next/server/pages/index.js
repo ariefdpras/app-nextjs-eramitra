@@ -240,19 +240,26 @@ const Home = props => {
             children: props.banner && props.banner.map((banner, idx) => /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
               className: `banner-item`,
               children: [/*#__PURE__*/jsx_runtime_.jsx("div", {
-                className: `banner-item-content-${idx}`
+                className: `banner-item-content-${idx}`,
+                children: /*#__PURE__*/jsx_runtime_.jsx("img", {
+                  src: `https://svr.eramitra.com/images/${banner.Picture.name}`
+                })
               }), /*#__PURE__*/jsx_runtime_.jsx("style", {
                 children: `
                       .banner-item{
-                        width: 100vw;
-                        height: 80vh;
+                       width: 100%;
+                       height: 100%;
                       }
                       .banner-item-content-${idx} {
-                        background: url(https://svr.eramitra.com/images/${banner.Picture.name});
-                        width: 100vw;
-                        height: 80vh;
-                        background-size: cover;
+                        width: 100%;
+                        height: 100%;
                       }
+
+                      .banner-item-content-${idx} img {
+                        width: 100vw;
+                        height: 100%;
+                      }
+
 
                       .slick-prev:before {
                         font-family: 'Bahnschrift';

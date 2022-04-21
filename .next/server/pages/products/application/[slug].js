@@ -383,7 +383,7 @@ async function getServerSideProps(req) {
   const industries = await getIndustry.json();
   const getApplications = await fetch(`${"https://staging.eramitra.com"}/api/getApplication`);
   const applications = await getApplications.json();
-  const getProducts = await fetch(`${"https://staging.eramitra.com"}/api/getProduct?application=${req.query.slug}&page=${req.query.page || 1}`);
+  const getProducts = await fetch(`${"https://staging.eramitra.com"}/api/getProduct?application=${req.query.slug}&active=true&page=${req.query.page || 0}`);
   const products = await getProducts.json();
   const getApplication = await fetch(`${"https://staging.eramitra.com"}/api/getApplication/${req.query.slug}`);
   const application = await getApplication.json();

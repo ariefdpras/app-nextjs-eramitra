@@ -29,7 +29,7 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="news-info-wrapper">
                   <div className="news-info-cover">
-                    <img src={props.articles.data[0] ? typeof props.articles.data[0].Picture !== "undefined" ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "/static/images/not-found.jpg" : "/static/images/not-found.jpg" } />
+                    <img src={props.articles.data[0] ? props.articles.data[0].Picture ? `https://svr.eramitra.com/images/${props.articles.data[0].Picture && props.articles.data[0].Picture.name}` : "/static/images/not-found.jpg" : "/static/images/not-found.jpg" } />
                   </div>
                   <div className="news-info-description">
                     <p>{utc_to_local_short(props.articles.data[0].createdAt)}</p>
@@ -228,7 +228,7 @@ const Home = (props) => {
 
                 .article-wrapper {
                   margin: 0 !important;
-                  justify-content: flex-start;
+                  grid-template-columns: 1fr 1fr;
                 }
 
                 .article-card-wrapper {
@@ -279,12 +279,9 @@ const Home = (props) => {
             }
 
             .article-wrapper {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-between;
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
               margin-bottom: 60px;
-              margin-left: calc((25% - 180px)* -0.5);
-              margin-right: calc((25% - 180px)* -0.5);
             }
 
             .article-card-wrapper {

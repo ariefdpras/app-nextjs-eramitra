@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/ZIj0ZXciYJMmxWLayTlDP/_buildManifest.js",
-    "static/ZIj0ZXciYJMmxWLayTlDP/_ssgManifest.js"
+    "static/7oGtWsvHH_r4QOiDddM7n/_buildManifest.js",
+    "static/7oGtWsvHH_r4QOiDddM7n/_ssgManifest.js"
   ],
   "pages": {
     "/": [
@@ -16,7 +16,7 @@
       "static/chunks/75fc9c18-5c1929f66343f0a636cd.js",
       "static/chunks/66-e38fbe3a196c97212fbe.js",
       "static/chunks/861-07eac9192fdbf9a58e61.js",
-      "static/chunks/pages/index-0d1b00aa952333b56320.js"
+      "static/chunks/pages/index-38297325487f81bf76d8.js"
     ],
     "/_app": [
       "static/chunks/webpack-613fd858cdb9cf2af3be.js",
@@ -38,7 +38,7 @@
       "static/chunks/75fc9c18-5c1929f66343f0a636cd.js",
       "static/chunks/66-e38fbe3a196c97212fbe.js",
       "static/chunks/861-07eac9192fdbf9a58e61.js",
-      "static/chunks/pages/about-us-dbaa577679e443c4b035.js"
+      "static/chunks/pages/about-us-36f187ec3e984b9c4315.js"
     ],
     "/career": [
       "static/chunks/webpack-613fd858cdb9cf2af3be.js",
@@ -72,7 +72,7 @@
       "static/chunks/main-62b8caa3ccc47893b147.js",
       "static/chunks/75fc9c18-5c1929f66343f0a636cd.js",
       "static/chunks/861-07eac9192fdbf9a58e61.js",
-      "static/chunks/pages/news-info-117664487418ee6e6857.js"
+      "static/chunks/pages/news-info-587adcb2bd333ff9c2dc.js"
     ],
     "/news-info/[slug]": [
       "static/chunks/webpack-613fd858cdb9cf2af3be.js",
@@ -80,7 +80,7 @@
       "static/chunks/main-62b8caa3ccc47893b147.js",
       "static/chunks/75fc9c18-5c1929f66343f0a636cd.js",
       "static/chunks/861-07eac9192fdbf9a58e61.js",
-      "static/chunks/pages/news-info/[slug]-b987b33fb3006afc96ac.js"
+      "static/chunks/pages/news-info/[slug]-03879867b4d4aadf0ca2.js"
     ],
     "/product/[slug]": [
       "static/chunks/webpack-613fd858cdb9cf2af3be.js",

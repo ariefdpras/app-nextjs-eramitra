@@ -190,6 +190,9 @@ const Articles = props => {
               margin: 0;
             }
 
+            .article-content {
+              word-wrap: break-word;
+            }
             .green-tetra-img {
               width: 100%;
             }
