@@ -12,7 +12,7 @@ class ProductCardCart extends React.Component {
     return (
         <div className="product-cart">
             <div className="product-picture-wrapper">
-            <img className="product-picture" src={props.picture} /></div>
+            <img className="product-picture" src={props.picture ? `https://svr.eramitra.com/images/${props.picture}` : "/static/images/not-found.jpg"} /></div>
             <div className="product-description">
                 <p className="product-category">{props.brand}</p>
                 <h6 className="product-name">{props.name} </h6>
@@ -26,6 +26,7 @@ class ProductCardCart extends React.Component {
                 {`
                     .product-cart {
                         display: flex;
+                        align-items: center;
                     }
 
                     .product-cart .product-picture-wrapper {
@@ -37,7 +38,8 @@ class ProductCardCart extends React.Component {
                     .product-cart .product-picture {
                         width: 60px;
                         height: 60px;
-                        object-fit: cover;
+                        padding: 0;
+                        object-fit: contain;
                     }
 
                     .product-cart .product-description {
@@ -48,7 +50,7 @@ class ProductCardCart extends React.Component {
                         font-family: Calibri;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 8px;
+                        font-size: 12px;
                         line-height: 10px;
                         color: #1BA58A;
                         margin: 0 0 5px 0;
@@ -78,7 +80,7 @@ class ProductCardCart extends React.Component {
 
                     .product-cart .product-warning {
                         font-family: Bahnschrift;
-                        font-size: 14px;
+                        font-size: 10px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: 18px;

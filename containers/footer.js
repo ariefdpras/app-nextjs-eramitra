@@ -1,165 +1,285 @@
+import axios from "axios";
 import Link from "next/link";
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
+const Header = (props) => {
+  const [csData, setCsData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    company: "",
+    message: "",
+  });
 
-const Header= (props) => {
-  
-    const [csData, setCsData] = useState({
-      name: '',
-      phone: '',
-      email: '',
-      company: '',
-      message: ''
-    })
+  const [subscribe, setSubscribe] = useState("");
 
-    const setName = (e) => {
-      setCsData((csData) => ({
-        ...csData,
-        name: e.target.value
-      }))
+  const setNewCustomer = (e) => {
+    setSubscribe(e.target.value);
+  };
+
+  const setName = (e) => {
+    setCsData((csData) => ({
+      ...csData,
+      name: e.target.value,
+    }));
+  };
+
+  const setPhone = (e) => {
+    setCsData((csData) => ({
+      ...csData,
+      phone: e.target.value,
+    }));
+  };
+
+  const setEmail = (e) => {
+    setCsData((csData) => ({
+      ...csData,
+      email: e.target.value,
+    }));
+  };
+
+  const setCompany = (e) => {
+    setCsData((csData) => ({
+      ...csData,
+      company: e.target.value,
+    }));
+  };
+
+  const setMessage = (e) => {
+    setCsData((csData) => ({
+      ...csData,
+      message: e.target.value,
+    }));
+  };
+
+  const emailSend = async () => {
+    if (!validatePhone(csData.phone) || !csData.phone) {
+      alert("Please input correct phone number");
+      return;
     }
-
-    
-    const setPhone = (e) => {
-      setCsData((csData) => ({
-        ...csData,
-        phone: e.target.value
-      }))
+    if (!validateEmail(csData.email) || !csData.email) {
+      alert("Please input correct email");
+      return;
     }
-
-
-    
-    const setEmail = (e) => {
-      setCsData((csData) => ({
-        ...csData,
-        email: e.target.value
-      }))
-    }
-
-
-    
-    const setCompany = (e) => {
-      setCsData((csData) => ({
-        ...csData,
-        company: e.target.value
-      }))
-    }
-
-
-    
-    const setMessage = (e) => {
-      setCsData((csData) => ({
-        ...csData,
-        message: e.target.value
-      }))
-    }
-
-
-    const emailSend = () => {
-      window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Hi Era Mitra Perdana, I would like to know more information regarding below details.%0d%0a%0d%0a${csData.message ? csData.message + "%0d%0a%0d%0a": ''}Please contact me through below Contact Information:%0d%0aName: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''} %0d%0aLooking forward to the information and more collaboration with EMP. I would also like to receive updates from Era Mitra Perdana regarding news, info, and other advertising purposes.  %0d%0a%0d%0aThank you,%0d%0aRegards.
-      `, '_blank');
+    const data = {
+      name: csData.name,
+      phone: csData.phone,
+      email: csData.email,
+      company: csData.company || null,
     };
+    axios
+      .post("/api/addCustomer", data)
+      .then((res) => {
+        alert("Subscribe success!");
+      })
+      .catch((error) => {
+        alert("Error to subscribe! Please try again");
+      });
 
-    return (
-      <div className="footer-container">
-        <div className="footer upper">
-          <div className="footer-wrapper">
-            <div className="footer-inner-content-wrapper">
-              <div className="footer-left">
-                <h2>OUR LOCATION</h2>
-                <div className="location-group">
-                  <h2>Head Office - Jakarta</h2>
-                  <p>Ruko Buaran Persada No. 31 <br></br>Jl. R. Soekamto Duren Sawit Jakarta 13450, Indonesia</p>
-                  <div className="icon-text"><span className="material-icons">phone</span><p> +62-21-86612458 (Fax: +62-21-86612365)</p></div>
-                  <div className="icon-text"><span className="material-icons">mail_outline</span><p>sales@eramitra.com</p></div>
-                </div>                
-                <div className="location-group">
-                  <h2>Branch Office - Surabaya</h2>
-                  <p>Jl. Kebon Sari V No. 7G - Surabaya</p>
-                  <div className="icon-text"><span className="material-icons">phone</span><p> +62-31-8298235 (Fax: +62-31-8298235)</p></div>
-                  <div className="icon-text"><span className="material-icons">mail_outline</span><p>emp.sby@eramitra.com</p></div>
+    window.open(
+      `mailto:sales@eramitra.com?subject=Reach Us Form&body=Hi Era Mitra Perdana, I would like to know more information regarding below details.%0d%0a%0d%0a${
+        csData.message ? csData.message + "%0d%0a%0d%0a" : ""
+      }Please contact me through below Contact Information:%0d%0aName: ${
+        csData.name || ""
+      } %0d%0aPhone: ${csData.phone || ""}  %0d%0aEmail: ${
+        csData.email || ""
+      } %0d%0aCompany: ${
+        csData.company || ""
+      } %0d%0aLooking forward to the information and more collaboration with EMP. I would also like to receive updates from Era Mitra Perdana regarding news, info, and other advertising purposes.  %0d%0a%0d%0aThank you,%0d%0aRegards.
+      `,
+      "_blank"
+    );
+  };
+
+  const postCustomer = async (data) => {
+    axios
+      .post("/api/addCustomer", data)
+      .then((res) => {
+        alert("Subscribe success!");
+      })
+      .catch((error) => {
+        alert("Error to subscribe! Please try again");
+      });
+  };
+
+  const postSubcribe = () => {
+    if (validateEmail(subscribe)) {
+      const data = { name: subscribe, email: subscribe };
+      postCustomer(data);
+    } else {
+      alert("Please enter an email");
+    }
+  };
+
+  const validateEmail = (email) => {
+    const re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validatePhone = (phone) => {
+    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    return re.test(phone.replace(/\s+/g, ""));
+  };
+
+  return (
+    <div className="footer-container">
+      <div className="footer upper">
+        <div className="footer-wrapper">
+          <div className="footer-inner-content-wrapper">
+            <div className="footer-left">
+              <h2>OUR LOCATION</h2>
+              <div className="location-group">
+                <h2>Head Office - Jakarta</h2>
+                <p>
+                  Ruko Buaran Persada No. 31 <br></br>Jl. R. Soekamto Duren
+                  Sawit Jakarta 13450, Indonesia
+                </p>
+                <div className="icon-text">
+                  <span className="material-icons">phone</span>
+                  <p> +62-21-86612458 (Fax: +62-21-86612365)</p>
+                </div>
+                <div className="icon-text">
+                  <span className="material-icons">mail_outline</span>
+                  <p>sales@eramitra.com</p>
                 </div>
               </div>
-              <div className="reach-us">
-                 <h2>REACH US</h2>
-                 <div className="form-reach-us"><input type="text" placeholder="Name" onChange={setName} /></div>
-                 <div className="form-reach-us"><input type="text" placeholder="Phone Number" onChange={setPhone}/></div>
-                 <div className="form-reach-us"><input type="text" placeholder="Email" onChange={setEmail}/></div>
-                 <div className="form-reach-us"><input type="text" placeholder="Company" onChange={setCompany}/></div>
-                 <div className="form-reach-us"><textarea rows="5" placeholder="Message" onChange={setMessage}/></div>
-                 <a className="btn-submit-reach" onClick={() => emailSend()}>Submit</a>
+              <div className="location-group">
+                <h2>Branch Office - Surabaya</h2>
+                <p>Jl. Kebon Sari V No. 7G - Surabaya</p>
+                <div className="icon-text">
+                  <span className="material-icons">phone</span>
+                  <p> +62-31-8298235 (Fax: +62-31-8298235)</p>
+                </div>
+                <div className="icon-text">
+                  <span className="material-icons">mail_outline</span>
+                  <p>emp.sby@eramitra.com</p>
+                </div>
               </div>
             </div>
+            <div className="reach-us">
+              <h2>REACH US</h2>
+              <div className="form-reach-us">
+                <input type="text" placeholder="Name" onChange={setName} />
+              </div>
+              <div className="form-reach-us">
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  onChange={setPhone}
+                />
+              </div>
+              <div className="form-reach-us">
+                <input type="text" placeholder="Email" onChange={setEmail} />
+              </div>
+              <div className="form-reach-us">
+                <input
+                  type="text"
+                  placeholder="Company"
+                  onChange={setCompany}
+                />
+              </div>
+              <div className="form-reach-us">
+                <textarea
+                  rows="5"
+                  placeholder="Message"
+                  onChange={setMessage}
+                />
+              </div>
+              <a className="btn-submit-reach" onClick={() => emailSend()}>
+                Submit
+              </a>
+            </div>
           </div>
-          <img className="footer-shape" src="/static/images/footer-shape.svg" />
         </div>
-        <div className="footer bottom">
-          <div className="footer-wrapper">
-            <div className="footer-inner-content-wrapper">
-              <div className="footer-left">
-                <div className="info-wrapper">
-                  <a href={`${process.env.ROOT_DOMAIN}`}>
-                    <img className="logo" src="/static/images/logo-white.png" />
+        <img className="footer-shape" src="/static/images/footer-shape.svg" />
+      </div>
+      <div className="footer bottom">
+        <div className="footer-wrapper">
+          <div className="footer-inner-content-wrapper">
+            <div className="footer-left">
+              <div className="info-wrapper">
+                <a href={`${process.env.ROOT_DOMAIN}`}>
+                  <img className="logo" src="/static/images/logo-white.png" />
+                </a>
+              </div>
+            </div>
+
+            <div className="hyperlink-column">
+              <div className="col footer-link">
+                <h2>Newsletter</h2>
+                <div className="form-newsletter">
+                  <input
+                    type="text"
+                    placeholder="Your Email"
+                    onChange={setNewCustomer}
+                  />
+                  <a className="btn-subscribe" onClick={() => postSubcribe()}>
+                    Subscribe
+                  </a>
+                </div>
+                <h2>Follow Us</h2>
+                <div className="social-media-wrapper">
+                  <a href="https://wa.me/6285210043257">
+                    <img
+                      className="logo-social logo-wa"
+                      src="/static/icons/whatsapp.svg"
+                    />
+                  </a>
+                  <a href="mailto:sales@eramitra.com">
+                    <span className="material-icons white logo-mail">mail</span>
+                  </a>
+
+                  <a href="https://www.linkedin.com/company/era-mitra-perdana">
+                    <img
+                      className="logo-social"
+                      src="/static/icons/linkedin.svg"
+                    />
+                  </a>
+
+                  <a href="https://instagram.com/eramitra.id?utm_medium=copy_link">
+                    <img
+                      className="logo-social"
+                      src="/static/icons/instagram.svg"
+                    />
                   </a>
                 </div>
               </div>
-
-              <div className="hyperlink-column">
-                <div className="col footer-link">
-                  <h2>Newsletter</h2>
-                  <div className="form-newsletter">
-                    <input type="text" placeholder="Your Email"/>
-                    <a className="btn-subscribe" onClick={() => {}}>Subscribe</a>
-                  </div>
-                  <h2>Follow Us</h2>
-                  <div className="social-media-wrapper">
-                    <a href="https://wa.me/6281212918004">
-                      <img
-                        className="logo-social logo-wa"
-                        src="/static/icons/whatsapp.svg"
-                      />
-                    </a>
-                    <a href="mailto:sales@eramitra.com">
-                      <span className="material-icons white logo-mail">
-                      mail
-                      </span>
-                    </a>
-
-                    <a href="https://www.linkedin.com/company/era-mitra-perdana">
-                    <img className="logo-social" src="/static/icons/linkedin.svg" />
-                    </a>
-
-                    <a href="https://instagram.com/eramitra.id?utm_medium=copy_link">
-                    <img className="logo-social" src="/static/icons/instagram.svg" />
-                    </a>
-                  </div>
-                </div>
-                <div className="col footer-link page">
-                  <h2>Page</h2>
-                  <Link href={`${process.env.ROOT_DOMAIN}/about-us`}>
-                    <a>About Us</a>
-                  </Link>
-                  <Link href={`${process.env.ROOT_DOMAIN}/career`}>
-                    <a>Career</a>
-                  </Link>
-                  <Link href={`${process.env.ROOT_DOMAIN}/contact-us`}>
-                    <a>Contact Us</a>
-                  </Link>
-                  <Link href={`${process.env.ROOT_DOMAIN}/contact-us`}>
-                    <a>Customer Service</a>
-                  </Link>
-                </div>
+              <div className="col footer-link page">
+                <h2>Page</h2>
+                <Link
+                  href={`${process.env.ROOT_DOMAIN}/about-us`}
+                  legacyBehavior
+                >
+                  <a>About Us</a>
+                </Link>
+                <Link href={`${process.env.ROOT_DOMAIN}/career`} legacyBehavior>
+                  <a>Career</a>
+                </Link>
+                <Link
+                  href={`${process.env.ROOT_DOMAIN}/contact-us`}
+                  legacyBehavior
+                >
+                  <a>Contact Us</a>
+                </Link>
+                <Link
+                  href={`${process.env.ROOT_DOMAIN}/contact-us`}
+                  legacyBehavior
+                >
+                  <a>Customer Service</a>
+                </Link>
               </div>
             </div>
-            {/* <div className="copyright">
+          </div>
+          {/* <div className="copyright">
               <p>copyright</p>
               <span className="material-icons">copyright</span>
               <p>forte tech 2021</p>
             </div> */}
-          </div>
         </div>
-        <style>
-          {`
+      </div>
+      <style>
+        {`
 
                 .col {
                     display: flex;
@@ -325,7 +445,7 @@ const Header= (props) => {
                   font-family: Calibri;
                   font-style: italic;
                   font-weight: normal;
-                  font-size: 16px;
+                  font-size: 18px;
                   line-height: 20px;
                 }
                 
@@ -600,8 +720,8 @@ const Header= (props) => {
                     }
 
                     .location-group p {
-                      font-size: 9px;
-                      line-height: 9px;
+                      font-size: 12px;
+                      line-height: 12px;
                       text-align: center;
                     }
 
@@ -642,9 +762,9 @@ const Header= (props) => {
 
                 }
                 `}
-        </style>
-      </div>
-    );
-}
+      </style>
+    </div>
+  );
+};
 
 export default Header;

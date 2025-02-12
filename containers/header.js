@@ -11,7 +11,7 @@ class Header extends React.Component {
       isProduct: false,
       isSearch: false,
       isCart: false,
-      search: ''
+      search: "",
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleClickProduct = this.handleClickProduct.bind(this);
@@ -21,8 +21,8 @@ class Header extends React.Component {
     this.submitSearch = this.submitSearch.bind(this);
   }
 
-  handleClick() {   
-    if(this.state.isToggleOn){
+  handleClick() {
+    if (this.state.isToggleOn) {
       this.setState((state) => ({
         isProduct: false,
       }));
@@ -30,8 +30,6 @@ class Header extends React.Component {
     this.setState((state) => ({
       isToggleOn: !state.isToggleOn,
     }));
-
-
   }
 
   handleClickProduct() {
@@ -40,10 +38,9 @@ class Header extends React.Component {
     }));
   }
 
-
   handleClickSearch() {
-    if(this.state.search !== ""){
-      this.submitSearch()
+    if (this.state.search !== "") {
+      this.submitSearch();
     } else {
       this.setState((state) => ({
         isSearch: !state.isSearch,
@@ -61,15 +58,17 @@ class Header extends React.Component {
     this.setState((state) => ({
       search: e.target.value,
     }));
-    if(e.target.value == "") {
+    if (e.target.value == "") {
       this.setState((state) => ({
         isSearch: !state.isSearch,
-      })); 
+      }));
     }
   }
 
   submitSearch() {
-    window.location.replace(`${process.env.ROOT_DOMAIN}/search?name=${this.state.search}&by=product`);
+    window.location.replace(
+      `${process.env.ROOT_DOMAIN}/search?name=${this.state.search}&by=product`
+    );
   }
 
   render() {
@@ -80,7 +79,7 @@ class Header extends React.Component {
         {this.state.isToggleOn && (
           <div className="sidebar mobile-only">
             <div className="logo-wrapper">
-              <a href={`${process.env.ROOT_DOMAIN}`}>
+              <a href={`${process.env.ROOT_DOMAIN}`} legacyBehavior>
                 <img className="logo" src="/static/images/logo.png" />
               </a>
               <span className="material-icons" onClick={this.handleClick}>
@@ -88,49 +87,45 @@ class Header extends React.Component {
               </span>
             </div>
             <div className="navbar-link">
-          
-               <Link href={`${process.env.ROOT_DOMAIN}/about-us`}>
-                  <a>
-                    About Us
-                  </a>
-                </Link>
-                <a onClick={this.handleClickProduct}>
-                    Products
-                </a>
-                <Link href={`${process.env.ROOT_DOMAIN}/news-info`}>
-                  <a>
-                    News &amp; Info
-                  </a>
-                </Link>
-                <Link href={`${process.env.ROOT_DOMAIN}/career`}>
-                  <a>
-                    Career
-                  </a>
-                </Link>                
-                <Link href={`${process.env.ROOT_DOMAIN}/contact-us`}>
-                  <a>
-                    Contact Us
-                  </a>
-                </Link>
+              <Link href={`${process.env.ROOT_DOMAIN}/about-us`}>About Us</Link>
+              <a onClick={this.handleClickProduct} legacyBehavior>
+                Products
+              </a>
+              <Link href={`${process.env.ROOT_DOMAIN}/news-info`}>
+                News &amp; Info
+              </Link>
+              <Link href={`${process.env.ROOT_DOMAIN}/career`}>Career</Link>
+              <Link
+                href={`${process.env.ROOT_DOMAIN}/contact-us`}
+                legacyBehavior
+              >
+                <a>Contact Us</a>
+              </Link>
             </div>
           </div>
         )}
 
-        {
-          this.state.isToggleOn && this.state.isProduct && 
+        {this.state.isToggleOn && this.state.isProduct && (
           <div className="sidebar product mobile-only">
-          <div className="logo-wrapper">
-            <span className="material-icons" onClick={this.handleClickProduct}>
-              chevron_left
-            </span>
-            <a href={`${process.env.ROOT_DOMAIN}`}>
+            <div className="logo-wrapper">
+              <span
+                className="material-icons"
+                onClick={this.handleClickProduct}
+              >
+                chevron_left
+              </span>
+              <a href={`${process.env.ROOT_DOMAIN}`} legacyBehavior>
                 <img className="logo" src="/static/images/logo.png" />
-            </a>
+              </a>
+            </div>
+            <CategoryMenu
+              brands={props.brands}
+              applications={props.applications}
+              industries={props.industries}
+              catalogue={props.catalogue}
+            />
           </div>
-          <CategoryMenu brands={props.brands} applications={props.applications} industries={props.industries} catalogue={props.catalogue}/>
-      
-        </div>
-        }
+        )}
 
         {this.state.isToggleOn && (
           <div
@@ -139,118 +134,110 @@ class Header extends React.Component {
           ></div>
         )}
 
-
         <div className="navbar-content-wrapper">
           <div className="navbar-inner-content-wrapper">
             <div className="logo-wrapper mobile-only">
-              <span
-                className="material-icons"
-                onClick={this.handleClick}
-              >
+              <span className="material-icons" onClick={this.handleClick}>
                 menu
               </span>
-              {
-                  !this.state.isSearch &&
-                  <a href={`${process.env.ROOT_DOMAIN}`}>
-                    <img className="logo" src="/static/images/logo.png" />
-                  </a>
-              }
-              
+              {!this.state.isSearch && (
+                <a href={`${process.env.ROOT_DOMAIN}`} legacyBehavior>
+                  <img className="logo" src="/static/images/logo.png" />
+                </a>
+              )}
             </div>
             <div className="logo-wrapper desktop-only">
-              <a href={`${process.env.ROOT_DOMAIN}`}>
+              <a href={`${process.env.ROOT_DOMAIN}`} legacyBehavior>
                 <img className="logo" src="/static/images/logo.png" />
               </a>
-              
             </div>
             <div className="navbar-link desktop-only">
               <div className="navbar-link-wrapper">
-                <Link href={`${process.env.ROOT_DOMAIN}/about-us`}>
-                  <a>
-                    About Us
-                  </a>
+                <Link
+                  href={`${process.env.ROOT_DOMAIN}/about-us`}
+                  legacyBehavior
+                >
+                  <a>About Us</a>
                 </Link>
-                <a onClick={this.handleClickProduct}>
-                    Products
-                </a>
-                <Link href={`${process.env.ROOT_DOMAIN}/news-info`}>
-                  <a>
-                    News &amp; Info
-                  </a>
+                <a onClick={this.handleClickProduct}>Products</a>
+                <Link
+                  href={`${process.env.ROOT_DOMAIN}/news-info`}
+                  legacyBehavior
+                >
+                  <a>News &amp; Info</a>
                 </Link>
-                <Link href={`${process.env.ROOT_DOMAIN}/career`}>
-                  <a>
-                    Career
-                  </a>
-                </Link>                
-                <Link href={`${process.env.ROOT_DOMAIN}/contact-us`}>
-                  <a>
-                    Contact Us
-                  </a>
+                <Link href={`${process.env.ROOT_DOMAIN}/career`} legacyBehavior>
+                  <a>Career</a>
+                </Link>
+                <Link
+                  href={`${process.env.ROOT_DOMAIN}/contact-us`}
+                  legacyBehavior
+                >
+                  <a>Contact Us</a>
                 </Link>
                 <div className="separator"></div>
-                {
-                  this.state.isSearch ? 
-                  <div className="input-search"><input type="text" placeholder="" onChange={this.handleSearch}/>
-                  <a className="search-box" onClick={this.handleClickSearch}>
-                    <span className="material-icons">
-                      search
-                    </span>
-                  </a></div>
-                  : 
-
-                <a className="search-header" onClick={this.handleClickSearch}>
-                <span className="material-icons">
-                  search
-                </span>
-              </a>
-                }
+                {this.state.isSearch ? (
+                  <div className="input-search">
+                    <input
+                      type="text"
+                      placeholder=""
+                      onChange={this.handleSearch}
+                    />
+                    <a className="search-box" onClick={this.handleClickSearch}>
+                      <span className="material-icons">search</span>
+                    </a>
+                  </div>
+                ) : (
+                  <a className="search-header" onClick={this.handleClickSearch}>
+                    <span className="material-icons">search</span>
+                  </a>
+                )}
                 <a className="cart-header" onClick={this.handleClickCart}>
-                  <span className="material-icons">
-                    shopping_cart
-                  </span>
+                  <span className="material-icons">shopping_cart</span>
                 </a>
-
               </div>
             </div>
 
             <div className="navbar-link mobile-only">
               <div className="navbar-link-wrapper">
-                {
-                  this.state.isSearch ? 
-                  <div className="input-search"><input type="text" placeholder="" onChange={this.handleSearch}/>
-                  <a className="search-box" onClick={this.handleClickSearch}>
-                    <span className="material-icons">
-                      search
-                    </span>
-                  </a></div>
-                  : 
-
-                <a className="search-header" onClick={this.handleClickSearch}>
-                <span className="material-icons">
-                  search
-                </span>
-              </a>
-                }
+                {this.state.isSearch ? (
+                  <div className="input-search">
+                    <input
+                      type="text"
+                      placeholder=""
+                      onChange={this.handleSearch}
+                    />
+                    <a className="search-box" onClick={this.handleClickSearch}>
+                      <span className="material-icons">search</span>
+                    </a>
+                  </div>
+                ) : (
+                  <a className="search-header" onClick={this.handleClickSearch}>
+                    <span className="material-icons">search</span>
+                  </a>
+                )}
                 <a className="cart-header" onClick={this.handleClickCart}>
-                  <span className="material-icons">
-                    shopping_cart
-                  </span>
+                  <span className="material-icons">shopping_cart</span>
                 </a>
-
               </div>
             </div>
           </div>
         </div>
 
         {this.state.isCart && (
-          <><Cart cart={props.cart} />
-          <div className="backdrop" onClick={this.handleClickCart}></div>
+          <>
+            <Cart cart={props.cart} />
+            <div className="backdrop" onClick={this.handleClickCart}></div>
           </>
         )}
 
-        { !this.state.isToggleOn && this.state.isProduct && (
-          <CategoryMenu brands={props.brands} applications={props.applications} industries={props.industries} catalogue={props.catalogue}/>
+        {!this.state.isToggleOn && this.state.isProduct && (
+          <CategoryMenu
+            brands={props.brands}
+            applications={props.applications}
+            industries={props.industries}
+            catalogue={props.catalogue}
+          />
         )}
 
         <style>
@@ -270,13 +257,14 @@ class Header extends React.Component {
                     z-index: 200;
                     width: 100vw;
                     padding: 0;
+                    
                 }
 
                 .navbar-content-wrapper {
                     width: 100%;
                     position: relative;
                     box-shadow: 0px 4px 10px rgba(145, 158, 171, 0.1);
-                    background-color: #FFF;
+                    background-color: rgba(255, 255, 255, 0.7);
                 }
 
                 .navbar-inner-content-wrapper {
@@ -287,6 +275,7 @@ class Header extends React.Component {
                     max-width: 1120px;
                     height: 76px;
                     margin: 0 auto;
+                   
                 }
 
                 .navbar-inner-content-wrapper .logo-wrapper {
@@ -310,8 +299,8 @@ class Header extends React.Component {
 
                 .navbar-link a {
                     font-family: 'Bahnschrift';
-                    font-weight: 400;
-                    font-size: 14px;
+                    font-weight: 500;
+                    font-size: 17px;
                     margin-left: 55px;
                 }
 
@@ -438,7 +427,7 @@ class Header extends React.Component {
 
                     .sidebar .navbar-link a {
                         font-family: 'Bahnschrift';
-                        font-size: 16px;
+                        font-size: 18px;
                         font-style: normal;
                         font-weight: 600;
                         line-height: 22px;

@@ -58,7 +58,7 @@ const Home = (props) => {
                         </div>
 
                         {
-                            isBrands && <div className="group-list-wrapper"> {props.brands && props.brands.map((brand, idx) => <a 
+                            isBrands && <div className="group-list-wrapper"> {props.brands && props.brands.length > 0 && props.brands.map((brand, idx) => <a 
                               key={idx} href={`${process.env.ROOT_DOMAIN}/products/brand/${brand.id}`}><p className={props.detail ? props.detail.name === brand.name ? `group-list active` : `group-list` : `group-list`}>{brand.name}</p></a>)}</div>
                           }
                         <div className="category-group">
@@ -71,7 +71,7 @@ const Home = (props) => {
                         </div>
 
                           {
-                            isIndustry && <div className="group-list-wrapper"> {props.industries && props.industries.map((industry, idx) => <a  
+                            isIndustry && <div className="group-list-wrapper"> {props.industries && props.industries.length > 0 && props.industries.map((industry, idx) => <a  
                               key={idx} href={`${process.env.ROOT_DOMAIN}/products/industry/${industry.id}`}><p className={props.detail ? props.detail.name === industry.name ? `group-list active` : `group-list` : `group-list`}>{industry.name}</p></a>)}</div>
                           }
                         <div className="category-group">
@@ -83,7 +83,7 @@ const Home = (props) => {
                           }
                         </div>
                           {
-                            isApplication && <div className="group-list-wrapper"> {props.applications && props.applications.map((application, idx) => <a 
+                            isApplication && <div className="group-list-wrapper"> {props.applications && props.applications.length > 0 && props.applications.map((application, idx) => <a 
                               key={idx} href={`${process.env.ROOT_DOMAIN}/products/application/${application.id}`}><p className={props.detail ? props.detail.name === application.name ? `group-list active` : `group-list` : `group-list`}>{application.name}</p></a>)}</div>
                           }
                     </div>
@@ -94,7 +94,7 @@ const Home = (props) => {
                             { props.detail ? props.detail.name : "Products"}    
                         </h3>
                         <div className="products-wrapper">
-                            { props.products && props.products.map((product, idx) => 
+                            { props.products && props.products.length > 0 && props.products.map((product, idx) => 
                                 <ProductCard 
                                 id={product.id}
                                 picture={product.Pictures && product.Pictures[0] && product.Pictures[0].name}
@@ -106,13 +106,15 @@ const Home = (props) => {
                             )}
                         </div>
                         
-                        <Pagination
-                          count={props.pagination}
-                          page={parseInt(props.query.page) || 1}
-                          showFirstButton 
-                          showLastButton
-                          onChange={handleChange}
-                        />
+                        { props.products && props.products.length > 0 && 
+                          <Pagination
+                            count={props.pagination}
+                            page={parseInt(props.query.page) || 1}
+                            showFirstButton 
+                            showLastButton
+                            onChange={handleChange}
+                            />
+                        }
                     </div>
                 </div>
             </div>

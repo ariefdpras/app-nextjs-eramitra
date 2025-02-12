@@ -3,56 +3,65 @@ import Section from "../components/section";
 import Slider from "react-slick";
 
 const Home = (props) => {
- 
   const settings = {
-		dots: true,
-		arrows: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 2,
-		slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
     variableWidth: true,
-    centerMode: true
-    
-	};
+    centerMode: true,
+  };
 
   const settings2 = {
-		dots: true,
-		arrows: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     variableWidth: true,
-    centerMode: true
-	};
+    centerMode: true,
+  };
 
   return (
-      <Layout
-        title="About Us | PT. Era Mitra Perdana"
-        applications={props.applications}
-        brands={props.brands}
-        industries={props.industries}
-        catalogue={props.catalogue}   >      
-        <div className="container">
-          <div className="header-about">
-            <img className="green-tetra-img" src="/static/images/green-tetra.svg" />
-            <div className="header-about-wrapper">
-              <div className="header-img">
-                <img src="http://cdn.eramitra.com/images_article/original/DSC00749.jpg" />
-              </div>
-              <h3 className="section-title">About Us</h3>
-              <p className="section-description">PT.	Era	Mitra	Perdana	provides	Scientific,	Laboratory	Equipment,	and	Services.	Established	in	Jakarta,	
-We	are	committed	to	provide	the	best	service,	open	communication,	and	proactively	giving	suggestion	
-and	alternate	solution	to	support	our	principals	and	customers.	<br></br><br></br>
-To	be	the	best	in	Scientific	and	Laboratory	Equipment	industry,	PT	Era	Mitra	Perdana	is	supported	by	
-highly	qualified	personnel,	high	quality	product,	and	optimum	after	sales	service.	
-We	are	highly	experienced	and	a	trusted	partner	for	Government	Institutions,	Universities,	and	
-Industries	to	supply,	install,	and	provide	after	sales	services	in	the	area	of	scientific	and	laboratory	
-equipment	since	1999.</p>
+    <Layout
+      title="About Us | PT. Era Mitra Perdana"
+      applications={props.applications}
+      brands={props.brands}
+      industries={props.industries}
+      catalogue={props.catalogue}
+    >
+      <div className="container">
+        <div className="header-about">
+          <img
+            className="green-tetra-img"
+            src="/static/images/green-tetra.svg"
+          />
+          <div className="header-about-wrapper">
+            <div className="header-img">
+              <img src="http://cdn.eramitra.com/images_article/original/DSC00749.jpg" />
             </div>
-            <style>
-              {`
+            <h3 className="section-title">About Us</h3>
+            <p className="section-description">
+              PT. Era Mitra Perdana provides Scientific, Laboratory Equipment,
+              and Services. Established in Jakarta, We are committed to provide
+              the best service, open communication, and proactively giving
+              suggestion and alternate solution to support our principals and
+              customers. <br></br>
+              <br></br>
+              To be the best in Scientific and Laboratory Equipment industry, PT
+              Era Mitra Perdana is supported by highly qualified personnel, high
+              quality product, and optimum after sales service. We are highly
+              experienced and a trusted partner for Government Institutions,
+              Universities, and Industries to supply, install, and provide after
+              sales services in the area of scientific and laboratory equipment
+              since 1999.
+            </p>
+          </div>
+          <style>
+            {`
                 .header-about-wrapper {
                   display: flex;
                   flex-direction: column;
@@ -121,24 +130,23 @@ equipment	since	1999.</p>
   
                 }
               `}
-            </style>
-          </div>
-          <Section 
-            element_id="vision-about" 
-            background="#FBFBFB"  
-            height="618px" >
-            <div className="container-inner">
-              <div className="vision-about-wrapper">
-                <div className="about-us-description">
-                  <h3 className="section-title">Vision</h3>
-                  <p className="section-description">To	be	the	best	and	most	reliable	partner	for	our	principals	and	clients	in	Scientific	and	Laboratory	
-Equipment	Industry.</p>
-                </div>
-                <img src="/static/images/vision.svg" />
+          </style>
+        </div>
+        <Section element_id="vision-about" background="#FBFBFB" height="618px">
+          <div className="container-inner">
+            <div className="vision-about-wrapper">
+              <div className="about-us-description">
+                <h3 className="section-title">Vision</h3>
+                <p className="section-description">
+                  To be the best and most reliable partner for our principals
+                  and clients in Scientific and Laboratory Equipment Industry.
+                </p>
               </div>
+              <img src="/static/images/vision.svg" />
             </div>
-            <style>
-              {`
+          </div>
+          <style>
+            {`
                 .vision-about-wrapper {
                   height: 100%;
                   display: flex;
@@ -173,38 +181,53 @@ Equipment	Industry.</p>
 
                 }
               `}
-            </style>
-          </Section>
+          </style>
+        </Section>
 
-          <Section 
-            element_id="mission-about" 
-            background="#FFFFFF" 
-            icon={[
-              {
-                image: "shape-5.svg",
-                vertical: "bottom",
-                horizontal: "right"
-              }
-            ]} 
-            height="618px" >
-            <div className="container-inner">
-              <div className="mission-about-wrapper">
-                <img src="/static/images/mission.svg" />
-                <div className="mission-description">
-                  <h3 className="section-title">Mission</h3>
-                  <p className="section-description">
+        <Section
+          element_id="mission-about"
+          background="#FFFFFF"
+          icon={[
+            {
+              image: "shape-5.svg",
+              vertical: "bottom",
+              horizontal: "right",
+            },
+          ]}
+          height="618px"
+        >
+          <div className="container-inner">
+            <div className="mission-about-wrapper">
+              <img src="/static/images/mission.svg" />
+              <div className="mission-description">
+                <h3 className="section-title">Mission</h3>
+                <p className="section-description">
+                  <div>
                     <ul className="section-mission">
-                        <li>Provide	high	quality	product	and	services	with	competitive	price</li>
-                        <li>Be	proactive	during	the	end-to-end	process	in	supporting	principals	and	clients</li>
-                        <li>Continuously	learning	and	sharing	insights	regarding	Scientific	and	Laboratory Industry</li>
-                        <li>Company	digitalization	to	provide	easier	access	for	consumers</li>
+                      <li>
+                        Provide high quality product and services with
+                        competitive price
+                      </li>
+                      <li>
+                        Be proactive during the end-to-end process in supporting
+                        principals and clients
+                      </li>
+                      <li>
+                        Continuously learning and sharing insights regarding
+                        Scientific and Laboratory Industry
+                      </li>
+                      <li>
+                        Company digitalization to provide easier access for
+                        consumers
+                      </li>
                     </ul>
-                  </p>
-                </div>
+                  </div>
+                </p>
               </div>
             </div>
-            <style>
-              {`
+          </div>
+          <style>
+            {`
                 .mission-about-wrapper {
                   height: 100%;
                   display: flex;
@@ -269,49 +292,66 @@ Equipment	Industry.</p>
                   }
                 }
               `}
-            </style>
-          </Section>
-          
-          
-          <Section 
-            element_id="values" 
-            background="#FBFBFB" 
-            icon={[
-              {
-                image: "shape-4.svg",
-                vertical: "top",
-                horizontal: "left"
-              }
-            ]} 
-            height="768px" >
-            <div className="container-inner">
-              <div className="values-wrapper">
-                <h3 className="section-title">Values</h3>
-                <div className="values-card-wrapper">
-                  <div className="values-card">
-                    <img className="values-img other-perform" src="/static/images/bond.svg"/>
-                    <h6>Bond</h6>
-                    <p>We	aim	to	be	the	best	and	most	reliable	partner	for	all	stakeholders	which	we	believe	started	
-from	having	a	strong	bond.</p>
-                  </div>
-                  <div className="values-card">
-                    <img className="values-img " src="/static/images/performance.svg"/>
-                    <h6>Performance</h6>
-                    <p>	We	are	committed	to	perform	in	the	best	way	possible	in	all	projects	by	being	a	
-proactive	partner.</p>
-                  </div>
-                  <div className="values-card">
-                    <img className="values-img other-perform" src="/static/images/process.svg"/>
-                    <h6>Process</h6>
-                    <p>We	believe	process	is	an	important	part	in	all	projects	and	are	committed	to	be	a	reliable	
-partner	for	our	stakeholders	along	the	process.
-</p>
-                  </div>
+          </style>
+        </Section>
+
+        <Section
+          element_id="values"
+          background="#FBFBFB"
+          icon={[
+            {
+              image: "shape-4.svg",
+              vertical: "top",
+              horizontal: "left",
+            },
+          ]}
+          height="768px"
+        >
+          <div className="container-inner">
+            <div className="values-wrapper">
+              <h3 className="section-title">Values</h3>
+              <div className="values-card-wrapper">
+                <div className="values-card">
+                  <img
+                    className="values-img other-perform"
+                    src="/static/images/bond.svg"
+                  />
+                  <h6>Bond</h6>
+                  <p>
+                    We aim to be the best and most reliable partner for all
+                    stakeholders which we believe started from having a strong
+                    bond.
+                  </p>
+                </div>
+                <div className="values-card">
+                  <img
+                    className="values-img "
+                    src="/static/images/performance.svg"
+                  />
+                  <h6>Performance</h6>
+                  <p>
+                    {" "}
+                    We are committed to perform in the best way possible in all
+                    projects by being a proactive partner.
+                  </p>
+                </div>
+                <div className="values-card">
+                  <img
+                    className="values-img other-perform"
+                    src="/static/images/process.svg"
+                  />
+                  <h6>Process</h6>
+                  <p>
+                    We believe process is an important part in all projects and
+                    are committed to be a reliable partner for our stakeholders
+                    along the process.
+                  </p>
                 </div>
               </div>
             </div>
-            <style>
-              {`
+          </div>
+          <style>
+            {`
                 .values-wrapper {
                   height: 100%;
                   display: flex;
@@ -431,51 +471,65 @@ partner	for	our	stakeholders	along	the	process.
 
                 }
               `}
-            </style>
-          </Section>
+          </style>
+        </Section>
 
-           
-          <Section 
-            element_id="what-we-do-best" 
-            background="#FFFFFF" 
-            icon={[
-              {
-                image: "shape-2.svg",
-                vertical: "top",
-                horizontal: "right"
-              }
-            ]} 
-            height="1000px" >
-            <div className="container-inner">
-              <div className="what-we-do-best-wrapper">
-                  <h3 className="section-title">What We Do Best</h3>
-                  <p className="section-description">We offer the best solution for <br></br>Scientific, Laboratory Equipment, and Services</p>
-                      
-                  <div className="main-content">
-                    <div className="card-wrapper">
-                      <div className="wwdb-card">
-                        <img src="/static/images/wwdb-1.svg" />
-                        <p>High Quality with <br></br> Competitive Price</p>
-                      </div>
-                      <div className="wwdb-card">
-                        <img src="/static/images/wwdb-2.svg" />
-                        <p>Installation &amp; <br></br>Training</p>
-                      </div>
-                      <div className="wwdb-card">
-                        <img src="/static/images/wwdb-3.svg" />
-                        <p>Accessories &amp;<br></br> Sparepart</p>
-                      </div>
-                      <div className="wwdb-card">
-                        <img src="/static/images/wwdb-4.svg" />
-                        <p>Maintenance &amp; <br></br> Contract Service</p>
-                      </div>
-                    </div>
-                    <img className="what-we-do-img" src="/static/images/what-we-do-best.svg" />
+        <Section
+          element_id="what-we-do-best"
+          background="#FFFFFF"
+          icon={[
+            {
+              image: "shape-2.svg",
+              vertical: "top",
+              horizontal: "right",
+            },
+          ]}
+          height="1000px"
+        >
+          <div className="container-inner">
+            <div className="what-we-do-best-wrapper">
+              <h3 className="section-title">What We Do Best</h3>
+              <p className="section-description">
+                We offer the best solution for <br></br>Scientific, Laboratory
+                Equipment, and Services
+              </p>
+
+              <div className="main-content">
+                <div className="card-wrapper">
+                  <div className="wwdb-card">
+                    <img src="/static/images/wwdb-1.svg" />
+                    <p>
+                      High Quality with <br></br> Competitive Price
+                    </p>
                   </div>
+                  <div className="wwdb-card">
+                    <img src="/static/images/wwdb-2.svg" />
+                    <p>
+                      Installation &amp; <br></br>Training
+                    </p>
+                  </div>
+                  <div className="wwdb-card">
+                    <img src="/static/images/wwdb-3.svg" />
+                    <p>
+                      Accessories &amp;<br></br> Sparepart
+                    </p>
+                  </div>
+                  <div className="wwdb-card">
+                    <img src="/static/images/wwdb-4.svg" />
+                    <p>
+                      Maintenance &amp; <br></br> Contract Service
+                    </p>
+                  </div>
+                </div>
+                <img
+                  className="what-we-do-img"
+                  src="/static/images/what-we-do-best.svg"
+                />
               </div>
             </div>
-            <style>
-              {`
+          </div>
+          <style>
+            {`
 
                 .mobile-only {
                   display: none;
@@ -603,79 +657,81 @@ partner	for	our	stakeholders	along	the	process.
                   }
                 }
               `}
-            </style>
-          </Section>
+          </style>
+        </Section>
 
-        
-          <Section 
-            element_id="brands" 
-            background="#FBFBFB"  
-            height="263px" >
-            <div className="container-inner">
-              <div className="brands-wrapper">
-                
-                <div className="brands-slider desktop">
-                  <Slider {...settings}>
-                      <div className="brands-item">
-                        <img src={`https://svr.eramitra.com/images/pertamina.png`} />
+        <Section element_id="clients" background="#FBFBFB" height="263px">
+          <div className="container-inner">
+            <div className="clients-wrapper">
+              <div className="clients-slider desktop">
+                <Slider {...settings}>
+                  {props.clients &&
+                    props.clients.map((client, idx) => (
+                      <div className="clients-item" key={idx}>
+                        {client.Picture && client.Picture.name && (
+                          <img
+                            src={`https://svr.eramitra.com/images/${client.Picture.name}`}
+                          />
+                        )}
                       </div>
-                      <div className="brands-item">
-                        <img src={`https://svr.eramitra.com/images/bmkg.png`} />
-                      </div>
-                  </Slider>
-                </div>
+                    ))}
+                </Slider>
+              </div>
 
-                <div className="brands-slider mobile">
-                  <Slider {...settings2}>
-                 
-                  <div className="brands-item">
-                        <img src={`https://svr.eramitra.com/images/pertamina.png`} />
+              <div className="clients-slider mobile">
+                <Slider {...settings2}>
+                  {props.clients &&
+                    props.clients.map((client, idx) => (
+                      <div className="clients-item" key={idx}>
+                        {client.Picture && client.Picture.name && (
+                          <img
+                            src={`https://svr.eramitra.com/images/${client.Picture.name}`}
+                          />
+                        )}
                       </div>
-                      <div className="brands-item">
-                        <img src={`https://svr.eramitra.com/images/bmkg.png`} />
-                      </div>
-                  </Slider>
-                </div>
-                <div className="brands-description">
-                  <h3 className="section-title">Our clients</h3>
-                  <p className="section-description">Meet our clients</p>
-                </div>
+                    ))}
+                </Slider>
+              </div>
+              <div className="clients-description">
+                <h3 className="section-title">Our Clients</h3>
+                <p className="section-description">Meet our Clients</p>
               </div>
             </div>
-            <style>
-              {`
-                .brands-wrapper {
+          </div>
+          <style>
+            {`
+                .clients-wrapper {
                   height: 100%;
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
                 }
 
-                .brands-wrapper .section-title {
+                .clients-wrapper .section-title {
                   margin: 0;
                 }
                 
-                .brands-wrapper .section-description {
+                .clients-wrapper .section-description {
                   max-width: 280px;
                 }
 
-                .brands-slider.desktop {
+                .clients-slider.desktop {
                   width: 70%;
                   margin-right: 54px;
                 }
 
-                .brands-slider.mobile {
+                .clients-slider.mobile {
                   display: none;
                 }
 
 
-                .brands-item {
+                .clients-item {
                   height: 40px;
                   display: flex;
                   justify-content: center;
                 }
 
-                .brands-item img{
+                .clients-item img{
                   height: 40px;
                   width: auto;
                   margin: 0 20px;
@@ -683,46 +739,46 @@ partner	for	our	stakeholders	along	the	process.
 
                 
                 @media only screen and (max-width: 800px){
-                    .brands-wrapper {
+                    .clients-wrapper {
                       flex-direction: column-reverse;
                       justify-content: center;
                     }
 
                     
-                    .brands-slider.mobile {
+                    .clients-slider.mobile {
                       display: block;
                       width: 100%;
                       margin-right: 0 !important;
                       padding: 0 20px;
                     }
 
-                    .brands-slider.desktop {
+                    .clients-slider.desktop {
                       display: none;
                     }
 
-                    .brands-item {
+                    .clients-item {
                       height: 30px;
                       display: flex;
                       justify-content: center;
                     }
     
-                    .brands-item img{
+                    .clients-item img{
                       height: 30px;
                       width: auto;
                       margin: 0 20px;
                     }
 
-                    .brands-description {
+                    .clients-description {
                       margin-bottom: 25px;
                     }
     
                 }
               `}
-            </style>
-          </Section>
-        </div>
-        <style>
-          {`
+          </style>
+        </Section>
+      </div>
+      <style>
+        {`
             .container {
               width: 100vw;
               padding: 0;
@@ -751,8 +807,8 @@ partner	for	our	stakeholders	along	the	process.
               font-family: Calibri;
               font-style: italic;
               font-weight: normal;
-              font-size: 20px;
-              line-height: 24px;
+              font-size: 22px;
+              line-height: 26px;
               color: #666A66;
               margin: 0;
             }
@@ -784,29 +840,40 @@ partner	for	our	stakeholders	along	the	process.
               }
             }
           `}
-        </style>
-      </Layout>
+      </style>
+    </Layout>
   );
-}
+};
 
 export async function getServerSideProps() {
+  const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`);
+  const brands = await getBrands.json();
 
-  const getBrands = await fetch(`${process.env.ROOT_DOMAIN}/api/getBrands`)
-  const brands = await getBrands.json()
+  const getClients = await fetch(`${process.env.ROOT_DOMAIN}/api/getClients`);
+  const clients = await getClients.json();
 
+  const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`);
+  const industries = await getIndustry.json();
 
-  const getIndustry = await fetch(`${process.env.ROOT_DOMAIN}/api/getIndustry`)
-  const industries = await getIndustry.json()
+  const getApplication = await fetch(
+    `${process.env.ROOT_DOMAIN}/api/getApplication`
+  );
+  const applications = await getApplication.json();
 
+  const getCatalogue = await fetch(
+    `${process.env.ROOT_DOMAIN}/api/getCatalogue`
+  );
+  const catalogue = await getCatalogue.json();
 
-  const getApplication = await fetch(`${process.env.ROOT_DOMAIN}/api/getApplication`)
-  const applications = await getApplication.json()
-
-  
-  const getCatalogue = await fetch(`${process.env.ROOT_DOMAIN}/api/getCatalogue`)
-  const catalogue = await getCatalogue.json()
-
-  return { props: { brands: brands, industries: industries, applications: applications, catalogue: catalogue }}
+  return {
+    props: {
+      brands: brands,
+      industries: industries,
+      applications: applications,
+      catalogue: catalogue,
+      clients: clients,
+    },
+  };
 }
 
 export default Home;

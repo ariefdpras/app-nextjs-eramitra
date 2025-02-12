@@ -60,7 +60,7 @@ const Home = (props) => {
                         </h3>
                         { props.query && typeof props.query.by !== undefined && props.query.by === "product" && 
                           <div className="products-wrapper">
-                              { props.search && props.search.products && props.search.products.map((product, idx) => 
+                              { props.search && props.search.products && props.search.products.length > 0 && props.search.products.map((product, idx) => 
                                   <ProductCard
                                   id={product.id}
                                   picture={product.Pictures && product.Pictures[0] && product.Pictures[0].name}
@@ -73,7 +73,7 @@ const Home = (props) => {
                         
                         { props.query && typeof props.query.by !== undefined && props.query.by === "article" && 
                           <div className="article-wrapper">
-                                { props.search && props.search.articles && props.search.articles.map((article, idx) => 
+                                { props.search && props.search.articles && props.search.articles.length > 0 && props.search.articles.map((article, idx) => 
                                     <div className="article-card-wrapper" key={idx}>
                                       <ArticleCard
                                         picture={article.cover}

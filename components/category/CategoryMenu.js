@@ -63,7 +63,7 @@ class CategoryMenu extends React.Component {
                 <div className="right-category-inner">
                     <div className="category-col">
                     {
-                        this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
+                        this.state.activeTab == "brands" && props.brands && props.brands.length > 0 && props.brands.map((brand, idx ) =>
                             { 
                                 if(idx > brandTotal) {
                                     return;
@@ -82,7 +82,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
+                        this.state.activeTab == "brands" && props.brands && props.brands.length > 0 && props.brands.map((brand, idx ) =>
                             { 
                                 if(idx < brandTotal || idx > brandTotal*2) {
                                     return;
@@ -101,7 +101,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "brands" && props.brands && props.brands.map((brand, idx ) =>
+                        this.state.activeTab == "brands" && props.brands && props.brands.length > 0 && props.brands.map((brand, idx ) =>
                             { 
                                 if(idx < brandTotal*2 || idx > brandTotal*3) {
                                     return;
@@ -120,7 +120,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
+                        this.state.activeTab == "application" && props.applications && props.brands.length > 0 && props.applications.map((app, idx ) =>
                             { 
                                 if(idx > applicationTotal) {
                                     return;
@@ -139,7 +139,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
+                        this.state.activeTab == "application" && props.applications && props.applications.length > 0 && props.applications.map((app, idx ) =>
                             { 
                                 if(idx < applicationTotal || idx > applicationTotal*2) {
                                     return;
@@ -158,7 +158,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "application" && props.applications && props.applications.map((app, idx ) =>
+                        this.state.activeTab == "application" && props.applications && props.applications.length > 0 && props.applications.map((app, idx ) =>
                             { 
                                 if(idx < applicationTotal*2 || idx > applicationTotal*3) {
                                     return;
@@ -176,7 +176,7 @@ class CategoryMenu extends React.Component {
                  </div>
                  <div className="category-col">
                     {
-                        this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
+                        this.state.activeTab == "industry" && props.industries && props.industries.length > 0 && props.industries.map((ind, idx ) =>
                             { 
                                 if(idx > industriesTotal) {
                                     return;
@@ -194,7 +194,7 @@ class CategoryMenu extends React.Component {
                  </div>
                  <div className="category-col">
                     {
-                        this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
+                        this.state.activeTab == "industry" && props.industries && props.industries.length > 0 && props.industries.map((ind, idx ) =>
                             { 
                                 if(idx < industriesTotal || idx > industriesTotal*2) {
                                     return;
@@ -212,7 +212,7 @@ class CategoryMenu extends React.Component {
                  </div>
                  <div className="category-col">
                     {
-                        this.state.activeTab == "industry" && props.industries && props.industries.map((ind, idx ) =>
+                        this.state.activeTab == "industry" && props.industries && props.industries.length > 0 && props.industries.map((ind, idx ) =>
                             { 
                                 if(idx < industriesTotal*2 || idx > industriesTotal*3) {
                                     return;
@@ -231,7 +231,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx ) =>
+                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.length > 0 && props.catalogue.map((cat, idx ) =>
                             { 
                                 if(idx > catalogueTotal) {
                                     return;
@@ -250,7 +250,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx ) =>
+                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.length > 0 && props.catalogue.map((cat, idx ) =>
                             { 
                                 if(idx < catalogueTotal || idx > catalogueTotal*2) {
                                     return;
@@ -269,7 +269,7 @@ class CategoryMenu extends React.Component {
 
                  <div className="category-col">
                     {
-                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.map((cat, idx ) =>
+                        this.state.activeTab == "catalogue" && props.catalogue && props.catalogue.length > 0 && props.catalogue.map((cat, idx ) =>
                             { 
                                 if(idx < catalogueTotal*2 || idx > catalogueTotal*3) {
                                     return;

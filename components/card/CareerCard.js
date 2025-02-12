@@ -118,6 +118,16 @@ class CareerCard extends React.Component {
                         }
 
                         @media only screen and (max-width: 800px){ 
+
+                          .career-expand .description img {
+                            width: 100% !important;
+                            height: auto !important;
+                          }
+        
+                          .career-expand .description > p, .career-expand .description > h1, .career-expand .description > h2, .career-expand .description > h3, .career-expand .description > h4, .career-expand .description > h5, .career-expand .description > h6 {
+                            display: flex;
+                          }
+
                           .career-card {
                             margin-bottom: 8px;
                             padding: 10px;

@@ -7,6 +7,7 @@ const WebHead = (props) => {
         <title>{props.title || "PT. Era Mitra Perdana"} </title>
         <link rel="icon" href="/static/images/icon.png" />
         <meta name="title" content={props.title || "PT. Era Mitra Perdana"} />
+        <meta name="title" property="og:title" content={props.title || "PT. Era Mitra Perdana"} />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
@@ -22,7 +23,7 @@ const WebHead = (props) => {
           href="/static/styles/css/slick-theme.css"
         />
 
-      <link
+        <link
           rel="stylesheet"
           type="text/css"
           href="/static/styles/css/style.css"

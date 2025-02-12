@@ -57,7 +57,7 @@ const Cart = (props) => {
                         props.cart && props.cart.map((item, idx) => 
                             <div className="product-cart-wrapper" key={idx}>
                                 <ProductCardCart
-                                     picture={item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].path}
+                                     picture={item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].name}
                                      brand={item.product.Brand.name}
                                     name={item.product.name}
                                     price={item.product.price}

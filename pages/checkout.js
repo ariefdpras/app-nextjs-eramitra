@@ -2,12 +2,12 @@ import Layout from "../containers/layout";
 import React, { useState, useEffect } from 'react'
 import ProductCardCart from "Components/cart/Product";
 import { number } from "Helpers/utils";
+import axios from "axios";
 
 const Home = (props) => {
   
     const [cart, setCart] = useState(props.cart) 
     const [csData, setCsData] = useState({
-        
           name: "",
           company: "",
           email: "",
@@ -38,7 +38,7 @@ const Home = (props) => {
         if(localStorage.getItem("cart")) {
             setCart(JSON.parse(localStorage.getItem("cart")))
         }
-    })
+    }, [])
 
     
     const setName = (e) => {
@@ -109,15 +109,47 @@ const Home = (props) => {
         localStorage.setItem("cart", JSON.stringify(carts))
     }
   
-    const emailSend = () => {
+    const emailSend = async () => {  
+        if(!validatePhone(csData.phone) || !csData.phone) {
+            alert('Please input correct phone number')
+            return;
+        }
+        if(!validateEmail(csData.email) || !csData.email) {
+            alert('Please input correct email')
+            return;
+        }
+        const subscribe = {
+            name: csData.name,
+            phone: csData.phone,
+            email: csData.email,
+            company: csData.company || null,
+            address: csData.address || null
+        }
+
+        axios.post('/api/addCustomer', subscribe).then(res => {
+        }).catch(error => {
+            alert('Error to checkout! Please try again');
+            return;
+        })
+
         let data = ""
         let tempCart = cart
         for (var i = 0; i < tempCart.length; i++) {
             data = data.concat("%0d%0a - " +cart[i].product.name + "- x " + cart[i].value);
           }
-        window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Name: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''}%0d%0aAddres: ${csData.address || ''} %0d%0aMessage: ${csData.message || ''} %0d%0aCart: ${data || ''}`, '_blank');
+        window.open(`mailto:sales@eramitra.com?subject=Reach Us Form&body=Name: ${csData.name || ''} %0d%0aPhone: ${csData.phone || ''}  %0d%0aEmail: ${csData.email || ''} %0d%0aCompany: ${csData.company || ''}%0d%0aAddress: ${csData.address || ''} %0d%0aMessage: ${csData.message || ''} %0d%0aCart: ${data || ''}`, '_blank');
       };
-
+      
+  
+      const validateEmail = (email) => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+  
+      const validatePhone = (phone) => {
+        var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        return re.test(phone.replace(/\s+/g, ''));
+      }
     
   
 
@@ -136,11 +168,11 @@ const Home = (props) => {
                             <h3 className="checkout-title">Your Order</h3>
                             <div className="checkout-detail-wrapper">
                                 {
-                                    cart && cart.map((item, idx) => 
+                                    cart && cart.length > 0 && cart.map((item, idx) => 
                                         <div className="product-cart-wrapper" 
                                         key={idx}>
                                             <ProductCardCart
-                                                picture={item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].path}
+                                                picture={item.product.Pictures && item.product.Pictures.length > 0 && item.product.Pictures[0].name}
                                                 brand={item.product.Brand.name}
                                                 name={item.product.name}
                                                 price={item.product.price}

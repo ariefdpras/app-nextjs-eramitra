@@ -99,6 +99,8 @@ const Home = (props) => {
                     justify-content: center !important;
                     padding-left: 50px;
                   }
+
+                  
                 }
                 
               `}
@@ -119,7 +121,7 @@ const Home = (props) => {
             <div className="container-inner">
               <div className="career-card-wrapper">
                 {
-                  props.careers && props.careers.map((career, idx) => 
+                  props.careers && props.careers.length > 0 && props.careers.map((career, idx) => 
                   <CareerCard 
                      key={idx} title={career.title} description={career.description} />)
                 }

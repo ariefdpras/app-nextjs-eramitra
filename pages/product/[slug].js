@@ -78,6 +78,7 @@ const Home = (props) => {
     }
   
   return (
+    props.detail && 
       <Layout
         title={`${props.detail.name} | PT. Era Mitra Perdana`}
         applications={props.applications}
@@ -239,12 +240,12 @@ const Home = (props) => {
                           <div dangerouslySetInnerHTML={{__html: props.detail.description}}></div>
                         }
                          { activeTab == "catalog" && props.detail.brochure ?
-                          <div className="catalog-section">Click <a className="catalog-click" src="http://google.com">here</a> to open the brochure</div>
+                          <div className="catalog-section">Click <a className="catalog-click" href={props.detail.brochure} target="_blank" rel="noreferrer">here</a> to open the brochure</div>
                           :  activeTab == "catalog" &&
                           <div className="catalog-section">No catalog(s) available</div>
                         }
                         { activeTab == "video" && props.detail.video ?
-                          <div><iframe src={`https://www.youtube.com/embed/${props.video}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
+                          <div><iframe src={`https://www.youtube.com/embed/${props.detail.video}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
                           : activeTab == "video" && 
                           <div className="catalog-section">No video available</div>
                         }
@@ -266,8 +267,8 @@ const Home = (props) => {
 
                 .left-product .image-big {
                   width: 420px;
-                  height: 420px;
-                  object-fit: cover;
+                  height: 420px;    
+                  object-fit: contain;
                   cursor: pointer;
                 }
 
@@ -527,11 +528,6 @@ const Home = (props) => {
                 display: flex;
                 justify-content: flex-end;
                 width: 100%;
-              }
-
-              iframe {
-                width: 100%;
-                height: auto;
               }
                 @media only screen and (max-width: 800px){
                

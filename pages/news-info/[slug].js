@@ -103,7 +103,7 @@ const Articles = (props) => {
                     height: 111px;
                     border-radius: 10px;
                   }
-  
+
                 }
               `}
             </style>
@@ -153,6 +153,7 @@ const Articles = (props) => {
             .article-content {
               word-wrap: break-word;
             }
+
             .green-tetra-img {
               width: 100%;
             }
@@ -169,6 +170,13 @@ const Articles = (props) => {
                 margin-bottom: 10px;
               }
 
+              .article-content img {
+                width: 100% !important;
+                height: auto;
+                display: flex;
+                margin: 0 !important;
+              }
+
               .share-content p {
                 font-size: 14px;
                 margin: 0 10px 0 0;
@@ -182,6 +190,10 @@ const Articles = (props) => {
                 line-height: 15px;
                 text-align: center;
                 color: #666A66;
+              }
+
+              p {
+                font-size: 12px;
               }
             }
           `}

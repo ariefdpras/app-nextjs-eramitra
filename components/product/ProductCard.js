@@ -30,7 +30,7 @@ class ProductCard extends React.Component {
                     .product-card {
                         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
                         border-radius: 20px;
-                        height: 400px;
+                        height: 450px;
                         width: 220px;
                     }
 
@@ -96,7 +96,7 @@ class ProductCard extends React.Component {
                         font-family: Bahnschrift;
                         font-style: normal;
                         font-weight: 600;
-                        font-size: 14px;
+                        font-size: 12px;
                         line-height: 17px;
                         color: #FF0303;
                         margin: 0;
@@ -111,6 +111,10 @@ class ProductCard extends React.Component {
                             border-radius: 20px;
                             height: 325px;
                             width: 150px;
+                        }
+
+                        .product-description {
+                            padding: 12px;
                         }
 
                         .product-category {
@@ -129,6 +133,9 @@ class ProductCard extends React.Component {
                             object-fit: cover;
                         }
     
+                        .product-brand {
+                            font-size: 12px;
+                        }
 
                         .product-name {
                             font-family: Bahnschrift;

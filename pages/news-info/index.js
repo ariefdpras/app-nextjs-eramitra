@@ -26,6 +26,7 @@ const Home = (props) => {
                 horizontal: "left"
               }
             ]}  >
+            { props.articles && props.articles.data && props.articles.data.length > 0 &&
             <div className="container-inner">
               <div className="news-info-wrapper">
                   <div className="news-info-cover">
@@ -38,6 +39,7 @@ const Home = (props) => {
                   </div>
              </div>
             </div>
+            }
             <style>
               {`
                 .news-info {
@@ -123,19 +125,6 @@ const Home = (props) => {
                   margin-left: 20px;
                 }
                 
-                .article-content img {
-                  width: 100% !important;
-                  height: auto;
-                }
-
-                .article-content p {
-                  text-indent: 0pt !important;
-                }
-
-                .article-content {
-                  word-break: break-word;
-                }
-
                 .news-info-cover {
                   width: 170px;
                   height: 100px;
@@ -228,7 +217,7 @@ const Home = (props) => {
 
                 .article-wrapper {
                   margin: 0 !important;
-                  grid-template-columns: 1fr 1fr;
+                  grid-template-columns: 1fr 1fr !important;
                 }
 
                 .article-card-wrapper {
@@ -248,7 +237,7 @@ const Home = (props) => {
               Latest Articles
             </h3>
             <div className="article-wrapper">
-                { props.articles && props.articles.data && props.articles.data.map((article, idx) => 
+                { props.articles && props.articles.data && props.articles.data.length > 0 && props.articles.data.map((article, idx) => 
                     <div className="article-card-wrapper" key={idx}>
                       <ArticleCard
                         picture={article.Picture && article.Picture.name}

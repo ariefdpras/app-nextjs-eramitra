@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
 /**
  * Props:
@@ -10,32 +10,30 @@ const Breadcrumb = (props) => {
     <React.Fragment>
       <ul className="breadcrumb">
         <li key={0}>
-          <Link href={props.url} as={props.url}>
+          <Link href={props.url} as={props.url} legacyBehavior>
             <a className="breadcrumb-section-text">Home</a>
           </Link>
         </li>
         {props.breadcrumbs
-          ? props.breadcrumbs.map((item, idx) => (
-              !!item.title ?
+          ? props.breadcrumbs.map((item, idx) =>
+              !!item.title ? (
                 <li key={idx} className="breadcrumb-section">
                   <span className="ic-separate">/</span>
                   {idx < props.breadcrumbs.length - 1 ? (
-                    <Link
-                      href={item.url}
-                    >
+                    <Link href={item.url} legacyBehavior>
                       <a className="breadcrumb-section-text">
-                        {item.title.replace(/[-]/g, ' ')}
+                        {item.title.replace(/[-]/g, " ")}
                       </a>
                     </Link>
                   ) : (
                     <span className="breadcrumb-section-text active">
-                      {item.title.replace(/[-]/g, ' ')}
+                      {item.title.replace(/[-]/g, " ")}
                     </span>
                   )}
                 </li>
-                : null
-              ))
-            : null}
+              ) : null
+            )
+          : null}
       </ul>
 
       <style jsx>
@@ -66,7 +64,7 @@ const Breadcrumb = (props) => {
             font-weight: normal;
             font-size: 18px;
             line-height: 22px;
-            color: #1BA58A;
+            color: #1ba58a;
             text-align: left;
             text-transform: capitalize;
           }
@@ -82,7 +80,7 @@ const Breadcrumb = (props) => {
         `}
       </style>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Breadcrumb
+export default Breadcrumb;
