@@ -201,28 +201,27 @@ const Home = (props) => {
               <img src="/static/images/mission.svg" />
               <div className="mission-description">
                 <h3 className="section-title">Mission</h3>
-                <p className="section-description">
-                  <div>
-                    <ul className="section-mission">
-                      <li>
-                        Provide high quality product and services with
-                        competitive price
-                      </li>
-                      <li>
-                        Be proactive during the end-to-end process in supporting
-                        principals and clients
-                      </li>
-                      <li>
-                        Continuously learning and sharing insights regarding
-                        Scientific and Laboratory Industry
-                      </li>
-                      <li>
-                        Company digitalization to provide easier access for
-                        consumers
-                      </li>
-                    </ul>
-                  </div>
-                </p>
+                <p></p>
+                <div className="section-description">
+                  <ul className="section-mission">
+                    <li>
+                      Provide high quality product and services with competitive
+                      price
+                    </li>
+                    <li>
+                      Be proactive during the end-to-end process in supporting
+                      principals and clients
+                    </li>
+                    <li>
+                      Continuously learning and sharing insights regarding
+                      Scientific and Laboratory Industry
+                    </li>
+                    <li>
+                      Company digitalization to provide easier access for
+                      consumers
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -804,11 +803,11 @@ const Home = (props) => {
             }
 
             .section-description {
-              font-family: Calibri;
+              font-family: calibri;
               font-style: italic;
               font-weight: normal;
               font-size: 22px;
-              line-height: 26px;
+              line-height: 27px;
               color: #666A66;
               margin: 0;
             }
